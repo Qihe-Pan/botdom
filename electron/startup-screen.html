@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <title>Botdom</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; color: #252622; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; overflow: hidden; }
+    main {
+      display: grid; height: 100%; align-content: center; justify-items: center; position: relative;
+      background: #fafaf7; border: 1px solid #dedfd9; border-radius: 20px; -webkit-app-region: drag; user-select: none;
+    }
+    .team { width: 86px; height: 86px; }
+    .team svg { display: block; width: 100%; overflow: visible; }
+    #tile { display: none; }
+    h1 { margin: 11px 0 4px; font-size: 26px; font-weight: 640; line-height: 1.25; letter-spacing: -.8px; }
+    .status { margin: 0; padding: 0 22px; text-align: center; color: #61645e; font-size: 12px; line-height: 19px; }
+    button {
+      position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 30px; height: 30px;
+      color: #71736d; border: 0; border-radius: 50%; background: transparent; -webkit-app-region: no-drag;
+    }
+    button:hover { background: #878b801a; }
+    button:focus-visible { outline: 2px solid currentColor; }
+    @media (prefers-color-scheme: dark) {
+      :root { color: #f1f1ec; } main { background: #212320; border-color: #41443d; }
+      .status, button { color: #b3b6ab; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      #supervisor, #mint, #peach, #blue, #rose { animation: gather 420ms cubic-bezier(.2,.76,.24,1) both; }
+      #supervisor { --dy: 3px; }
+      #mint { --dx: -6px; --dy: 2px; animation-delay: 35ms; }
+      #peach { --dx: 6px; --dy: 2px; animation-delay: 35ms; }
+      #blue { --dx: -3px; --dy: 5px; animation-delay: 65ms; }
+      #rose { --dx: 3px; --dy: 5px; animation-delay: 65ms; }
+      #crown { animation: settle 480ms 60ms cubic-bezier(.2,.76,.24,1) both; }
+    }
+    @keyframes gather {
+      0% { transform: translate(var(--dx, 0), var(--dy, 0)); }
+      75% { transform: translateY(-.5px); } 100% { transform: none; }
+    }
+    @keyframes settle {
+      0% { transform: translateY(-6px); } 68% { transform: translateY(1px); } 100% { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <button type="button" aria-label="{{close}}" onclick="window.startupScreen.close()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <div class="team" aria-hidden="true">{{logo}}</div>
+    <h1>Botdom</h1>
+    <p class="status" role="status">{{status}}</p>
+  </main>
+</body>
+</html>

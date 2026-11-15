@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Botdom · 使用指南</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #302b3b; background: #faf9fc; }
+    body { max-width: 780px; margin: 40px auto; padding: 0 24px; line-height: 1.8; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    h1 { font-size: 26px; font-weight: 500; } h2 { font-size: 20px; font-weight: 500; }
+    a { color: #6e52c0; } button { font: inherit; color: inherit; background: transparent; border: 1px solid #b9afcf; border-radius: 8px; padding: 4px 12px; cursor: pointer; }
+    li { margin-bottom: 16px; } img { display: block; max-width: 100%; max-height: 820px; border-radius: 12px; } figcaption, #version { font-size: 13px; color: #6b6378; } figure { margin: 24px 0; }
+    @media (prefers-color-scheme: dark) { :root { color: #eeeaf5; background: #211d29; } a { color: #b8a0fa; } figcaption, #version { color: #b9afc9; } }
+  </style>
+</head>
+<body>
+  <header><h1>Botdom · <span id="guide-name">使用指南</span></h1><button id="language" type="button">English</button></header>
+  <main id="content" aria-live="polite"></main>
+  <p id="version"></p>
+  <script type="module">
+    let language = navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+    const main = document.querySelector("main");
+    try {
+      const response = await fetch("./content.json");
+      if (!response.ok) throw new Error("Guide unavailable");
+      const guide = await response.json();
+      const show = () => {
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+        document.querySelector("#guide-name").textContent = language === "zh" ? "使用指南" : "User guide";
+        document.querySelector("#language").textContent = language === "zh" ? "English" : "中文";
+        main.replaceChildren();
+        for (const topic of guide.topics) {
+          const section = document.createElement("section");
+          section.id = topic.id;
+          const heading = document.createElement("h2");
+          heading.textContent = topic[language].title;
+          const steps = document.createElement("ol");
+          for (const text of topic[language].steps) {
+            const item = document.createElement("li");
+            item.textContent = text;
+            steps.append(item);
+          }
+          section.append(heading, steps);
+          if (topic.image) {
+            const figure = document.createElement("figure");
+            const image = document.createElement("img");
+            image.src = "./" + topic.image;
+            image.alt = topic[language].caption;
+            const caption = document.createElement("figcaption");
+            caption.textContent = topic[language].caption;
+            figure.append(image, caption);
+            section.append(figure);
+          }
+          main.append(section);
+        }
+        document.querySelector("#version").textContent = guide.updatedAt + " · " + guide.version;
+      };
+      document.querySelector("#language").onclick = () => { language = language === "zh" ? "en" : "zh"; show(); };
+      show();
+    } catch {
+      main.textContent = "使用指南未能加载，请刷新重试。 / Could not load the guide. Please reload.";
+    }
+  </script>
+</body>
+</html>

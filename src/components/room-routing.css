@@ -1,0 +1,31 @@
+.room-routing { display: grid; grid-template-columns: minmax(42px, .45fr) 44px minmax(0, 3fr); align-items: center; gap: 0 4px; margin: 10px 12px 0; color: var(--color-accent); font-size: 11px; font-weight: 400; }
+.room-routing-source { display: flex; align-items: center; gap: 4px; min-width: 0; color: var(--color-ink-secondary); }
+.room-routing-source > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.room-routing-source .room-routing-wire { flex: 1; min-width: 12px; }
+.room-routing-supervisor { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--color-ink-secondary); }
+.room-routing-routes { position: relative; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.room-routing-routes::before { content: ""; position: absolute; inset-inline-start: 0; top: 18px; bottom: 18px; width: 1px; background: currentColor; opacity: .25; pointer-events: none; }
+.room-routing-row { display: grid; grid-template-columns: minmax(16px, 1fr) minmax(0, 7fr); align-items: center; gap: 6px; min-width: 0; }
+.room-routing-wire { display: block; width: 100%; height: 24px; overflow: visible; pointer-events: none; }
+.room-routing-line { fill: none; stroke: currentColor; stroke-width: 1; opacity: .25; }
+.room-routing-dot { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-dasharray: .1 200; animation: room-routing-travel 1.4s linear infinite both; }
+[data-flow-returning] .room-routing-dot { animation-direction: reverse; animation-iteration-count: 1; }
+.room-routing-member { display: flex; align-items: center; gap: 6px; min-width: 0; width: 100%; border-radius: 7px; padding: 4px; text-align: start; color: var(--color-ink); }
+.room-routing-member:hover { background: var(--color-raised); }
+.room-routing-member:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 1px; }
+.room-routing-member-text { min-width: 0; flex: 1; }
+.room-routing-member-text > span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.room-routing-member-text > span + span { font-size: 10px; color: var(--color-ink-secondary); }
+.room-routing-status { flex-shrink: 0; max-width: 45%; color: var(--color-ink-secondary); }
+[data-routing-phase="running"] .room-routing-status, [data-routing-phase="returning"] .room-routing-status { color: var(--color-accent); }
+[data-routing-phase="queued"] .room-routing-line, [data-routing-phase="dispatching"] .room-routing-line { stroke-dasharray: 2 4; }
+[data-routing-phase="blocked"] { color: var(--color-danger); }
+[data-routing-phase="blocked"] .room-routing-status { color: var(--color-danger); }
+[data-routing-phase="reported"] .room-routing-line { color: var(--color-success); }
+.room-routing-overflow { grid-column: 3; justify-self: end; padding: 4px; color: var(--color-accent); }
+.room-routing-detail { grid-column: 1 / -1; min-width: 0; margin-top: 6px; padding: 8px; border-radius: 8px; background: var(--color-app); overflow-wrap: anywhere; color: var(--color-ink-secondary); }
+.room-routing-detail button { margin-top: 4px; color: var(--color-accent); }
+.room-routing[data-paused] .room-routing-dot { animation-play-state: paused; }
+@keyframes room-routing-travel { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) { .room-routing-dot { display: none; animation: none; } }
+:root[data-reduced-motion="true"] .room-routing-dot { display: none; animation: none; }

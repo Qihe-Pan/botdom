@@ -1,0 +1,100 @@
+/* A calmer, wider product-story preview, using Muster's existing components. */
+.mu-shell {max-width:1500px}
+@media(min-width:1180px){
+ .mu-shell {display:block}
+ .mu-agenda {position:sticky;top:var(--header);z-index:25;padding:11px var(--gutter);margin:0 calc(-1 * var(--gutter));background:rgba(247,248,251,.95);border-bottom:1px solid var(--line);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
+ .mu-agenda::-webkit-scrollbar{display:none}
+ .mu-agenda-title {display:none}
+ .mu-agenda ol {display:flex;flex-direction:row;gap:8px;width:max-content;margin:auto}
+ .mu-agenda li a {white-space:nowrap;min-height:36px;padding:0 14px 0 6px;border-radius:999px;font-size:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+ .mu-agenda li a[aria-current=true] {background:var(--lead-ink);color:#fff}
+ .mu-agenda li a[aria-current=true] .mu-agenda-num {background:var(--lead);color:var(--ink)}
+}
+:root{--sticky:132px}
+.mu-hero {padding-top:clamp(56px,7vw,110px);text-align:center}
+.mu-hero .mu-kicker--hero {margin-bottom:30px}
+.mu-hero-grid {display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:'title' 'copy' 'actions' 'replay';gap:24px}
+.light-ready .mu-hero h1 {margin:0 auto;max-width:15ch;font-size:clamp(48px,6.7vw,96px);line-height:1.03}
+.mu-hero-copy,.light-hero-copy {align-items:center;padding:0;gap:18px}
+.light-hero-copy .mu-lede {max-width:48ch;font-size:clamp(18px,1.5vw,21px);line-height:1.6}
+.light-hero-tools {justify-content:center;gap:10px}
+.light-tool {font-size:15px;padding:9px 15px}
+.light-tools-more {font-size:15px}
+.mu-hero-actions {justify-content:center;margin:8px 0 0}
+.mu-hero-actions .mu-btn {min-height:54px;padding-inline:25px}
+.mu-hero-grid > .mu-replay {text-align:left;margin-top:clamp(56px,7vw,96px)}
+.chat-card .mu-replay-head {padding-bottom:20px}
+.chat-card .mu-replay-title {font-size:18px}
+.chat-card .mu-stage-wrap,.chat-card .light-transcript-block,.chat-team {border-radius:28px}
+.chat-card .mu-stage-wrap {padding:clamp(22px,3vw,38px)}
+.chat-card .mu-stage {min-height:360px}
+.chat-card .light-transcript-block {padding:clamp(24px,3vw,36px)}
+.chat-card .chat-card-heading {font-size:17px}
+.chat-card .chat-card-badge {font-size:14px;padding:8px 13px}
+.chat-card .mu-transcript {gap:16px}
+.chat-card .mu-transcript li {grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:7px}
+.chat-card .mu-transcript::before {left:21px}
+.chat-card .mu-transcript .chat-card-avatar {--s:42px}
+.chat-card .mu-transcript .mu-you.chat-card-avatar {width:42px;height:42px}
+.chat-card .mu-transcript .mu-route {font-size:15px}
+.chat-card .mu-transcript .mu-msg {font-size:16px;line-height:1.55;padding:11px 14px;border-radius:16px}
+.chat-card .light-transcript-toggle {font-size:15px;margin:15px 0 0 49px}
+.chat-card .mu-ctl {min-height:42px;font-size:15px;padding:0 16px}
+.chat-card .mu-counter,.chat-card .mu-caption {font-size:14px;line-height:1.5}
+.chat-team {padding:28px}
+.chat-team-head h3 {font-size:20px}
+.chat-team-head p {font-size:15px}
+.chat-team-members {gap:12px;margin:22px 0 18px}
+.chat-team-members li {padding:14px;border-radius:18px}
+.chat-team-members .mu-face {--s:42px}
+.chat-team-labels {font-size:14px}
+.chat-team-labels strong {font-size:15px}
+.chat-team-link {font-size:15px}
+.mu-section {padding-block:clamp(76px,9vw,132px)}
+.mu-head {max-width:1000px}
+.mu-head h2 {font-size:clamp(38px,4.3vw,64px)}
+.mu-intro {font-size:clamp(18px,1.55vw,21px);line-height:1.6}
+.light-ready .mu-step > p.light-short {font-size:17px}
+.light-detail {font-size:16px;line-height:1.7;margin-top:15px}
+@media(max-width:819px){
+ .mu-hero {padding-top:56px}
+ .mu-hero-grid > .mu-replay {margin-top:50px}
+ .chat-card .mu-stage {min-height:300px}
+ .chat-card .light-transcript-block {padding:22px}
+ .chat-card .mu-transcript .mu-msg {font-size:15px}
+ .chat-team {padding:22px}
+}
+@media(max-width:440px){
+ .light-ready .mu-hero h1 {font-size:46px}
+ .chat-card .mu-transcript li {grid-template-columns:38px minmax(0,1fr);column-gap:10px}
+ .chat-card .mu-transcript .chat-card-avatar {--s:36px}
+ .chat-card .mu-transcript .mu-you.chat-card-avatar {width:36px;height:36px}
+ .chat-card .mu-transcript::before {left:18px}
+ .chat-team-members .mu-face {--s:34px}
+ .chat-team-members li {padding:10px}
+}
+@media(min-width:820px){.mu-hero{padding-top:clamp(42px,4vw,64px)}.mu-hero .mu-kicker--hero{margin-bottom:22px}.mu-hero-grid{row-gap:18px}.light-hero-copy{gap:14px}}
+/* One generous shared card: the stage and complete conversation belong together. */
+.chat-card.mu-replay {background:var(--card);border:1px solid var(--line);border-radius:32px;padding:clamp(22px,3vw,36px);box-shadow:var(--shadow-lg)}
+.chat-card .mu-replay-head {padding:0 84px 20px 0}
+.chat-card .mu-stage-wrap {position:static;background:transparent;border:0;border-radius:0;padding:0;box-shadow:none}
+.chat-card .mu-stage {margin:12px 0;min-height:320px}
+.chat-card .mu-evidence {min-height:48px}
+.chat-card .light-transcript-block {background:transparent;border:0;border-radius:0;padding:0;box-shadow:none}
+.chat-card .mu-transcript {gap:9px}
+.chat-card .mu-transcript::before {display:none}
+.chat-card .mu-transcript li {padding:9px 12px;border-radius:16px;grid-template-columns:36px minmax(0,1fr);gap:3px 12px}
+.chat-card .mu-transcript li.is-current {background:var(--lead-50)}
+.chat-card .mu-transcript .chat-card-avatar {--s:34px}
+.chat-card .mu-transcript .mu-you.chat-card-avatar {width:34px;height:34px}
+.chat-card .mu-transcript .mu-route {font-size:14px;color:var(--ink-2)}
+.chat-card .mu-transcript .mu-msg,.chat-card .mu-transcript li.is-current .mu-msg {background:transparent;border:0;box-shadow:none;padding:0;font-size:16px;line-height:1.5}
+.chat-card .light-transcript-toggle {margin:8px 0 0;font-size:14px}
+.chat-card .mu-controls:not([hidden]) {border:0;padding-top:0;margin-top:24px}
+.chat-card .mu-caption {margin-top:16px}
+@container replay (min-width:820px) {
+ .light-ready .chat-card .mu-replay-body {grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+ .chat-card .light-transcript-block {align-self:center;border-left:2px dotted var(--line);padding-left:clamp(20px,2.5vw,32px)}
+}
+@media(max-width:819px){.chat-card.mu-replay{padding:22px}.chat-card .light-transcript-block{padding:0}.chat-card .mu-transcript .mu-msg,.chat-card .mu-transcript li.is-current .mu-msg{font-size:15px}}
+@media(max-width:440px){.chat-card.mu-replay{padding:18px}.chat-card .mu-replay-head{padding-right:72px}.chat-card .mu-transcript li{grid-template-columns:34px minmax(0,1fr)}}

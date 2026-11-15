@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="meta.title">Botdom — your own kingdom of AI agents</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Botdom puts Codex, OpenCode, DeepSeek Harness, Claude Code and CodeBuddy Code in one group chat on your computer. You brief the lead; the lead assigns, members hand off, and you check the results.">
+  <meta name="theme-color" content="#F5F2FC">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/muster-mark.svg">
+  <link rel="stylesheet" href="shared/reading-motion.css?v=20261027-1">
+  <link rel="stylesheet" href="shared/cjk-font.css?v=20261102-cjk-regular-1">
+  <link rel="stylesheet" href="botdom-map.css?v=20261103-16">
+  <link rel="stylesheet" href="tour-redesign.css?v=20261104-11">
+  <script defer src="shared/reading-motion.js?v=20261031-smooth-1"></script>
+  <script defer src="copy.zh.js?v=20261103-map-1"></script>
+  <script defer src="product-language.js?v=20261102-product-1"></script>
+  <script defer src="botdom-map.js?v=20261103-8"></script>
+  <script defer src="tour-rail.js?v=20261104-1"></script>
+  <script defer src="tour-ornaments.js?v=20261104-2"></script>
+</head>
+<body class="bd-page">
+<a class="bd-skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<svg class="bd-defs" aria-hidden="true" focusable="false" width="0" height="0"><defs>
+<symbol id="lm-castle" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="104" ry="9" fill="#D7ECDF"/><rect x="44" y="98" width="152" height="68" rx="0" fill="#F0EBFD"/><rect x="196" y="98" width="0" height="68" fill="#DCD2F4"/><rect x="45.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="65.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="85.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="105.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="125.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="145.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="165.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="185.0" y="89" width="10" height="9" fill="#F0EBFD"/><rect x="30" y="72" width="36" height="94" rx="0" fill="#F0EBFD"/><rect x="57" y="72" width="9" height="94" fill="#DCD2F4"/><path d="M24 74L48 34L48 74Z" fill="#C6B6F1"/><path d="M48 34L72 74L48 74Z" fill="#A891E3"/><rect x="46.8" y="18" width="2.4" height="16" rx="1.2" fill="#7861C2"/><path d="M49.2 18L67.2 23L49.2 28Z" fill="#E6AE2E" class="bd-flag"/><rect x="174" y="72" width="36" height="94" rx="0" fill="#F0EBFD"/><rect x="201" y="72" width="9" height="94" fill="#DCD2F4"/><path d="M168 74L192 34L192 74Z" fill="#C6B6F1"/><path d="M192 34L216 74L192 74Z" fill="#A891E3"/><rect x="190.8" y="18" width="2.4" height="16" rx="1.2" fill="#7861C2"/><path d="M193.2 18L211.2 23L193.2 28Z" fill="#E6AE2E" class="bd-flag"/><rect x="94" y="54" width="52" height="112" rx="0" fill="#F0EBFD"/><rect x="134" y="54" width="12" height="112" fill="#DCD2F4"/><rect x="90" y="52" width="60" height="6" rx="2" fill="#DCD2F4"/><path d="M88 54L120 10L120 54Z" fill="#C6B6F1"/><path d="M120 10L152 54L120 54Z" fill="#A891E3"/><rect x="118.8" y="-8" width="2.4" height="18" rx="1.2" fill="#7861C2"/><path d="M121.2 -8L141.2 -3L121.2 2Z" fill="#E6AE2E" class="bd-flag"/><rect x="112.0" y="72" width="16" height="26" rx="8.0" style="fill:var(--win,#FFE6A0)"/><rect x="42.0" y="92" width="12" height="18" rx="6.0" style="fill:var(--win,#FFE6A0)"/><rect x="186.0" y="92" width="12" height="18" rx="6.0" style="fill:var(--win,#FFE6A0)"/><rect x="75.0" y="114" width="10" height="14" rx="5.0" style="fill:var(--win,#FFE6A0)"/><rect x="155.0" y="114" width="10" height="14" rx="5.0" style="fill:var(--win,#FFE6A0)"/><path d="M106.0 166V146.0A14.0 14.0 0 0 1 134.0 146.0V166Z" fill="#8F79D4"/><circle cx="126" cy="152" r="2" fill="#E6AE2E"/></symbol>
+<symbol id="lm-signpost" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="70" ry="9" fill="#D7ECDF"/><rect x="114" y="30" width="12" height="136" rx="2" fill="#E3C99F"/><rect x="120" y="30" width="6" height="136" fill="#CDAE7E"/><circle cx="120" cy="26" r="7" fill="#E6AE2E"/><path d="M74 42H152L164 54L152 66H74Z" fill="#D2C2F0"/><path d="M74 60H158L152 66H74Z" fill="#BBA6EA"/><path d="M166 78H88L76 90L88 102H166Z" fill="#BFDCCB"/><path d="M82 96H166V102H88Z" fill="#A3CCB4"/><path d="M74 114H152L164 126L152 138H74Z" fill="#F2CDB6"/><path d="M74 132H158L152 138H74Z" fill="#E5B596"/><circle cx="120" cy="54" r="2.6" fill="#B8861A"/><circle cx="120" cy="90" r="2.6" fill="#B8861A"/><circle cx="120" cy="126" r="2.6" fill="#B8861A"/></symbol>
+<symbol id="lm-guild" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="98" ry="9" fill="#D7ECDF"/><rect x="46" y="82" width="148" height="84" rx="0" fill="#F0EBFD"/><rect x="180" y="82" width="14" height="84" fill="#DCD2F4"/><path d="M34 84L120 32L120 84Z" fill="#C6B6F1"/><path d="M120 32L206 84L120 84Z" fill="#A891E3"/><rect x="40" y="80" width="160" height="7" rx="2" fill="#DCD2F4"/><rect x="62" y="92" width="116" height="4" rx="2" fill="#E6AE2E"/><path d="M70 96H94V132L82 125L70 132Z" fill="#D2C2F0"/><path d="M108 96H132V132L120 125L108 132Z" fill="#BFDCCB"/><path d="M146 96H170V132L158 125L146 132Z" fill="#F2CDB6"/><path d="M107.0 166V151.0A13.0 13.0 0 0 1 133.0 151.0V166Z" fill="#8F79D4"/></symbol>
+<symbol id="lm-archive" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="72" ry="9" fill="#D7ECDF"/><defs><linearGradient id="bdCyl" x1="0" x2="1"><stop offset="0" stop-color="#F4F0FE"/><stop offset=".58" stop-color="#ECE6FC"/><stop offset=".58" stop-color="#DCD2F4"/><stop offset="1" stop-color="#D3C8F1"/></linearGradient></defs><rect x="84" y="50" width="72" height="116" fill="url(#bdCyl)"/><rect x="78" y="40" width="84" height="12" rx="2" fill="url(#bdCyl)"/><rect x="78.0" y="30" width="10" height="10" fill="#E9E2FB"/><rect x="96.5" y="30" width="10" height="10" fill="#E9E2FB"/><rect x="115.0" y="30" width="10" height="10" fill="#E9E2FB"/><rect x="133.5" y="30" width="10" height="10" fill="#E9E2FB"/><rect x="152.0" y="30" width="10" height="10" fill="#E9E2FB"/><rect x="111.0" y="64" width="18" height="30" rx="9.0" style="fill:var(--win,#FFE6A0)"/><rect x="113.0" y="106" width="14" height="18" rx="7.0" style="fill:var(--win,#FFE6A0)"/><path d="M108.0 166V152.0A12.0 12.0 0 0 1 132.0 152.0V166Z" fill="#8F79D4"/><rect x="118.8" y="10" width="2.4" height="20" rx="1.2" fill="#7861C2"/><path d="M121.2 10L141.2 15L121.2 20Z" fill="#E6AE2E" class="bd-flag"/></symbol>
+<symbol id="lm-gate" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="100" ry="9" fill="#D7ECDF"/><rect x="84" y="80" width="72" height="86" rx="0" fill="#F0EBFD"/><rect x="156" y="80" width="0" height="86" fill="#DCD2F4"/><rect x="84.0" y="70" width="12" height="10" fill="#F0EBFD"/><rect x="104.0" y="70" width="12" height="10" fill="#F0EBFD"/><rect x="124.0" y="70" width="12" height="10" fill="#F0EBFD"/><rect x="144.0" y="70" width="12" height="10" fill="#F0EBFD"/><rect x="38" y="56" width="46" height="110" rx="0" fill="#F0EBFD"/><rect x="74" y="56" width="10" height="110" fill="#DCD2F4"/><rect x="38.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="56.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="74.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="156" y="56" width="46" height="110" rx="0" fill="#F0EBFD"/><rect x="192" y="56" width="10" height="110" fill="#DCD2F4"/><rect x="156.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="174.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="192.0" y="46" width="10" height="10" fill="#F0EBFD"/><rect x="55.0" y="82" width="12" height="20" rx="6.0" style="fill:var(--win,#FFE6A0)"/><rect x="173.0" y="82" width="12" height="20" rx="6.0" style="fill:var(--win,#FFE6A0)"/><clipPath id="bdGateClip"><path d="M96 166V112A24 24 0 0 1 144 112V166Z"/></clipPath><path d="M96 166V112A24 24 0 0 1 144 112V166Z" fill="#3D3070"/><g clip-path="url(#bdGateClip)"><rect x="102.5" y="86" width="3" height="80" fill="#E6AE2E"/><rect x="110.5" y="86" width="3" height="80" fill="#E6AE2E"/><rect x="118.5" y="86" width="3" height="80" fill="#E6AE2E"/><rect x="126.5" y="86" width="3" height="80" fill="#E6AE2E"/><rect x="134.5" y="86" width="3" height="80" fill="#E6AE2E"/><rect x="96" y="114.5" width="48" height="3" fill="#E6AE2E"/><rect x="96" y="130.5" width="48" height="3" fill="#E6AE2E"/><rect x="96" y="146.5" width="48" height="3" fill="#E6AE2E"/></g></symbol>
+<symbol id="lm-workshops" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="104" ry="9" fill="#D7ECDF"/><rect x="20" y="114" width="56" height="52" rx="0" fill="#F2CDB6"/><rect x="66" y="114" width="10" height="52" fill="#E5B596"/><path d="M16 116L48 84L48 116Z" fill="#C6B6F1"/><path d="M48 84L80 116L48 116Z" fill="#A891E3"/><rect x="41.0" y="128" width="14" height="14" rx="7.0" style="fill:var(--win,#FFE6A0)"/><rect x="164" y="114" width="56" height="52" rx="0" fill="#C8D6F1"/><rect x="210" y="114" width="10" height="52" fill="#AEC1EA"/><path d="M160 116L192 84L192 116Z" fill="#C6B6F1"/><path d="M192 84L224 116L192 116Z" fill="#A891E3"/><rect x="185.0" y="128" width="14" height="14" rx="7.0" style="fill:var(--win,#FFE6A0)"/><rect x="132" y="66" width="10" height="24" fill="#DCD2F4"/><rect x="88" y="98" width="64" height="68" rx="0" fill="#BFDCCB"/><rect x="140" y="98" width="12" height="68" fill="#A3CCB4"/><path d="M84 100L120 62L120 100Z" fill="#C6B6F1"/><path d="M120 62L156 100L120 100Z" fill="#A891E3"/><rect x="113.0" y="110" width="14" height="16" rx="7.0" style="fill:var(--win,#FFE6A0)"/><path d="M110.0 166V150.0A10.0 10.0 0 0 1 130.0 150.0V166Z" fill="#8F79D4"/></symbol>
+<symbol id="lm-walls" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="108" ry="9" fill="#D7ECDF"/><path d="M58 106L80 76L80 106Z" fill="#D2C2F0"/><path d="M80 76L102 106L80 106Z" fill="#BBA6EA"/><path d="M96 106L120 66L120 106Z" fill="#BFDCCB"/><path d="M120 66L144 106L120 106Z" fill="#A3CCB4"/><path d="M138 106L160 76L160 106Z" fill="#C8D6F1"/><path d="M160 76L182 106L160 106Z" fill="#AEC1EA"/><rect x="26" y="106" width="188" height="60" rx="0" fill="#F0EBFD"/><rect x="214" y="106" width="0" height="60" fill="#DCD2F4"/><rect x="30.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="54.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="78.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="102.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="126.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="150.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="174.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="198.0" y="96" width="12" height="10" fill="#F0EBFD"/><rect x="26" y="150" width="188" height="16" fill="#DCD2F4"/><rect x="14" y="84" width="30" height="82" rx="0" fill="#F0EBFD"/><rect x="36" y="84" width="8" height="82" fill="#DCD2F4"/><path d="M10 86L29 58L29 86Z" fill="#C6B6F1"/><path d="M29 58L48 86L29 86Z" fill="#A891E3"/><rect x="196" y="84" width="30" height="82" rx="0" fill="#F0EBFD"/><rect x="218" y="84" width="8" height="82" fill="#DCD2F4"/><path d="M192 86L211 58L211 86Z" fill="#C6B6F1"/><path d="M211 58L230 86L211 86Z" fill="#A891E3"/><path d="M105.0 166V143.0A15.0 15.0 0 0 1 135.0 143.0V166Z" fill="#8F79D4"/></symbol>
+<symbol id="lm-edge" viewBox="0 -12 240 192"><ellipse cx="66" cy="160" rx="54" ry="11" fill="#DCD2F4"/><path d="M78 66L212 40V96Z" fill="#FFE6A0" opacity=".42"/><clipPath id="bdLight"><path d="M50 156L54 74H78L82 156Z"/></clipPath><g clip-path="url(#bdLight)"><rect x="40" y="70" width="50" height="90" fill="#F7F4FF"/><rect x="69" y="70" width="20" height="90" fill="#E3DCF7"/><rect x="40" y="94" width="50" height="12" fill="#D2C2F0"/><rect x="40" y="122" width="50" height="12" fill="#D2C2F0"/><rect x="69" y="94" width="20" height="12" fill="#BBA6EA"/><rect x="69" y="122" width="20" height="12" fill="#BBA6EA"/></g><rect x="48" y="58" width="36" height="16" rx="3" style="fill:var(--win,#FFE6A0)"/><path d="M44 60L66 36L66 60Z" fill="#C6B6F1"/><path d="M66 36L88 60L66 60Z" fill="#A891E3"/><path d="M96 166C112 152 132 152 152 157S196 151 240 153V168H96Z" fill="#CFE0F6"/><path d="M110 160c8-5 16-5 24 0M156 162c8-5 16-5 24 0M200 160c8-5 16-5 24 0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><g fill="#fff" opacity=".95"><circle cx="178" cy="106" r="13"/><circle cx="196" cy="100" r="17"/><circle cx="214" cy="107" r="11"/><rect x="166" y="106" width="58" height="14" rx="7"/></g></symbol>
+<symbol id="lm-tent" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="96" ry="9" fill="#D7ECDF"/><path d="M36 166L120 66L120 166Z" fill="#D2C2F0"/><path d="M120 66L204 166H120Z" fill="#BBA6EA"/><path d="M120 66L78 166H96Z" fill="#F2CDB6"/><path d="M120 66L162 166H144Z" fill="#E5B596"/><path d="M120 108L102 166H138Z" fill="#8F79D4"/><rect x="118.8" y="40" width="2.4" height="26" rx="1.2" fill="#7861C2"/><path d="M121.2 40L143.2 45L121.2 50Z" fill="#E6AE2E" class="bd-flag"/></symbol>
+<symbol id="lm-board" viewBox="0 -12 240 192"><ellipse cx="120" cy="167" rx="78" ry="9" fill="#D7ECDF"/><rect x="58" y="110" width="10" height="56" rx="0" fill="#E3C99F"/><rect x="64" y="110" width="4" height="56" fill="#CDAE7E"/><rect x="172" y="110" width="10" height="56" rx="0" fill="#E3C99F"/><rect x="178" y="110" width="4" height="56" fill="#CDAE7E"/><rect x="42" y="52" width="156" height="72" rx="8" fill="#E3C99F"/><rect x="50" y="60" width="140" height="56" rx="4" fill="#F4E6CC"/><path d="M32 54L120 22L120 54Z" fill="#C6B6F1"/><path d="M120 22L208 54L120 54Z" fill="#A891E3"/><rect x="59" y="68" width="36" height="40" rx="2" fill="#FFFDF6"/><rect x="66" y="82" width="22" height="3" rx="1.5" fill="#E2DAEE"/><rect x="66" y="90" width="16" height="3" rx="1.5" fill="#E2DAEE"/><circle cx="77" cy="70" r="3.6" fill="#6E52C0"/><rect x="102" y="68" width="36" height="40" rx="2" fill="#FFFDF6"/><rect x="109" y="82" width="22" height="3" rx="1.5" fill="#E2DAEE"/><rect x="109" y="90" width="16" height="3" rx="1.5" fill="#E2DAEE"/><circle cx="120" cy="70" r="3.6" fill="#E6AE2E"/><rect x="145" y="68" width="36" height="40" rx="2" fill="#FFFDF6"/><rect x="152" y="82" width="22" height="3" rx="1.5" fill="#E2DAEE"/><rect x="152" y="90" width="16" height="3" rx="1.5" fill="#E2DAEE"/><circle cx="163" cy="70" r="3.6" fill="#C0533B"/></symbol>
+<symbol id="lm-compass" viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" fill="#FFFDF8" opacity=".7"/><circle cx="60" cy="60" r="44" fill="none" stroke="#CFC3EC" stroke-width="1.5"/><circle cx="60" cy="60" r="36" fill="none" stroke="#E2D9F6" stroke-width="1.5" stroke-dasharray="2 5"/><path d="M60 14L67 60H53Z" fill="#E6AE2E"/><path d="M60 106L67 60H53Z" fill="#5B43B5"/><path d="M14 60L60 53V67Z" fill="#DCD2F4"/><path d="M106 60L60 53V67Z" fill="#C6B6F1"/><circle cx="60" cy="60" r="4" fill="#FFFDF8"/></symbol>
+</defs></svg>
+<header class="bd-bar">
+  <a class="bd-brand" href="#top" aria-label="Botdom, back to top" data-i18n-attr="aria-label:nav.brand-label"><img src="assets/muster-mark.svg" alt="" width="30" height="30"><span data-i18n="nav.brand">Botdom</span></a>
+  <p class="bd-here" aria-hidden="true"><span class="bd-here-label" data-i18n="nav.here">You are at</span> <span class="bd-here-place" id="bdHere">The Castle</span></p>
+  <div class="bd-bar-actions">
+    <button type="button" class="bd-mapbtn" id="bdMapBtn" aria-expanded="false" aria-controls="bdLegend"><span class="bd-mapbtn-icon" aria-hidden="true"></span><span data-i18n="nav.map">Map</span></button>
+    <a class="bd-btn bd-btn--royal bd-btn--sm" href="workspace.html"><span data-i18n="nav.demo">Open the demo</span></a>
+  </div>
+  <nav class="bd-legend" id="bdLegend" aria-label="Places in the kingdom" data-i18n-attr="aria-label:nav.legend-label" hidden>
+    <p class="bd-legend-title" data-i18n="nav.legend">Places in the kingdom</p>
+    <ol>
+      <li><a href="#top" data-msg-place="The Castle"><span class="bd-num">I</span><span data-i18n="nav.top">The Castle</span><small data-i18n="nav.top-sub">The idea</small></a></li>
+      <li><a href="#meeting" data-msg-place="The Royal Road"><span class="bd-num">II</span><span data-i18n="nav.meeting">The Royal Road</span><small data-i18n="nav.meeting-sub">How it works</small></a></li>
+      <li><a href="#harnesses" data-msg-place="The Guild Hall"><span class="bd-num">III</span><span data-i18n="nav.harnesses">The Guild Hall</span><small data-i18n="nav.harnesses-sub">Supported tools</small></a></li>
+      <li><a href="#checks" data-msg-place="The Archive Tower"><span class="bd-num">IV</span><span data-i18n="nav.checks">The Archive Tower</span><small data-i18n="nav.checks-sub">Records you can open</small></a></li>
+      <li><a href="#controls" data-msg-place="The Gatehouse"><span class="bd-num">V</span><span data-i18n="nav.controls">The Gatehouse</span><small data-i18n="nav.controls-sub">Your controls</small></a></li>
+      <li><a href="#more" data-msg-place="The Workshops"><span class="bd-num">VI</span><span data-i18n="nav.more">The Workshops</span><small data-i18n="nav.more-sub">Also included</small></a></li>
+      <li><a href="#local" data-msg-place="The City Walls"><span class="bd-num">VII</span><span data-i18n="nav.local">The City Walls</span><small data-i18n="nav.local-sub">Your data</small></a></li>
+      <li><a href="#limits" data-msg-place="The Edge of the Map"><span class="bd-num">VIII</span><span data-i18n="nav.limits">The Edge of the Map</span><small data-i18n="nav.limits-sub">Not yet</small></a></li>
+      <li><a href="#collaboration" data-msg-place="The Training Grounds"><span class="bd-num">IX</span><span data-i18n="nav.collaboration">The Training Grounds</span><small data-i18n="nav.collaboration-sub">Interactive demo</small></a></li>
+      <li><a href="#faq" data-msg-place="The Notice Board"><span class="bd-num">X</span><span data-i18n="nav.faq">The Notice Board</span><small data-i18n="nav.faq-sub">Questions</small></a></li>
+    </ol>
+  </nav>
+</header>
+
+<div class="bd-map" id="bdMap">
+  <svg class="bd-road" id="bdRoad" aria-hidden="true" focusable="false"><path class="bd-road-bed" d=""/><path class="bd-road-dash" d=""/><path class="bd-road-walked" d=""/></svg>
+  <div class="bd-traveller" id="bdTraveller" aria-hidden="true"><span class="bd-bot bd-bot--lead bd-bot--sm"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></div>
+
+<main id="main" tabindex="-1">
+
+  <section id="top" class="bd-stop bd-stop--hero" aria-labelledby="hero-title" data-msg-place="The Castle">
+    <div class="bd-hero">
+      <div class="bd-cartouche">
+        <p class="bd-cartouche-pre" data-i18n="hero.pre">Welcome to the kingdom of</p>
+        <p class="bd-wordmark" data-i18n="hero.wordmark">Botdom</p>
+      </div>
+      <h1 id="hero-title" data-i18n="hero.title">Your own kingdom of AI agents.</h1>
+      <p class="bd-lede" data-i18n="hero.lede">Give one goal to your lead Bot. It splits the work across your AI tools and brings back records you can check.</p>
+      <div class="bd-actions">
+        <a class="bd-btn bd-btn--royal" href="#court"><span data-i18n="hero.cta-court">Watch a court session</span></a>
+        <a class="bd-btn bd-btn--plain" href="workspace.html"><span data-i18n="hero.cta-demo">Try the interactive demo</span></a>
+      </div>
+      <div class="bd-landmark bd-landmark--castle" data-landmark>
+        <svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-castle"/></svg>
+        <ul class="bd-residents" aria-hidden="true">
+          <li class="bd-res bd-res--research"><span class="bd-bot bd-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li>
+          <li class="bd-res bd-res--lead"><span class="bd-bot bd-bot--lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li>
+          <li class="bd-res bd-res--writer"><span class="bd-bot bd-bot--writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li>
+          <li class="bd-res bd-res--review"><span class="bd-bot bd-bot--review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li>
+        </ul>
+        <p class="bd-place"><span class="bd-num">I</span><span data-i18n="hero.place">The Castle</span></p>
+      </div>
+      <svg class="bd-compass" aria-hidden="true" focusable="false"><use href="#lm-compass"/></svg>
+      <div class="bd-guilds-legend">
+        <p class="bd-guilds-title" data-i18n="hero.tools-label">Members can run on</p>
+        <ul>
+          <li data-i18n="hero.tool-codex">Codex</li><li data-i18n="hero.tool-opencode">OpenCode</li><li data-i18n="hero.tool-deepseek">DeepSeek Harness</li><li data-i18n="hero.tool-claude">Claude Code</li><li data-i18n="hero.tool-codebuddy">CodeBuddy Code</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bd-court" id="court">
+      <div class="bd-court-head">
+        <p class="bd-place bd-place--inline"><span class="bd-num bd-num--dot" aria-hidden="true"></span><span data-i18n="court.place">The Throne Room</span></p>
+        <h2 data-i18n="court.title">A court session, in six messages.</h2>
+        <p data-i18n="court.lede">From your brief to a reviewed result.</p>
+      </div>
+      <figure class="bd-throne" id="throne" data-step="1" aria-labelledby="throneCaption"
+        data-msg-counter="Step {n} of {total}" data-msg-announce="Step {n} of {total}: {route}. {message}"
+        data-msg-play="Play" data-msg-pause="Pause"
+        data-i18n-attr="data-msg-counter:court.counter;data-msg-announce:court.announce;data-msg-play:court.play;data-msg-pause:court.pause">
+        <span class="bd-sample" data-i18n="court.sample">Sample</span>
+        <div class="bd-hall">
+          <svg class="bd-hall-arcs" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="bd-arc" d=""/><circle class="bd-spark" r="9" cx="-50" cy="-50"/></svg>
+          <div class="bd-table" aria-hidden="true"></div>
+          <ul class="bd-seats" aria-hidden="true">
+            <li class="bd-seat" data-seat="you"><span class="bd-you"></span><span class="bd-seat-tag"><b data-i18n="court.seat-you">You</b></span></li>
+            <li class="bd-seat" data-seat="lead"><span class="bd-bot bd-bot--lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span><span class="bd-seat-tag"><b data-i18n="court.seat-lead">Lead</b><span data-i18n="court.tool-lead">Codex</span></span></li>
+            <li class="bd-seat" data-seat="research"><span class="bd-bot bd-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span><span class="bd-seat-tag"><b data-i18n="court.seat-research">Researcher</b><span data-i18n="court.tool-research">Codex</span></span></li>
+            <li class="bd-seat" data-seat="writer"><span class="bd-bot bd-bot--writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span><span class="bd-seat-tag"><b data-i18n="court.seat-writer">Writer</b><span data-i18n="court.tool-writer">DeepSeek Harness</span></span></li>
+            <li class="bd-seat" data-seat="review"><span class="bd-bot bd-bot--review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span><span class="bd-seat-tag"><b data-i18n="court.seat-review">Reviewer</b><span data-i18n="court.tool-review">OpenCode</span></span></li>
+          </ul>
+          <div class="bd-decree-card" aria-hidden="true">
+            <p class="bd-decree-route" id="decreeRoute">You → Lead</p>
+            <p class="bd-decree-msg" id="decreeMsg">Prepare a product launch brief. Check the facts before you send it to me.</p>
+          </div>
+          <div class="bd-props" aria-hidden="true">
+            <span class="bd-prop bd-prop--file" id="propFile"></span>
+            <span class="bd-prop bd-prop--seal" id="propSeal" data-i18n="court.pass">Review passed</span>
+          </div>
+        </div>
+        <ol class="bd-steps" aria-label="Messages in this sample" data-i18n-attr="aria-label:court.steps-label">
+          <li data-from="you" data-to="lead"><button type="button"><span class="bd-step-route" data-i18n="replay.l1-route">You → Lead</span><span class="bd-step-msg" data-i18n="replay.l1-msg">Prepare a product launch brief. Check the facts before you send it to me.</span></button></li>
+          <li data-from="lead" data-to="research"><button type="button"><span class="bd-step-route" data-i18n="replay.l2-route">Lead → Researcher</span><span class="bd-step-msg" data-i18n="replay.l2-msg">Research the audience and product facts in research.md.</span></button></li>
+          <li data-from="research" data-to="writer" data-file="research.md v1"><button type="button"><span class="bd-step-route" data-i18n="replay.l3-route">Researcher → Writer</span><span class="bd-step-msg" data-i18n="replay.l3-msg">research.md is registered as version 1. Over to you.</span></button></li>
+          <li data-from="writer" data-to="review" data-file="launch-brief.md v1"><button type="button"><span class="bd-step-route" data-i18n="replay.l4-route">Writer → Reviewer</span><span class="bd-step-msg" data-i18n="replay.l4-msg">The draft is launch-brief.md, version 1. Please check it against research.md.</span></button></li>
+          <li data-from="review" data-to="lead" data-seal="true"><button type="button"><span class="bd-step-route" data-i18n="replay.l5-route">Reviewer → Lead</span><span class="bd-step-msg" data-i18n="replay.l5-msg">Review passed. Every item traces back to research.md.</span></button></li>
+          <li data-from="lead" data-to="you" data-file="launch-brief.md v1" data-seal="true"><button type="button"><span class="bd-step-route" data-i18n="replay.l6-route">Lead → You</span><span class="bd-step-msg" data-i18n="replay.l6-msg">launch-brief.md version 1 is registered and reviewed. Open the result card to check it yourself.</span></button></li>
+        </ol>
+        <div class="bd-throne-controls">
+          <button type="button" class="bd-ctl" data-act="back" aria-label="Previous message" data-i18n-attr="aria-label:court.back"><span aria-hidden="true">←</span></button>
+          <button type="button" class="bd-ctl bd-ctl--play" data-act="play" aria-pressed="false"><span class="bd-play-icon" aria-hidden="true"></span><span class="bd-play-label" data-i18n="court.play-label">Play</span></button>
+          <button type="button" class="bd-ctl" data-act="next" aria-label="Next message" data-i18n-attr="aria-label:court.next"><span aria-hidden="true">→</span></button>
+          <span class="bd-counter" id="throneCounter" data-i18n="court.counter-text">Step 1 of 6</span>
+        </div>
+        <p class="bd-sr" id="throneLive" aria-live="polite"></p>
+        <figcaption id="throneCaption" class="bd-caption" data-i18n="court.caption">Sample messages. No models are called.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="meeting" class="bd-stop bd-stop--right" aria-labelledby="meeting-title" data-msg-place="The Royal Road">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-signpost"/></svg><p class="bd-place"><span class="bd-num">II</span><span data-i18n="meeting.place">The Royal Road</span></p></div>
+    <div class="bd-content">
+      <h2 id="meeting-title" data-i18n="meeting.title">You talk to one Bot. The lead runs the court.</h2>
+      <p class="bd-intro" data-i18n="meeting.lede">Each group has a lead, members, its own history and its own rules. Messages normally go to the lead; use @ to request specific members.</p>
+      <ol class="bd-milestones">
+        <li><span class="bd-mile">1</span><div><h3 data-i18n="meeting.s1-title">Give the brief</h3><p data-i18n="meeting.s1-body">Say what you want and what counts as done.</p></div></li>
+        <li><span class="bd-mile">2</span><div><h3 data-i18n="meeting.s2-title">The lead assigns</h3><p data-i18n="meeting.s2-body">Up to 20 items, three at a time.</p><p class="bd-pinned" data-i18n="meeting.s2-note">Short on people? The lead proposes, you confirm.</p></div></li>
+        <li><span class="bd-mile">3</span><div><h3 data-i18n="meeting.s3-title">Members hand off</h3><p data-i18n="meeting.s3-body">Each handoff points to a saved version.</p></div></li>
+        <li><span class="bd-mile">4</span><div><h3 data-i18n="meeting.s4-title">You inspect</h3><p data-i18n="meeting.s4-body">Done isn't approved until you check.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="harnesses" class="bd-stop bd-stop--left" aria-labelledby="harnesses-title" data-msg-place="The Guild Hall">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-guild"/></svg><p class="bd-place"><span class="bd-num">III</span><span data-i18n="harness.place">The Guild Hall</span></p></div>
+    <div class="bd-content">
+      <h2 id="harnesses-title" data-i18n="harness.title">Bring the AI tools you already use.</h2>
+      <p class="bd-intro" data-i18n="harness.lede">Each Bot runs on a tool you connect.</p>
+      <ul class="bd-banners">
+        <li class="bd-banner-flag" style="--c:var(--lead)"><b data-i18n="harness.codex">Codex</b><span data-i18n="harness.codex-body">Your local sign-in.</span></li>
+        <li class="bd-banner-flag" style="--c:var(--research)"><b data-i18n="harness.opencode">OpenCode</b><span data-i18n="harness.opencode-body">Models on this computer.</span></li>
+        <li class="bd-banner-flag" style="--c:var(--writer)"><b data-i18n="harness.deepseek">DeepSeek Harness</b><span data-i18n="harness.deepseek-body">Models on this computer.</span></li>
+        <li class="bd-banner-flag" style="--c:var(--review)"><b data-i18n="harness.claude">Claude Code</b><span data-i18n="harness.claude-body">Model IDs by hand.</span></li>
+        <li class="bd-banner-flag" style="--c:#E3D7F6"><b data-i18n="harness.codebuddy">CodeBuddy Code</b><span data-i18n="harness.codebuddy-body">Model IDs by hand.</span></li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section id="checks" class="bd-stop bd-stop--right" aria-labelledby="checks-title" data-msg-place="The Archive Tower">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-archive"/></svg><p class="bd-place"><span class="bd-num">IV</span><span data-i18n="checks.place">The Archive Tower</span></p></div>
+    <div class="bd-content">
+      <h2 id="checks-title" data-i18n="checks.title">Check the work, not the claim.</h2>
+      <p class="bd-intro" data-i18n="checks.lede">A Bot saying “done” isn't evidence.</p>
+      <div class="bd-records">
+        <article class="bd-record bd-record--wide" aria-labelledby="checks-a-title">
+          <h3 id="checks-a-title" data-i18n="checks.a-title">Registered versions</h3>
+          <p data-i18n="checks.a-body">Each delivery is saved with a checksum. Version 1 stays the same, even if the file changes.</p>
+          <div class="bd-versions" id="bdVersions" data-edited="false">
+            <span class="bd-label" data-i18n="checks.a-illus">Illustration</span>
+            <div class="bd-sheet bd-sheet--working"><p class="bd-sheet-title" data-i18n="checks.a-working-label">Working file</p><p class="bd-file">launch-brief.md</p><span class="bd-lines" aria-hidden="true"><i></i><i></i><i></i><i class="bd-scribble"></i></span><p class="bd-sheet-state" id="workingState" data-i18n="checks.a-working-state">Same as version 1</p></div>
+            <div class="bd-sheet bd-sheet--saved"><span class="bd-wax" aria-hidden="true"></span><p class="bd-sheet-title" data-i18n="checks.a-saved-label">Version 1, saved copy</p><p class="bd-file">launch-brief.md</p><span class="bd-lines" aria-hidden="true"><i></i><i></i><i></i></span><p class="bd-sheet-state" data-i18n="checks.a-saved-state">Unchanged since delivery</p></div>
+          </div>
+          <div class="bd-versions-actions">
+            <button type="button" class="bd-btn bd-btn--plain bd-btn--sm" id="versionToggle" aria-pressed="false" aria-describedby="versionNote"
+              data-msg-edited="Edited after delivery" data-msg-original="Same as version 1"
+              data-msg-on="The working file now differs. Version 1 still opens the saved copy." data-msg-off="The working file is back to its original text."
+              data-i18n-attr="data-msg-edited:checks.msg-edited;data-msg-original:checks.msg-original;data-msg-on:checks.msg-on;data-msg-off:checks.msg-off"><span data-i18n="checks.a-button">Edit the working file</span></button>
+            <p class="bd-note" id="versionNote" data-i18n="checks.a-note">Version 1 still opens the saved copy.</p>
+          </div>
+          <p class="bd-sr" id="versionLive" aria-live="polite"></p>
+        </article>
+        <article class="bd-record" aria-labelledby="checks-b-title">
+          <h3 id="checks-b-title" data-i18n="checks.b-title">Receipts</h3>
+          <p data-i18n="checks.b-body">Every assignment, reply and delivery is logged with who sent and received it.</p>
+          <div class="bd-tile"><span class="bd-label" data-i18n="checks.b-sample">Sample</span><ol class="bd-ledger"><li style="--c:var(--lead)"><b data-i18n="checks.b-assigned">Assigned</b> <span data-i18n="checks.b-assigned-who">Lead to Researcher</span></li><li style="--c:var(--research)"><b data-i18n="checks.b-delivered">Delivered</b> <code>research.md v1</code></li><li style="--c:var(--writer)"><b data-i18n="checks.b-received">Received</b> <span data-i18n="checks.b-received-who">Writer</span></li></ol></div>
+        </article>
+        <article class="bd-record" aria-labelledby="checks-c-title">
+          <h3 id="checks-c-title" data-i18n="checks.c-title">Independent review</h3>
+          <p data-i18n="checks.c-body">Another member reviews the work. A pass is still an AI judgment, not your approval.</p>
+          <div class="bd-tile"><span class="bd-label" data-i18n="checks.c-sample">Sample</span><p class="bd-stamp" data-i18n="checks.c-pass">Review passed</p><p class="bd-note" data-i18n="checks.c-note">Delivery and review are two separate records.</p></div>
+        </article>
+      </div>
+      <details class="bd-fold">
+        <summary data-i18n="checks.states-title">What the review labels mean</summary>
+        <dl class="bd-states">
+          <div style="--c:var(--research-ink)"><dt data-i18n="checks.s1">Review passed</dt><dd data-i18n="checks.s1-body">The reviewer checked the work against the requirements.</dd></div>
+          <div style="--c:var(--writer-ink)"><dt data-i18n="checks.s2">Review failed</dt><dd data-i18n="checks.s2-body">Changes are needed. Work that depends on the reviewed draft won't treat it as passed.</dd></div>
+          <div style="--c:var(--ink)"><dt data-i18n="checks.s3">Review blocked</dt><dd data-i18n="checks.s3-body">The reviewer couldn't finish the check.</dd></div>
+          <div class="bd-state-open"><dt data-i18n="checks.s4">Record needs checking</dt><dd data-i18n="checks.s4-body">The result can't be confirmed yet. Check it in the original group.</dd></div>
+        </dl>
+      </details>
+    </div>
+  </section>
+
+  <section id="controls" class="bd-stop bd-stop--left" aria-labelledby="controls-title" data-msg-place="The Gatehouse">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-gate"/></svg><p class="bd-place"><span class="bd-num">V</span><span data-i18n="controls.place">The Gatehouse</span></p></div>
+    <div class="bd-content">
+      <h2 id="controls-title" data-i18n="controls.title">Stay in charge while they work.</h2>
+      <ul class="bd-seals">
+        <li><div class="bd-card-head"><span class="bd-seal-icon" data-icon="queue" aria-hidden="true"></span><h3 data-i18n="controls.queue">Queue</h3></div><p data-i18n="controls.queue-body">Add work while a Bot is busy. Edit, reorder or cancel what's waiting.</p></li>
+        <li><div class="bd-card-head"><span class="bd-seal-icon" data-icon="pause" aria-hidden="true"></span><h3 data-i18n="controls.pause">Pause</h3></div><p data-i18n="controls.pause-body">Holds follow-up work. A running step can still finish.</p></li>
+        <li><div class="bd-card-head"><span class="bd-seal-icon" data-icon="stop" aria-hidden="true"></span><h3 data-i18n="controls.stop">Stop</h3></div><p data-i18n="controls.stop-body">Ends the work. Doesn't undo changes.</p></li>
+        <li><div class="bd-card-head"><span class="bd-seal-icon" data-icon="restart" aria-hidden="true"></span><h3 data-i18n="controls.restarts">Restarts</h3></div><p data-i18n="controls.restarts-body">Pause and stop survive a restart. Unclear results get checked, not rerun.</p></li>
+        <li><div class="bd-card-head"><span class="bd-seal-icon" data-icon="approve" aria-hidden="true"></span><h3 data-i18n="controls.approvals">Approvals</h3></div><p data-i18n="controls.approvals-body">Permission requests show up in the chat.</p></li>
+      </ul>
+      <aside class="bd-warning" aria-labelledby="warn-title">
+        <p class="bd-warning-kicker" data-i18n="controls.warn-label">Before you start</p>
+        <h3 id="warn-title" data-i18n="controls.warn-title">New Bots start with Full Access</h3>
+        <p data-i18n="controls.warn-body">New Codex, DeepSeek Harness and OpenCode Bots start with Full Access. Give them tasks you trust, and keep backups.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="more" class="bd-stop bd-stop--right" aria-labelledby="more-title" data-msg-place="The Workshops">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-workshops"/></svg><p class="bd-place"><span class="bd-num">VI</span><span data-i18n="more.place">The Workshops</span></p></div>
+    <div class="bd-content">
+      <h2 id="more-title" data-i18n="more.title">Also inside the walls.</h2>
+      <ul class="bd-shops">
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="models" aria-hidden="true"></span><h3 data-i18n="more.models">Models per Bot and per group</h3></div><p data-i18n="more.models-body">A default per Bot, overridable per group.</p></li>
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="skills" aria-hidden="true"></span><h3 data-i18n="more.skills">Base Skill and group Skill</h3></div><p data-i18n="more.skills-body">Base rules everywhere, group rules on top.</p></li>
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="schedule" aria-hidden="true"></span><h3 data-i18n="more.schedules">Schedules</h3></div><p data-i18n="more.schedules-body">Once, daily, weekly or on an interval, while your computer is on.</p></li>
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="backup" aria-hidden="true"></span><h3 data-i18n="more.backup">Backup and import</h3></div><p data-i18n="more.backup-body">Back up, and import if the database is lost.</p></li>
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="usage" aria-hidden="true"></span><h3 data-i18n="more.usage">Model usage records</h3></div><p data-i18n="more.usage-body">What each tool reported. A record, not a bill.</p></li>
+        <li><div class="bd-card-head"><span class="bd-room-icon" data-icon="search" aria-hidden="true"></span><h3 data-i18n="more.search">Search and export</h3></div><p data-i18n="more.search-body">Find messages and files. Export chats as Markdown.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="local" class="bd-stop bd-stop--left" aria-labelledby="local-title" data-msg-place="The City Walls">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-walls"/></svg><p class="bd-place"><span class="bd-num">VII</span><span data-i18n="local.place">The City Walls</span></p></div>
+    <div class="bd-content">
+      <h2 id="local-title" data-i18n="local.title">Your project data stays on your computer.</h2>
+      <p class="bd-intro" data-i18n="local.body">Chats, tasks, rules and files stay on this computer. Model calls go to the services you set up, on your quota.</p>
+      <div class="bd-citymap" role="img" aria-label="Chats, tasks, rules and registered files stay on this computer. Only model calls go out to the services you configured." data-i18n-attr="aria-label:local.map-label">
+        <div class="bd-inside"><p class="bd-inside-title" data-i18n="local.inside">This computer</p><ul><li data-i18n="local.chats">Chats</li><li data-i18n="local.tasks">Tasks</li><li data-i18n="local.rules">Rules</li><li data-i18n="local.files">Registered files</li></ul></div>
+        <p class="bd-gate-road"><span data-i18n="local.calls">Only model calls leave through the gate</span></p>
+        <div class="bd-outside"><p class="bd-inside-title" data-i18n="local.outside">Services you configured</p><p data-i18n="local.outside-body">Prompts go here, on your quota.</p></div>
+      </div>
+      <p class="bd-warning-line" data-i18n="local.note">Backups aren't encrypted.</p>
+    </div>
+  </section>
+
+  <section id="limits" class="bd-stop bd-stop--right" aria-labelledby="limits-title" data-msg-place="The Edge of the Map">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-edge"/></svg><p class="bd-place"><span class="bd-num">VIII</span><span data-i18n="limits.place">The Edge of the Map</span></p></div>
+    <div class="bd-content">
+      <h2 id="limits-title" data-i18n="limits.title">Not in Botdom yet.</h2>
+      <p class="bd-intro" data-i18n="limits.lede">Plan around these for now.</p>
+      <ul class="bd-fog">
+        <li data-i18n="limits.l1">Bots browsing on their own</li>
+        <li data-i18n="limits.l2">Cloud hosting</li>
+        <li data-i18n="limits.l3">Phone notifications</li>
+        <li data-i18n="limits.l4">Team accounts</li>
+        <li data-i18n="limits.l5">A public Bot marketplace</li>
+        <li data-i18n="limits.l7">Auto provider switching</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="collaboration" class="bd-stop bd-stop--left" aria-labelledby="demo-title" data-msg-place="The Training Grounds">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-tent"/></svg><p class="bd-place"><span class="bd-num">IX</span><span data-i18n="demo.place">The Training Grounds</span></p></div>
+    <div class="bd-content">
+      <h2 id="demo-title" data-i18n="demo.title">Watch a full relay, step by step.</h2>
+      <p class="bd-intro" data-i18n="demo.body">A sample project from brief to delivery. No models, no changes to your files.</p>
+      <div class="bd-demo-row"><a class="bd-btn bd-btn--royal" href="workspace.html"><span data-i18n="demo.cta">Open the interactive demo</span></a><ul class="bd-crew" aria-hidden="true"><li><span class="bd-bot bd-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li><li><span class="bd-bot bd-bot--lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li><li><span class="bd-bot bd-bot--writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li><li><span class="bd-bot bd-bot--review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i class="bd-eyes"></i></span></li></ul></div>
+    </div>
+  </section>
+
+  <section id="faq" class="bd-stop bd-stop--right" aria-labelledby="faq-title" data-msg-place="The Notice Board">
+    <div class="bd-landmark" data-landmark><svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-board"/></svg><p class="bd-place"><span class="bd-num">X</span><span data-i18n="faq.place">The Notice Board</span></p></div>
+    <div class="bd-content">
+      <h2 id="faq-title" data-i18n="faq.title">Short answers.</h2>
+      <div class="bd-notices">
+        <details><summary data-i18n="faq.q1">Does Botdom run in the cloud?</summary><p data-i18n="faq.a1">No. It runs on your computer. Work stops if the computer sleeps or the backend stops.</p></details>
+        <details><summary data-i18n="faq.q2">Which tools can join a group?</summary><p data-i18n="faq.a2">Codex, OpenCode, DeepSeek Harness, Claude Code and CodeBuddy Code. You install and configure each one yourself.</p></details>
+        <details><summary data-i18n="faq.q3">Do members see all my chats?</summary><p data-i18n="faq.a3">No. Each chat has its own session. Reading other records needs your say-so.</p></details>
+        <details><summary data-i18n="faq.q4">Can members use different models?</summary><p data-i18n="faq.a4">Yes, per Bot and per group, within the accounts you've set up.</p></details>
+        <details><summary data-i18n="faq.q5">Is it safe to let Bots work on my computer?</summary><p data-i18n="faq.a5">Use care: new Bots start with Full Access, and stopping doesn't undo changes. Keep backups.</p></details>
+        <details><summary data-i18n="faq.q6">Is the sample meeting on this page real?</summary><p data-i18n="faq.a6">No. It's an illustration. No models are called.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="start-now" class="bd-finale" aria-labelledby="close-title" data-msg-place="The Keep">
+    <div class="bd-landmark bd-landmark--keep" data-landmark>
+      <svg class="bd-lm" aria-hidden="true" focusable="false"><use href="#lm-castle"/></svg>
+    </div>
+    <h2 id="close-title" data-i18n="close.title">Hold your first court.</h2>
+    <p class="bd-intro" data-i18n="close.body">Create a group, then ask the lead to plan before anything runs.</p>
+    <div class="bd-scroll">
+      <p class="bd-scroll-label" data-i18n="close.brief-label">A first message you can paste</p>
+      <p class="bd-scroll-text" id="briefText" data-i18n="close.brief">Before you do anything, tell me which roles this project needs and what each one delivers. Don't create Bots or run tasks until I confirm.</p>
+      <button type="button" class="bd-btn bd-btn--plain bd-btn--sm" id="copyBrief" data-msg-copied="Copied." data-msg-blocked="Copying was blocked. Select the text and copy it yourself." data-i18n-attr="data-msg-copied:close.msg-copied;data-msg-blocked:close.msg-blocked"><span data-i18n="close.copy">Copy brief</span></button>
+    </div>
+    <a class="bd-btn bd-btn--gold" href="workspace.html"><span data-i18n="close.cta">Try the interactive demo</span></a>
+  </section>
+</main>
+</div>
+
+<footer class="bd-footer">
+  <p class="bd-brand bd-brand--footer"><img src="assets/muster-mark.svg" alt="" width="24" height="24"><span data-i18n="footer.brand">Botdom</span></p>
+  <p data-i18n="footer.text">A kingdom of AI agents, on your computer.</p>
+</footer>
+<p id="notice" class="bd-toast" role="status" hidden></p>
+<script src="guide-integration.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Shared pre-rendered 3D bodies. Live eyes, mouth, tools and status badges stay DOM-driven. */
+:root .bot-face.bot-face,:root .mu-face.mu-face{background-color:transparent!important;background-image:var(--bot-3d,url("bot-3d/assets/research-blue.png?v=20261103-2"))!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border-radius:0!important;box-shadow:none!important;border:0;overflow:visible}
+:root .bot-face.bot-face .bot-feature,:root .bot-face .bot-silhouette{display:none!important}
+:root .bot-face.bot-face::before,:root .bot-face.bot-face::after,:root .mu-face.mu-face::before,:root .mu-face.mu-face::after{box-shadow:inset 0 1px 1px #fff4,0 1px 1px #fff5}
+:root .bot-face.role-captain::before,:root .bot-face.role-captain::after{top:51%}
+:root .bot-face.role-captain .bot-mouth{top:70%}
+:root .mu-face.mu-face--lead::before,:root .mu-face.mu-face--lead::after{top:51%}
+:root .mu-face.mu-face--lead>i{top:70%}
+.bot-face.role-captain.supervisor{--bot-3d:url("bot-3d/assets/captain-supervisor.png?v=20261103-2")}
+.bot-face.role-captain.sage{--bot-3d:url("bot-3d/assets/captain-sage.png?v=20261103-2")}
+.bot-face.role-captain.peach{--bot-3d:url("bot-3d/assets/captain-peach.png?v=20261103-2")}
+.bot-face.role-captain.blue{--bot-3d:url("bot-3d/assets/captain-blue.png?v=20261103-2")}
+.bot-face.role-captain.mint{--bot-3d:url("bot-3d/assets/captain-mint.png?v=20261103-2")}
+.bot-face.role-captain.violet{--bot-3d:url("bot-3d/assets/captain-violet.png?v=20261103-2")}
+.bot-face.role-captain.sand{--bot-3d:url("bot-3d/assets/captain-sand.png?v=20261103-2")}
+.bot-face.role-captain.pink{--bot-3d:url("bot-3d/assets/captain-pink.png?v=20261103-2")}
+.bot-face.role-lead.supervisor{--bot-3d:url("bot-3d/assets/lead-supervisor.png?v=20261103-2")}
+.bot-face.role-lead.sage{--bot-3d:url("bot-3d/assets/lead-sage.png?v=20261103-2")}
+.bot-face.role-lead.peach{--bot-3d:url("bot-3d/assets/lead-peach.png?v=20261103-2")}
+.bot-face.role-lead.blue{--bot-3d:url("bot-3d/assets/lead-blue.png?v=20261103-2")}
+.bot-face.role-lead.mint{--bot-3d:url("bot-3d/assets/lead-mint.png?v=20261103-2")}
+.bot-face.role-lead.violet{--bot-3d:url("bot-3d/assets/lead-violet.png?v=20261103-2")}
+.bot-face.role-lead.sand{--bot-3d:url("bot-3d/assets/lead-sand.png?v=20261103-2")}
+.bot-face.role-lead.pink{--bot-3d:url("bot-3d/assets/lead-pink.png?v=20261103-2")}
+.bot-face.role-research.supervisor{--bot-3d:url("bot-3d/assets/research-supervisor.png?v=20261103-2")}
+.bot-face.role-research.sage{--bot-3d:url("bot-3d/assets/research-sage.png?v=20261103-2")}
+.bot-face.role-research.peach{--bot-3d:url("bot-3d/assets/research-peach.png?v=20261103-2")}
+.bot-face.role-research.blue{--bot-3d:url("bot-3d/assets/research-blue.png?v=20261103-2")}
+.bot-face.role-research.mint{--bot-3d:url("bot-3d/assets/research-mint.png?v=20261103-2")}
+.bot-face.role-research.violet{--bot-3d:url("bot-3d/assets/research-violet.png?v=20261103-2")}
+.bot-face.role-research.sand{--bot-3d:url("bot-3d/assets/research-sand.png?v=20261103-2")}
+.bot-face.role-research.pink{--bot-3d:url("bot-3d/assets/research-pink.png?v=20261103-2")}
+.bot-face.role-writer.supervisor{--bot-3d:url("bot-3d/assets/writer-supervisor.png?v=20261103-2")}
+.bot-face.role-writer.sage{--bot-3d:url("bot-3d/assets/writer-sage.png?v=20261103-2")}
+.bot-face.role-writer.peach{--bot-3d:url("bot-3d/assets/writer-peach.png?v=20261103-2")}
+.bot-face.role-writer.blue{--bot-3d:url("bot-3d/assets/writer-blue.png?v=20261103-2")}
+.bot-face.role-writer.mint{--bot-3d:url("bot-3d/assets/writer-mint.png?v=20261103-2")}
+.bot-face.role-writer.violet{--bot-3d:url("bot-3d/assets/writer-violet.png?v=20261103-2")}
+.bot-face.role-writer.sand{--bot-3d:url("bot-3d/assets/writer-sand.png?v=20261103-2")}
+.bot-face.role-writer.pink{--bot-3d:url("bot-3d/assets/writer-pink.png?v=20261103-2")}
+.bot-face.role-planner.supervisor{--bot-3d:url("bot-3d/assets/planner-supervisor.png?v=20261103-2")}
+.bot-face.role-planner.sage{--bot-3d:url("bot-3d/assets/planner-sage.png?v=20261103-2")}
+.bot-face.role-planner.peach{--bot-3d:url("bot-3d/assets/planner-peach.png?v=20261103-2")}
+.bot-face.role-planner.blue{--bot-3d:url("bot-3d/assets/planner-blue.png?v=20261103-2")}
+.bot-face.role-planner.mint{--bot-3d:url("bot-3d/assets/planner-mint.png?v=20261103-2")}
+.bot-face.role-planner.violet{--bot-3d:url("bot-3d/assets/planner-violet.png?v=20261103-2")}
+.bot-face.role-planner.sand{--bot-3d:url("bot-3d/assets/planner-sand.png?v=20261103-2")}
+.bot-face.role-planner.pink{--bot-3d:url("bot-3d/assets/planner-pink.png?v=20261103-2")}
+.bot-face.role-artist.supervisor{--bot-3d:url("bot-3d/assets/artist-supervisor.png?v=20261103-2")}
+.bot-face.role-artist.sage{--bot-3d:url("bot-3d/assets/artist-sage.png?v=20261103-2")}
+.bot-face.role-artist.peach{--bot-3d:url("bot-3d/assets/artist-peach.png?v=20261103-2")}
+.bot-face.role-artist.blue{--bot-3d:url("bot-3d/assets/artist-blue.png?v=20261103-2")}
+.bot-face.role-artist.mint{--bot-3d:url("bot-3d/assets/artist-mint.png?v=20261103-2")}
+.bot-face.role-artist.violet{--bot-3d:url("bot-3d/assets/artist-violet.png?v=20261103-2")}
+.bot-face.role-artist.sand{--bot-3d:url("bot-3d/assets/artist-sand.png?v=20261103-2")}
+.bot-face.role-artist.pink{--bot-3d:url("bot-3d/assets/artist-pink.png?v=20261103-2")}
+.bot-face.role-review.supervisor{--bot-3d:url("bot-3d/assets/review-supervisor.png?v=20261103-2")}
+.bot-face.role-review.sage{--bot-3d:url("bot-3d/assets/review-sage.png?v=20261103-2")}
+.bot-face.role-review.peach{--bot-3d:url("bot-3d/assets/review-peach.png?v=20261103-2")}
+.bot-face.role-review.blue{--bot-3d:url("bot-3d/assets/review-blue.png?v=20261103-2")}
+.bot-face.role-review.mint{--bot-3d:url("bot-3d/assets/review-mint.png?v=20261103-2")}
+.bot-face.role-review.violet{--bot-3d:url("bot-3d/assets/review-violet.png?v=20261103-2")}
+.bot-face.role-review.sand{--bot-3d:url("bot-3d/assets/review-sand.png?v=20261103-2")}
+.bot-face.role-review.pink{--bot-3d:url("bot-3d/assets/review-pink.png?v=20261103-2")}
+.bot-face.role-heart.supervisor{--bot-3d:url("bot-3d/assets/heart-supervisor.png?v=20261103-2")}
+.bot-face.role-heart.sage{--bot-3d:url("bot-3d/assets/heart-sage.png?v=20261103-2")}
+.bot-face.role-heart.peach{--bot-3d:url("bot-3d/assets/heart-peach.png?v=20261103-2")}
+.bot-face.role-heart.blue{--bot-3d:url("bot-3d/assets/heart-blue.png?v=20261103-2")}
+.bot-face.role-heart.mint{--bot-3d:url("bot-3d/assets/heart-mint.png?v=20261103-2")}
+.bot-face.role-heart.violet{--bot-3d:url("bot-3d/assets/heart-violet.png?v=20261103-2")}
+.bot-face.role-heart.sand{--bot-3d:url("bot-3d/assets/heart-sand.png?v=20261103-2")}
+.bot-face.role-heart.pink{--bot-3d:url("bot-3d/assets/heart-pink.png?v=20261103-2")}
+.bot-face.role-star.supervisor{--bot-3d:url("bot-3d/assets/star-supervisor.png?v=20261103-2")}
+.bot-face.role-star.sage{--bot-3d:url("bot-3d/assets/star-sage.png?v=20261103-2")}
+.bot-face.role-star.peach{--bot-3d:url("bot-3d/assets/star-peach.png?v=20261103-2")}
+.bot-face.role-star.blue{--bot-3d:url("bot-3d/assets/star-blue.png?v=20261103-2")}
+.bot-face.role-star.mint{--bot-3d:url("bot-3d/assets/star-mint.png?v=20261103-2")}
+.bot-face.role-star.violet{--bot-3d:url("bot-3d/assets/star-violet.png?v=20261103-2")}
+.bot-face.role-star.sand{--bot-3d:url("bot-3d/assets/star-sand.png?v=20261103-2")}
+.bot-face.role-star.pink{--bot-3d:url("bot-3d/assets/star-pink.png?v=20261103-2")}
+.bot-face.role-flower.supervisor{--bot-3d:url("bot-3d/assets/flower-supervisor.png?v=20261103-2")}
+.bot-face.role-flower.sage{--bot-3d:url("bot-3d/assets/flower-sage.png?v=20261103-2")}
+.bot-face.role-flower.peach{--bot-3d:url("bot-3d/assets/flower-peach.png?v=20261103-2")}
+.bot-face.role-flower.blue{--bot-3d:url("bot-3d/assets/flower-blue.png?v=20261103-2")}
+.bot-face.role-flower.mint{--bot-3d:url("bot-3d/assets/flower-mint.png?v=20261103-2")}
+.bot-face.role-flower.violet{--bot-3d:url("bot-3d/assets/flower-violet.png?v=20261103-2")}
+.bot-face.role-flower.sand{--bot-3d:url("bot-3d/assets/flower-sand.png?v=20261103-2")}
+.bot-face.role-flower.pink{--bot-3d:url("bot-3d/assets/flower-pink.png?v=20261103-2")}
+.bot-face.role-bean.supervisor{--bot-3d:url("bot-3d/assets/bean-supervisor.png?v=20261103-2")}
+.bot-face.role-bean.sage{--bot-3d:url("bot-3d/assets/bean-sage.png?v=20261103-2")}
+.bot-face.role-bean.peach{--bot-3d:url("bot-3d/assets/bean-peach.png?v=20261103-2")}
+.bot-face.role-bean.blue{--bot-3d:url("bot-3d/assets/bean-blue.png?v=20261103-2")}
+.bot-face.role-bean.mint{--bot-3d:url("bot-3d/assets/bean-mint.png?v=20261103-2")}
+.bot-face.role-bean.violet{--bot-3d:url("bot-3d/assets/bean-violet.png?v=20261103-2")}
+.bot-face.role-bean.sand{--bot-3d:url("bot-3d/assets/bean-sand.png?v=20261103-2")}
+.bot-face.role-bean.pink{--bot-3d:url("bot-3d/assets/bean-pink.png?v=20261103-2")}
+.mu-face--lead{--bot-3d:url("bot-3d/assets/captain-supervisor.png?v=20261103-2")}
+.mu-face--research{--bot-3d:url("bot-3d/assets/research-sage.png?v=20261103-2")}
+.mu-face--writer{--bot-3d:url("bot-3d/assets/writer-peach.png?v=20261103-2")}
+.mu-face--review{--bot-3d:url("bot-3d/assets/review-blue.png?v=20261103-2")}
+
+/* Soft facial contrast, while retaining each state’s live expression. */
+:root .bot-face.bot-face:not(.state-done)::before,:root .bot-face.bot-face:not(.state-done)::after,:root .mu-face.mu-face::before,:root .mu-face.mu-face::after{background-color:#625c78;box-shadow:inset 0 1px 1px #ffffff45}
+:root .bot-face.bot-face:is(.state-idle,.state-thinking,.state-working) .bot-mouth,:root .mu-face.mu-face>i{background-color:#706681}

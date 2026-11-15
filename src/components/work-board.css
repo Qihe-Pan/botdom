@@ -1,0 +1,83 @@
+[data-work-board] {
+  container: work-board / inline-size;
+  --color-accent: var(--color-ink);
+  --color-focus: var(--color-ink-secondary);
+}
+.botdom-board-menu {
+  --color-accent: var(--color-ink);
+  --color-focus: var(--color-ink-secondary);
+}
+.botdom-board-header {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-hairline) 30%, transparent);
+}
+.botdom-board-search {
+  max-width: 240px;
+}
+.botdom-board-filter {
+  flex: 0 1 140px;
+}
+@container work-board (max-width: 820px) {
+  .botdom-board-accepted { display: none; }
+  .botdom-board-filter { flex-basis: 112px; }
+}
+@container work-board (max-width: 540px) {
+  .botdom-board-count { display: none; }
+  .botdom-board-attention { font-size: 11px; }
+  .botdom-board-toolbar { gap: 0; }
+  .botdom-board-search { margin-right: 2px; }
+  .botdom-board-filter { flex: 1 1 70px; }
+}
+.botdom-board-columns {
+  transition: grid-template-columns 300ms cubic-bezier(.22, 1, .36, 1), gap 300ms ease;
+}
+.botdom-board-content,
+.botdom-board-heading,
+.botdom-board-rail {
+  transition: opacity 140ms ease, translate 220ms cubic-bezier(.22, 1, .36, 1);
+}
+.botdom-board-content,
+.botdom-board-heading {
+  opacity: 1;
+  translate: 0 0;
+  transition-delay: 90ms;
+}
+.botdom-board-rail {
+  opacity: 0;
+  translate: -4px 0;
+  pointer-events: none;
+}
+[data-collapsed] > .botdom-board-content,
+[data-collapsed] .botdom-board-heading {
+  opacity: 0;
+  translate: -6px 0;
+  transition-delay: 0ms;
+  pointer-events: none;
+}
+[data-collapsed] .botdom-board-rail {
+  opacity: 1;
+  translate: 0 0;
+  transition-delay: 100ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .botdom-board-columns, .botdom-board-content, .botdom-board-heading, .botdom-board-rail { transition: none; }
+}
+:root[data-reduced-motion="true"] :is(.botdom-board-columns, .botdom-board-content, .botdom-board-heading, .botdom-board-rail) { transition: none; }
+
+[data-work-board] [data-work-card]:focus-visible,
+.botdom-board-select:focus-visible {
+  outline: none;
+  border-color: var(--color-ink-secondary);
+  box-shadow: none;
+}
+[data-work-board] [role="dialog"]:focus-visible {
+  outline: none;
+}
+.botdom-board-menu [role="option"]:focus-visible {
+  outline: none;
+  background: color-mix(in srgb, var(--color-control) 65%, transparent);
+}
+
+@container work-board (max-width: 760px) {
+  .botdom-board-views { display: none; }
+  .botdom-board-view-picker { display: block; flex: 0 1 160px; }
+}

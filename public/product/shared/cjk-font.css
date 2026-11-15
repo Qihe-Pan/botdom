@@ -1,0 +1,7 @@
+/* Keep Chinese glyphs at their regular weight while Latin retains its own face and weight. */
+@font-face{
+ font-family:"Muster CJK Regular";
+ src:local("PingFangSC-Regular"),local("Microsoft YaHei"),local("Noto Sans CJK SC Regular");
+ font-style:normal;font-weight:100 900;font-display:swap;
+ unicode-range:U+2E80-2FFF,U+3000-303F,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FE30-FE4F,U+FF00-FFEF,U+20000-3134F;
+}

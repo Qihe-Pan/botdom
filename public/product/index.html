@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="meta.title">Botdom — your AI work team</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Botdom brings supported AI tools into one group chat. You talk to the lead; the lead assigns, members hand off, and you check the results.">
+  <meta name="theme-color" content="#F5F2FC">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="icon" href="assets/muster-mark.svg">
+  <link rel="stylesheet" href="shared/reading-motion.css?v=20261027-1">
+  <link rel="stylesheet" href="shared/cjk-font.css?v=20261102-cjk-regular-1">
+  <link rel="stylesheet" href="home.css?v=20261104-14">
+  <script defer src="shared/reading-motion.js?v=20261031-smooth-1"></script>
+  <script defer src="copy.zh.js?v=20261107-workspace-recovery-1"></script>
+  <script defer src="product-language.js?v=20261102-product-1"></script>
+  <script defer src="site-home.js?v=20261104-7"></script>
+  <script defer src="site-fx.js?v=20261104-3"></script>
+</head>
+<body class="hm-page">
+<a class="hm-skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+<header class="hm-nav" id="hmNav">
+  <a class="hm-brand" href="#top" aria-label="Botdom, back to top"><img src="assets/muster-mark.svg" alt="" width="28" height="28"><span data-i18n="nav.brand">Botdom</span></a>
+  <nav class="hm-links" aria-label="Agenda">
+    <a href="#meeting" data-i18n="nav.meeting">How it runs</a>
+    <a href="#harnesses" data-i18n="nav.harnesses">Harnesses</a>
+    <a href="#checks" data-i18n="nav.checks">Checks</a>
+    <a href="#controls" data-i18n="nav.controls">Controls</a>
+    <a href="#faq" data-i18n="nav.faq">Questions</a>
+  </nav>
+  <div class="hm-nav-end">
+    <a class="hm-btn hm-btn--plain" href="https://github.com/Qihe-Pan/botdom" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <button type="button" class="hm-sound" id="hmSound" aria-pressed="false" aria-label="Sound effects" title="Sound effects" hidden><span class="hm-sound-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ================= Hero + live preview ================= -->
+  <section id="top" class="hm-hero" aria-labelledby="hero-title">
+    <div class="hm-aura" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="hm-badge"><span class="hm-badge-dot" aria-hidden="true"></span><span data-i18n="hero.badge">Runs on your computer</span></p>
+    <h1 id="hero-title" class="hm-title"><span data-i18n="hero.meet">Meet</span> <img class="hm-title-mark" src="assets/muster-mark.svg" alt="" width="88" height="88"> <span data-i18n="hero.wordmark">Botdom</span></h1>
+    <p class="hm-subtitle" data-i18n="hero.title">Your AI team, working together.</p>
+    <p class="hm-lede" data-i18n="hero.lede">Give one goal to your lead Bot. It splits the work across your AI tools and brings back records you can check.</p>
+    <div class="hm-actions">
+      <a class="hm-btn hm-btn--plain" href="#preview"><span data-i18n="hero.cta-court">Watch a court session</span></a>
+    </div>
+    <div class="hm-tools">
+      <p class="hm-tools-label" data-i18n="hero.tools-label">Members can run on</p>
+      <ul class="hm-tool-row">
+        <li style="--c:var(--lead)" data-i18n="hero.tool-codex">Codex</li>
+        <li style="--c:var(--research)" data-i18n="hero.tool-opencode">OpenCode</li>
+        <li style="--c:var(--writer)" data-i18n="hero.tool-deepseek">DeepSeek Harness</li>
+        <li style="--c:var(--review)" data-i18n="hero.tool-claude">Claude Code</li>
+      </ul>
+    </div>
+
+    <figure class="hm-preview" id="preview" aria-labelledby="previewCaption">
+      <div class="hm-perch" id="hmPerch" aria-hidden="true">
+        <span class="hm-bot hm-bot--lg hm-bot--writer" data-who="writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+        <span class="hm-bot hm-bot--lg hm-bot--research" data-who="research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+        <span class="hm-bot hm-bot--xl hm-bot--lead" data-who="lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+        <span class="hm-bot hm-bot--lg hm-bot--review" data-who="review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+        <span class="hm-bot hm-bot--lg hm-perch-you" data-who="you"></span>
+      </div>
+      <div class="hm-window" id="hmWindow">
+        <div class="hm-window-bar">
+          <span class="hm-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="hm-window-title" data-i18n="preview.window">Botdom · Launch brief</span>
+          <span class="hm-sample" data-i18n="preview.sample">Sample</span>
+        </div>
+        <div class="hm-app">
+          <aside class="hm-side" aria-hidden="true">
+            <p class="hm-side-head" data-i18n="preview.groups">Groups</p>
+            <p class="hm-side-item is-active"><span class="hm-hash">#</span><span data-i18n="preview.group-launch">Launch brief</span><b class="hm-unread" id="hmUnread">6</b></p>
+            <p class="hm-side-item"><span class="hm-hash">#</span><span data-i18n="preview.group-weekly">Weekly report</span></p>
+            <p class="hm-side-head" data-i18n="preview.bots">Bots</p>
+            <p class="hm-side-item"><span class="hm-bot hm-bot--xs hm-bot--lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span data-i18n="preview.side-lead">Lead</span></p>
+            <p class="hm-side-item"><span class="hm-bot hm-bot--xs hm-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span data-i18n="preview.side-research">Researcher</span></p>
+            <p class="hm-side-item"><span class="hm-bot hm-bot--xs hm-bot--writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span data-i18n="preview.side-writer">Writer</span></p>
+            <p class="hm-side-item"><span class="hm-bot hm-bot--xs hm-bot--review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span data-i18n="preview.side-review">Reviewer</span></p>
+          </aside>
+
+          <div class="hm-chat">
+            <div class="hm-chat-head">
+              <p class="hm-chat-title"><span class="hm-hash">#</span><span data-i18n="preview.chat-title">Launch brief</span></p>
+              <p class="hm-chat-meta" data-i18n="preview.chat-meta">Lead and 3 members</p>
+            </div>
+            <ol class="hm-thread" id="hmThread" aria-live="polite">
+              <li class="hm-msg hm-msg--you" data-step="1">
+                <span class="hm-avatar-you" aria-hidden="true"></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.you">You</b><span data-i18n="replay.l1-route">You → Lead</span></p>
+                <p data-i18n="replay.l1-msg">Prepare a product launch brief. Check the facts before you send it to me.</p></div>
+              </li>
+              <li class="hm-sys" data-step="2" data-i18n="preview.sys-assign">Lead assigned 3 tasks</li>
+              <li class="hm-msg" data-step="2">
+                <span class="hm-bot hm-bot--sm hm-bot--lead" aria-hidden="true"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.lead">Lead</b><span data-i18n="replay.l2-route">Lead → Researcher</span></p>
+                <p data-i18n="replay.l2-msg">Research the audience and product facts in research.md.</p></div>
+              </li>
+              <li class="hm-msg" data-step="3">
+                <span class="hm-bot hm-bot--sm hm-bot--research" aria-hidden="true"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.research">Researcher</b><span data-i18n="replay.l3-route">Researcher → Writer</span></p>
+                <p data-i18n="replay.l3-msg">research.md is registered as version 1. Over to you.</p>
+                <p class="hm-file"><span class="hm-file-icon" aria-hidden="true"></span><code>research.md</code><span class="hm-ver" data-i18n="preview.v1-a">Version 1</span></p></div>
+              </li>
+              <li class="hm-msg" data-step="4">
+                <span class="hm-bot hm-bot--sm hm-bot--writer" aria-hidden="true"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.writer">Writer</b><span data-i18n="replay.l4-route">Writer → Reviewer</span></p>
+                <p data-i18n="replay.l4-msg">The draft is launch-brief.md, version 1. Please check it against research.md.</p>
+                <p class="hm-file"><span class="hm-file-icon" aria-hidden="true"></span><code>launch-brief.md</code><span class="hm-ver" data-i18n="preview.v1-b">Version 1</span></p></div>
+              </li>
+              <li class="hm-msg" data-step="5">
+                <span class="hm-bot hm-bot--sm hm-bot--review" aria-hidden="true"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.review">Reviewer</b><span data-i18n="replay.l5-route">Reviewer → Lead</span></p>
+                <p data-i18n="replay.l5-msg">Review passed. Every item traces back to research.md.</p>
+                <p class="hm-stamp" data-i18n="preview.pass">Review passed</p></div>
+              </li>
+              <li class="hm-msg" data-step="6">
+                <span class="hm-bot hm-bot--sm hm-bot--lead" aria-hidden="true"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+                <div class="hm-msg-body"><p class="hm-msg-meta"><b data-i18n="preview.lead-2">Lead</b><span data-i18n="replay.l6-route">Lead → You</span></p>
+                <p data-i18n="replay.l6-msg">launch-brief.md version 1 is registered and reviewed. Open the result card to check it yourself.</p>
+                <div class="hm-result"><span class="hm-result-icon" aria-hidden="true"></span><div><p><code>launch-brief.md</code></p><p class="hm-result-state" data-i18n="preview.result-state">Version 1 · reviewed · waiting for you</p></div><a class="hm-btn hm-btn--royal hm-btn--xs" href="#checks"><span data-i18n="preview.result-open">Open</span></a></div></div>
+              </li>
+              <li class="hm-typing" id="hmTyping" aria-hidden="true"><i></i><i></i><i></i></li>
+            </ol>
+            <div class="hm-composer" aria-hidden="true"><span class="hm-at">@</span><span class="hm-composer-text" data-i18n="preview.composer">Message the lead…</span><span class="hm-send">↑</span></div>
+          </div>
+
+          <aside class="hm-members" aria-label="Members in this sample">
+            <p class="hm-side-head" data-i18n="preview.members">Members</p>
+            <ul class="hm-roster" id="hmRoster">
+              <li data-who="lead"><span class="hm-bot hm-bot--sm hm-bot--lead" aria-hidden="true"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><div><b data-i18n="preview.m-lead">Lead</b><small data-i18n="preview.m-lead-tool">Codex</small></div><span class="hm-status"><span data-s="idle" data-i18n="preview.s-idle-1">Idle</span><span data-s="work" data-i18n="preview.s-work-1">Working</span><span data-s="done" data-i18n="preview.s-done-1">Done</span></span></li>
+              <li data-who="research"><span class="hm-bot hm-bot--sm hm-bot--research" aria-hidden="true"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><div><b data-i18n="preview.m-research">Researcher</b><small data-i18n="preview.m-research-tool">Codex</small></div><span class="hm-status"><span data-s="idle" data-i18n="preview.s-idle-2">Idle</span><span data-s="work" data-i18n="preview.s-work-2">Working</span><span data-s="done" data-i18n="preview.s-done-2">Done</span></span></li>
+              <li data-who="writer"><span class="hm-bot hm-bot--sm hm-bot--writer" aria-hidden="true"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><div><b data-i18n="preview.m-writer">Writer</b><small data-i18n="preview.m-writer-tool">DeepSeek Harness</small></div><span class="hm-status"><span data-s="idle" data-i18n="preview.s-idle-3">Idle</span><span data-s="work" data-i18n="preview.s-work-3">Working</span><span data-s="done" data-i18n="preview.s-done-3">Done</span></span></li>
+              <li data-who="review"><span class="hm-bot hm-bot--sm hm-bot--review" aria-hidden="true"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><div><b data-i18n="preview.m-review">Reviewer</b><small data-i18n="preview.m-review-tool">OpenCode</small></div><span class="hm-status"><span data-s="idle" data-i18n="preview.s-idle-4">Idle</span><span data-s="work" data-i18n="preview.s-work-4">Working</span><span data-s="done" data-i18n="preview.s-done-4">Done</span></span></li>
+            </ul>
+            <p class="hm-side-head" data-i18n="preview.files">Files</p>
+            <ul class="hm-files" id="hmFiles">
+              <li data-from="3"><code>research.md</code><span data-i18n="preview.f-v1-a">Version 1</span></li>
+              <li data-from="4"><code>launch-brief.md</code><span data-i18n="preview.f-v1-b">Version 1</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+      <div class="hm-player" id="hmPlayer">
+        <button type="button" class="hm-play" id="hmPlay" aria-pressed="true"><span class="hm-play-icon" aria-hidden="true"></span><span class="hm-play-label" data-i18n="preview.pause">Pause</span><span class="hm-play-label hm-play-label--alt" data-i18n="preview.play">Play</span></button>
+        <ol class="hm-steps" aria-label="Messages in this sample">
+          <li><button type="button" data-go="1" aria-label="Message 1">1</button></li>
+          <li><button type="button" data-go="2" aria-label="Message 2">2</button></li>
+          <li><button type="button" data-go="3" aria-label="Message 3">3</button></li>
+          <li><button type="button" data-go="4" aria-label="Message 4">4</button></li>
+          <li><button type="button" data-go="5" aria-label="Message 5">5</button></li>
+          <li><button type="button" data-go="6" aria-label="Message 6">6</button></li>
+        </ol>
+        <button type="button" class="hm-replay" id="hmReplay"><span aria-hidden="true">↺</span> <span data-i18n="preview.replay">Replay</span></button>
+      </div>
+      <figcaption id="previewCaption" class="hm-caption" data-i18n="court.caption">Sample messages. No models are called.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= How it runs: four steps, each with its own mini screen ================= -->
+  <section id="meeting" class="hm-section" aria-labelledby="meeting-title">
+    <header class="hm-head">
+      <p class="hm-kicker" data-i18n="meeting.kicker">How it runs</p>
+      <h2 id="meeting-title" data-i18n="meeting.title">You talk to one Bot. The lead runs the court.</h2>
+      <p class="hm-intro" data-i18n="meeting.lede">Each group has a lead, members, its own history and its own rules. Messages normally go to the lead; use @ to request specific members.</p>
+    </header>
+    <div class="hm-flow" id="hmFlow">
+      <div class="hm-flow-tabs" role="tablist" aria-label="How it runs">
+        <button type="button" role="tab" id="flowTab1" aria-controls="flowPanel1" aria-selected="true"><span class="hm-num">1</span><span><b data-i18n="meeting.s1-title">Give the brief</b><small data-i18n="meeting.s1-body">Say what you want and what counts as done.</small></span></button>
+        <button type="button" role="tab" id="flowTab2" aria-controls="flowPanel2" aria-selected="false" tabindex="-1"><span class="hm-num">2</span><span><b data-i18n="meeting.s2-title">The lead assigns</b><small data-i18n="meeting.s2-body">Up to 20 items, three at a time.</small></span></button>
+        <button type="button" role="tab" id="flowTab3" aria-controls="flowPanel3" aria-selected="false" tabindex="-1"><span class="hm-num">3</span><span><b data-i18n="meeting.s3-title">Members hand off</b><small data-i18n="meeting.s3-body">Each handoff points to a saved version.</small></span></button>
+        <button type="button" role="tab" id="flowTab4" aria-controls="flowPanel4" aria-selected="false" tabindex="-1"><span class="hm-num">4</span><span><b data-i18n="meeting.s4-title">You inspect</b><small data-i18n="meeting.s4-body">Done isn't approved until you check.</small></span></button>
+        <span class="hm-flow-bar" aria-hidden="true"><i id="hmFlowBar"></i></span>
+      </div>
+      <div class="hm-flow-stage">
+        <div class="hm-panel" role="tabpanel" id="flowPanel1" aria-labelledby="flowTab1">
+          <div class="hm-mini">
+            <p class="hm-mini-to"><span data-i18n="flow.to">To</span> <span class="hm-chip" style="--c:var(--lead)" data-i18n="flow.to-lead">Lead</span></p>
+            <p class="hm-mini-brief" data-i18n="flow.brief">Prepare a product launch brief. Check the facts before you send it to me.</p>
+            <p class="hm-mini-done"><span class="hm-tick" aria-hidden="true"></span><span data-i18n="flow.done">Done means: every fact is checked</span></p>
+            <p class="hm-mini-send"><span class="hm-send">↑</span></p>
+          </div>
+        </div>
+        <div class="hm-panel" role="tabpanel" id="flowPanel2" aria-labelledby="flowTab2" hidden>
+          <div class="hm-mini">
+            <p class="hm-mini-label"><span data-i18n="flow.plan">Plan</span><span class="hm-count" data-i18n="flow.plan-count">3 running · 1 waiting</span></p>
+            <ul class="hm-tasks">
+              <li style="--c:var(--research)"><span class="hm-spin" aria-hidden="true"></span><span data-i18n="flow.t1">Research the audience</span><small data-i18n="flow.t1-who">Researcher</small></li>
+              <li style="--c:var(--writer)"><span class="hm-spin" aria-hidden="true"></span><span data-i18n="flow.t2">Draft the brief</span><small data-i18n="flow.t2-who">Writer</small></li>
+              <li style="--c:var(--review)"><span class="hm-spin" aria-hidden="true"></span><span data-i18n="flow.t3">Prepare the review checklist</span><small data-i18n="flow.t3-who">Reviewer</small></li>
+              <li class="is-waiting" style="--c:var(--line)"><span class="hm-wait" aria-hidden="true"></span><span data-i18n="flow.t4">Prepare the visuals</span><small data-i18n="flow.t4-who">Waiting</small></li>
+            </ul>
+            <p class="hm-pinned" data-i18n="meeting.s2-note">Short on people? The lead proposes, you confirm.</p>
+          </div>
+        </div>
+        <div class="hm-panel" role="tabpanel" id="flowPanel3" aria-labelledby="flowTab3" hidden>
+          <div class="hm-mini hm-mini--handoff">
+            <div class="hm-hand"><span class="hm-bot hm-bot--lg hm-bot--research" aria-hidden="true"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><b data-i18n="flow.from">Researcher</b></div>
+            <div class="hm-hand-line" aria-hidden="true"><i></i></div>
+            <p class="hm-file hm-file--big"><span class="hm-file-icon" aria-hidden="true"></span><code>research.md</code><span class="hm-ver" data-i18n="flow.saved">Version 1 · saved</span></p>
+            <div class="hm-hand-line" aria-hidden="true"><i></i></div>
+            <div class="hm-hand"><span class="hm-bot hm-bot--lg hm-bot--writer" aria-hidden="true"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><b data-i18n="flow.to-writer">Writer</b></div>
+          </div>
+        </div>
+        <div class="hm-panel" role="tabpanel" id="flowPanel4" aria-labelledby="flowTab4" hidden>
+          <div class="hm-mini">
+            <div class="hm-result hm-result--big"><span class="hm-result-icon" aria-hidden="true"></span><div><p><code>launch-brief.md</code></p><p class="hm-result-state" data-i18n="flow.result-state">Version 1 · review passed</p></div></div>
+            <ul class="hm-checklist">
+              <li class="is-ok"><span class="hm-tick" aria-hidden="true"></span><span data-i18n="flow.c1">Delivered and registered</span></li>
+              <li class="is-ok"><span class="hm-tick" aria-hidden="true"></span><span data-i18n="flow.c2">Reviewed by another member</span></li>
+              <li class="is-you"><span class="hm-ring" aria-hidden="true"></span><span data-i18n="flow.c3">Approved by you</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= What Botdom does: a grid of small working screens ================= -->
+  <section id="product" class="hm-section" aria-labelledby="grid-title">
+    <header class="hm-head">
+      <p class="hm-kicker" data-i18n="grid.kicker">Inside Botdom</p>
+      <h2 id="grid-title" data-i18n="grid.title">What Botdom does.</h2>
+      <p class="hm-intro" data-i18n="grid.lede">One workspace for a team of Bots on your computer, using the AI tools you already have.</p>
+    </header>
+    <div class="hm-bento">
+
+      <article id="harnesses" class="hm-tile hm-tile--wide" aria-labelledby="harness-title">
+        <div class="hm-marquee" aria-hidden="true">
+          <ul class="hm-marquee-row">
+            <li style="--c:var(--lead)">Codex</li><li style="--c:var(--research)">OpenCode</li><li style="--c:var(--writer)">DeepSeek Harness</li><li style="--c:var(--review)">Claude Code</li><li style="--c:var(--lead)">Codex</li><li style="--c:var(--research)">OpenCode</li><li style="--c:var(--writer)">DeepSeek Harness</li><li style="--c:var(--review)">Claude Code</li>
+          </ul>
+          <ul class="hm-marquee-row hm-marquee-row--rev">
+            <li style="--c:var(--review)">Claude Code</li><li style="--c:var(--lead)">Codex</li><li style="--c:var(--research)">OpenCode</li><li style="--c:var(--writer)">DeepSeek Harness</li><li style="--c:var(--review)">Claude Code</li><li style="--c:var(--lead)">Codex</li><li style="--c:var(--research)">OpenCode</li><li style="--c:var(--writer)">DeepSeek Harness</li>
+          </ul>
+        </div>
+        <h3 id="harness-title" data-i18n="harness.title">Bring the AI tools you already use.</h3>
+        <p data-i18n="harness.lede">Each Bot runs on a tool you connect.</p>
+        <dl class="hm-tool-table">
+          <div><dt data-i18n="harness.codex">Codex</dt><dd data-i18n="harness.codex-body">Your local sign-in.</dd></div>
+          <div><dt data-i18n="harness.opencode">OpenCode</dt><dd data-i18n="harness.opencode-body">Models on this computer.</dd></div>
+          <div><dt data-i18n="harness.deepseek">DeepSeek Harness</dt><dd data-i18n="harness.deepseek-body">Models on this computer.</dd></div>
+          <div><dt data-i18n="harness.claude">Claude Code</dt><dd data-i18n="harness.claude-body">Model IDs by hand.</dd></div>
+        </dl>
+      </article>
+
+      <article id="local" class="hm-tile hm-tile--lilac" aria-labelledby="local-title">
+        <div class="hm-vault">
+          <p class="hm-vault-head"><span class="hm-lock" aria-hidden="true"></span><span data-i18n="local.inside">This computer</span></p>
+          <ul>
+            <li data-i18n="local.chats">Chats</li>
+            <li data-i18n="local.tasks">Tasks</li>
+            <li data-i18n="local.rules">Rules</li>
+            <li data-i18n="local.files">Registered files</li>
+          </ul>
+          <p class="hm-vault-out"><span class="hm-out-line" aria-hidden="true"></span><span data-i18n="local.calls">Only model calls leave through the gate</span></p>
+          <p class="hm-vault-svc"><b data-i18n="local.outside">Services you configured</b><span data-i18n="local.outside-body">Prompts go here, on your quota.</span></p>
+        </div>
+        <h3 id="local-title" data-i18n="local.title">Your project data stays on your computer.</h3>
+        <p data-i18n="local.body">Chats, tasks, rules and files stay on this computer. Model calls go to the services you set up, on your quota.</p>
+        <p class="hm-note" data-i18n="local.note">Backups aren't encrypted.</p>
+      </article>
+
+      <article id="checks" class="hm-tile hm-tile--wide" aria-labelledby="checks-title">
+        <div class="hm-check-demo">
+          <div class="hm-versions">
+            <span class="hm-label" data-i18n="checks.a-illus">Illustration</span>
+            <div class="hm-sheets">
+              <div class="hm-sheet" id="hmWorking"><p class="hm-sheet-title" data-i18n="checks.a-working-label">Working file</p><code>launch-brief.md</code><span class="hm-lines" aria-hidden="true"><i></i><i></i><i></i><i class="hm-scribble"></i></span><p class="hm-sheet-state" id="hmWorkingState" data-msg-edited="Edited after delivery" data-msg-original="Same as version 1" data-i18n="checks.a-working-state">Same as version 1</p></div>
+              <div class="hm-sheet hm-sheet--saved"><span class="hm-wax" aria-hidden="true"></span><p class="hm-sheet-title" data-i18n="checks.a-saved-label">Version 1, saved copy</p><code>launch-brief.md</code><span class="hm-lines" aria-hidden="true"><i></i><i></i><i></i></span><p class="hm-sheet-state" data-i18n="checks.a-saved-state">Unchanged since delivery</p></div>
+            </div>
+            <button type="button" class="hm-btn hm-btn--plain hm-btn--sm" id="hmEdit" aria-pressed="false" data-msg-on="Undo the edit" data-msg-off="Edit the working file"><span id="hmEditLabel" data-i18n="checks.a-button">Edit the working file</span></button>
+            <p class="hm-note" data-i18n="checks.a-note">Version 1 still opens the saved copy.</p>
+          </div>
+          <div class="hm-review">
+            <span class="hm-label" data-i18n="checks.states-title">What the review labels mean</span>
+            <div class="hm-seg" role="tablist" aria-label="What the review labels mean">
+              <button type="button" role="tab" aria-selected="true" aria-controls="reviewNote1" id="reviewTab1" style="--c:var(--research-ink)" data-i18n="checks.s1">Review passed</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="reviewNote2" id="reviewTab2" style="--c:var(--writer-ink)" data-i18n="checks.s2">Review failed</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="reviewNote3" id="reviewTab3" style="--c:var(--ink)" data-i18n="checks.s3">Review blocked</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="reviewNote4" id="reviewTab4" style="--c:var(--gold-deep)" data-i18n="checks.s4">Record needs checking</button>
+            </div>
+            <p class="hm-seg-note" role="tabpanel" id="reviewNote1" aria-labelledby="reviewTab1" data-i18n="checks.s1-body">The reviewer checked the work against the requirements.</p>
+            <p class="hm-seg-note" role="tabpanel" id="reviewNote2" aria-labelledby="reviewTab2" hidden data-i18n="checks.s2-body">Changes are needed. Work that depends on the reviewed draft won't treat it as passed.</p>
+            <p class="hm-seg-note" role="tabpanel" id="reviewNote3" aria-labelledby="reviewTab3" hidden data-i18n="checks.s3-body">The reviewer couldn't finish the check.</p>
+            <p class="hm-seg-note" role="tabpanel" id="reviewNote4" aria-labelledby="reviewTab4" hidden data-i18n="checks.s4-body">The result can't be confirmed yet. Check it in the original group.</p>
+            <ol class="hm-ledger">
+              <li style="--c:var(--lead)"><b data-i18n="checks.b-assigned">Assigned</b> <span data-i18n="checks.b-assigned-who">Lead to Researcher</span></li>
+              <li style="--c:var(--research)"><b data-i18n="checks.b-delivered">Delivered</b> <code>research.md v1</code></li>
+              <li style="--c:var(--writer)"><b data-i18n="checks.b-received">Received</b> <span data-i18n="checks.b-received-who">Writer</span></li>
+            </ol>
+          </div>
+        </div>
+        <h3 id="checks-title" data-i18n="checks.title">Check the work, not the claim.</h3>
+        <p data-i18n="checks.lede">A Bot saying “done” isn't evidence.</p>
+        <p data-i18n="checks.c-body">Another member reviews the work. A pass is still an AI judgment, not your approval.</p>
+      </article>
+
+      <article id="controls" class="hm-tile" aria-labelledby="controls-title">
+        <div class="hm-queue" id="hmQueue" data-state="run">
+          <p class="hm-queue-status"><span class="hm-bot hm-bot--xs hm-bot--writer" aria-hidden="true"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span>
+            <span data-q="run" data-i18n="queue.run">Writer is working</span><span data-q="pause" data-i18n="controls.pause-body">Holds follow-up work. A running step can still finish.</span><span data-q="stop" data-i18n="controls.stop-body">Ends the work. Doesn't undo changes.</span></p>
+          <ol class="hm-queue-list" id="hmQueueList">
+            <li><span data-i18n="queue.q1">Check the facts again</span><button type="button" class="hm-x" aria-label="Cancel">×</button></li>
+            <li><span data-i18n="queue.q2">Write the social posts</span><button type="button" class="hm-x" aria-label="Cancel">×</button></li>
+            <li><span data-i18n="queue.q3">Prepare the visuals</span><button type="button" class="hm-x" aria-label="Cancel">×</button></li>
+          </ol>
+          <div class="hm-queue-actions">
+            <button type="button" class="hm-btn hm-btn--plain hm-btn--sm" id="hmPause" aria-pressed="false"><span data-q-btn="pause" data-i18n="controls.pause">Pause</span><span data-q-btn="resume" data-i18n="queue.resume">Resume</span></button>
+            <button type="button" class="hm-btn hm-btn--danger hm-btn--sm" id="hmStop"><span data-q-btn="stop" data-i18n="controls.stop">Stop</span><span data-q-btn="reset" data-i18n="queue.reset">Start again</span></button>
+          </div>
+        </div>
+        <h3 id="controls-title" data-i18n="controls.title">Stay in charge while they work.</h3>
+        <p data-i18n="controls.queue-body">Add work while a Bot is busy. Edit, reorder or cancel what's waiting.</p>
+        <ul class="hm-facts">
+          <li data-i18n="controls.restarts-body">Pause and stop survive a restart. Unclear results get checked, not rerun.</li>
+          <li data-i18n="controls.approvals-body">Permission requests show up in the chat.</li>
+        </ul>
+        <aside class="hm-warning" aria-labelledby="warn-title">
+          <p class="hm-warning-kicker" data-i18n="controls.warn-label">Before you start</p>
+          <p class="hm-warning-title" id="warn-title" data-i18n="controls.warn-title">New Bots start with Full Access</p>
+          <p data-i18n="controls.warn-body">New Codex, DeepSeek Harness and OpenCode Bots start with Full Access. Give them tasks you trust, and keep backups.</p>
+        </aside>
+      </article>
+    </div>
+
+    <!-- Also included: one quiet row of chips instead of a seventh card -->
+    <div class="hm-extras">
+      <p class="hm-extras-label" data-i18n="more.place">Also included</p>
+      <ul id="more" class="hm-extras-row">
+        <li title="A default per Bot, overridable per group."><span class="hm-room-icon" data-icon="models" aria-hidden="true"></span><span data-i18n="more.models">Models per Bot and per group</span></li>
+        <li title="Base rules everywhere, group rules on top."><span class="hm-room-icon" data-icon="skills" aria-hidden="true"></span><span data-i18n="more.skills">Base Skill and group Skill</span></li>
+        <li title="Once, daily, weekly or on an interval, while your computer is on."><span class="hm-room-icon" data-icon="schedule" aria-hidden="true"></span><span data-i18n="more.schedules">Schedules</span></li>
+        <li title="Back up, and import if the database is lost."><span class="hm-room-icon" data-icon="backup" aria-hidden="true"></span><span data-i18n="more.backup">Backup and import</span></li>
+        <li title="What each tool reported. A record, not a bill."><span class="hm-room-icon" data-icon="usage" aria-hidden="true"></span><span data-i18n="more.usage">Model usage records</span></li>
+        <li title="Find messages and files. Export chats as Markdown."><span class="hm-room-icon" data-icon="search" aria-hidden="true"></span><span data-i18n="more.search">Search and export</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= Questions ================= -->
+  <section id="faq" class="hm-section hm-faq" aria-labelledby="faq-title">
+    <header class="hm-faq-head">
+      <p class="hm-kicker" data-i18n="faq.kicker">Questions</p>
+      <h2 id="faq-title" data-i18n="faq.title">Short answers.</h2>
+      <p class="hm-intro" data-i18n="faq.lede">About where it runs, which tools join, and how safe it is.</p>
+    </header>
+    <div class="hm-accordion">
+      <details><summary data-i18n="faq.q1">Does Botdom run in the cloud?</summary><p data-i18n="faq.a1">No. It runs on your computer. Work stops if the computer sleeps or the backend stops.</p></details>
+      <details><summary data-i18n="faq.q2">Which tools can join a group?</summary><p data-i18n="faq.a2">Codex, OpenCode, DeepSeek Harness and Claude Code. Install and configure each tool yourself; availability and features vary.</p></details>
+      <details><summary data-i18n="faq.q3">Do members see all my chats?</summary><p data-i18n="faq.a3">No. Each chat has its own session. Reading other records needs your say-so.</p></details>
+      <details><summary data-i18n="faq.q4">Can members use different models?</summary><p data-i18n="faq.a4">Yes, per Bot and per group, within the accounts you've set up.</p></details>
+      <details><summary data-i18n="faq.q5">Is it safe to let Bots work on my computer?</summary><p data-i18n="faq.a5">Use care: new Bots start with Full Access, and stopping doesn't undo changes. Keep backups.</p></details>
+      <details><summary data-i18n="faq.q6">Is the sample meeting on this page real?</summary><p data-i18n="faq.a6">No. It's an illustration. No models are called.</p></details>
+      <details id="limits"><summary data-i18n="limits.title">Not in Botdom yet.</summary>
+        <div class="hm-limits"><p data-i18n="limits.lede">Plan around these for now.</p>
+        <ul class="hm-fog">
+          <li data-i18n="limits.l1">Bots browsing on their own</li>
+          <li data-i18n="limits.l2">Cloud hosting</li>
+          <li data-i18n="limits.l3">Phone notifications</li>
+          <li data-i18n="limits.l4">Team accounts</li>
+          <li data-i18n="limits.l5">A public Bot marketplace</li>
+          <li data-i18n="limits.l7">Auto provider switching</li>
+          <li>Pi Agent and WorkBuddy connections</li>
+        </ul></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= Start now: demo and first brief in one closing block ================= -->
+  <section id="start-now" class="hm-section hm-finale" aria-labelledby="close-title">
+    <div class="hm-band" id="collaboration">
+      <ul class="hm-crew" id="hmCrew">
+        <li><button type="button" class="hm-crew-btn" aria-label="Say hello"><span class="hm-bot hm-bot--lg hm-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span class="hm-say" data-i18n="demo.say-research">I find and check the facts.</span></button></li>
+        <li><button type="button" class="hm-crew-btn" aria-label="Say hello"><span class="hm-bot hm-bot--lg hm-bot--writer"><img src="shared/bot-3d/assets/writer-peach.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span class="hm-say" data-i18n="demo.say-writer">I write the draft.</span></button></li>
+        <li class="is-lead"><button type="button" class="hm-crew-btn" aria-label="Say hello"><span class="hm-bot hm-bot--xl hm-bot--lead"><img src="shared/bot-3d/assets/captain-supervisor.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span class="hm-say" data-i18n="demo.say-lead">I plan the work and assign it.</span></button></li>
+        <li><button type="button" class="hm-crew-btn" aria-label="Say hello"><span class="hm-bot hm-bot--lg hm-bot--review"><img src="shared/bot-3d/assets/review-blue.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span class="hm-say" data-i18n="demo.say-review">I review it against the brief.</span></button></li>
+        <li><button type="button" class="hm-crew-btn" aria-label="Say hello"><span class="hm-bot hm-bot--lg hm-bot--research"><img src="shared/bot-3d/assets/research-sage.png?v=20261103-2" alt="" width="256" height="256"><i></i></span><span class="hm-say" data-i18n="demo.say-research-2">I find and check the facts.</span></button></li>
+      </ul>
+      <h2 id="close-title" data-i18n="close.title">Hold your first court.</h2>
+      <p class="hm-intro" data-i18n="close.body">Create a group, then ask the lead to plan before anything runs.</p>
+      <div class="hm-brief">
+        <p class="hm-label" data-i18n="close.brief-label">A first message you can paste</p>
+        <p class="hm-brief-text" id="briefText" data-i18n="close.brief">Before you do anything, tell me which roles this project needs and what each one delivers. Don't create Bots or run tasks until I confirm.</p>
+        <button type="button" class="hm-btn hm-btn--plain hm-btn--sm" id="copyBrief" data-msg-copied="Copied." data-msg-blocked="Copying was blocked. Select the text and copy it yourself."><span data-i18n="close.copy">Copy brief</span></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="hm-footer">
+  <p class="hm-brand"><img src="assets/muster-mark.svg" alt="" width="24" height="24"><span data-i18n="footer.brand">Botdom</span></p>
+  <p data-i18n="footer.text">A team of AI agents, on your computer.</p>
+  <a href="#top" data-i18n="footer.top">Back to top</a>
+</footer>
+<p id="notice" class="hm-toast" role="status" hidden></p>
+<script src="guide-integration.js"></script>
+</body>
+</html>

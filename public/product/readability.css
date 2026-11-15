@@ -1,0 +1,36 @@
+/* Final readability pass: quiet colors without disappearing task information. */
+.hero>p,.section-heading p,.relay-notes p,.benefits p,.faq p,.media-copy>p,.copy-block p{color:#776a83}
+.task-brief>p,.agent-card>p,.sidebar-members small,.leader-card small,.delivery-card small,.event-panel li>p{color:#7c6d89}
+.agent-card strong,.leader-card strong{font-size:12px}
+.agent-card>p{font-size:10px;line-height:1.7}
+.task-brief>p{font-size:11px}
+.node-state{font-size:10px}
+.node-state.working{color:#795690}.node-state.waiting{color:#896e42}.node-state.done{color:#567963}
+.agent-detail{font-size:9px;color:#857190}
+.event-panel li>p,.event-panel li>strong{font-size:10px}
+.event-panel li>strong{color:#795f8a}
+.event-panel li>small,.event-panel>header>span,.event-note{color:#897492;font-size:9px}
+.leader-card small,.delivery-card small{font-size:10px}
+.handoff-strip{font-size:10px;color:#816292}
+.stage-status{font-size:10px;color:#7e648f}
+.step-track button{font-size:9px;color:#84738e}
+.step-track [aria-pressed=true]{color:#76518f}
+.demo-tabs button{font-size:11px;color:#7c6b89}
+.demo-disclaimer{color:#7c6c87}
+.agent-card[data-status=working] .status-dot{box-shadow:0 0 0 3px #b193d31c}
+@media(max-width:900px){
+  .collaboration-app{display:block}
+  .demo-sidebar{display:flex;flex-direction:row;align-items:center;gap:14px;width:100%;padding:11px 16px;border-right:0;border-bottom:1px solid var(--line)}
+  .demo-sidebar .brand,.demo-sidebar .sidebar-eyebrow,.demo-sidebar .team-label,.demo-sidebar .sidebar-members,.demo-sidebar .sidebar-foot{display:none}
+  .demo-sidebar>label{margin:0;font-size:10px;color:#7c698d}
+  .demo-sidebar select{width:180px;max-width:65%;padding:7px 10px;font-size:11px}
+}
+@media(max-width:650px){
+  .demo-tabs button{font-size:10px;padding:5px 6px}.stage-status{font-size:8px}
+  .task-brief>p{font-size:10px}.agent-card strong,.workspace-page .agent-card strong{font-size:11px}
+  .agent-card>p{font-size:9px;min-height:32px}.node-state{font-size:9px}
+  .agent-detail{font-size:8px}.leader-card small,.delivery-card small{font-size:9px}
+  .handoff-strip{font-size:9px}.step-track button{font-size:8px}
+  .demo-disclaimer{font-size:9px}.workspace-page .demo-sidebar{padding:11px 13px}
+}
+

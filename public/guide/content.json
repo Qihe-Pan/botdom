@@ -1,0 +1,510 @@
+{
+  "version": "2026.11.15.3",
+  "updatedAt": "2026-11-15",
+  "topics": [
+    {
+      "id": "sidebar-organization",
+      "zh": {
+        "title": "整理侧边栏",
+        "steps": [
+          "置顶员工以较小头像和单行名称显示在最顶部，简洁和高级模式保持一致；置顶只增加快捷入口，Bot 仍留在原列表和分组中。卡片保持一行，较多时可横向滑动。",
+          "收起整个侧栏时使用 64px 窄栏，显示置顶员工和工作看板入口，隐藏群聊、分组、未置顶 Bot 和其他工具列表；展开后恢复完整列表。可拖动侧栏边缘，或按 ⌘+\\（Windows 为 Ctrl+\\）切换。",
+          "分组只用于整理 Bot。右键 Bot 选择移至分组，可放入已有分组或新建分组；群聊不按分组分类。在同一列表里拖动 Bot 时，其余 Bot 实时让位，淡色占位显示落点；拖到其他 Bot 上不会新建分组，新建分组请用右键菜单。群的专属主管不会出现在 Bot 列表中。",
+          "点击区标题可收起或展开。群聊支持拖动排序，也可聚焦后按 Alt+上/下；拖动时其余群实时让位，淡色占位显示落点，松手即定。搜索时不调整顺序。",
+          "点击“我的 Bot”右侧加号可创建 Bot。创建时选定执行器、模型和推理强度；创建后执行器固定，模型与推理强度可修改。",
+          "群聊顺序和折叠状态保存在当前桌面客户端；Bot 分组和手动顺序由工作区保存。找不到条目时，先清空搜索并展开对应分组。",
+          "在高级模式中展开 Bot，可分别看到“私聊对话”和“群内对话（只读）”。点击私聊继续对话；点击群内条目，主聊天区显示该 Bot 在对应群、对应对话中的参与记录，不提供输入框。点击“回到私聊”恢复原私聊，或点“打开群聊”进入对应群对话后回复。多个未使用的空白私聊只保留一个入口，不删除记录；已有活动、排队或分组的对话仍保留。"
+        ],
+        "caption": "真实桌面客户端中的隔离演示：单行置顶、原列表条目、宽聊天气泡与消息下方时间。全部是演示数据，不是用户工作记录。"
+      },
+      "en": {
+        "title": "Organize the sidebar",
+        "steps": [
+          "Compact employee avatars and single-line names appear at the top in both interface modes. Pinning adds a shortcut and keeps the bot in its original list and department. Tiles stay on one row; scroll sideways when there are more.",
+          "The collapsed 64px rail shows pinned employees and a Work board shortcut, hiding group, department, unpinned bot and other tool lists. Expand to restore them. Drag its edge or press Command+\\ (Ctrl+\\ on Windows) to toggle.",
+          "Departments organize bots only. Right-click a bot and choose Move to department to use or create a department. Groups are listed separately. Dragging a bot within its list slides the other bots aside, with a faded placeholder where it will land; dropping onto another bot never creates a department; use the right-click menu for that. A group's dedicated supervisor never appears in the bot list.",
+          "Select a heading to collapse or expand. Drag groups to reorder, or focus one and press Alt+Up/Down; while you drag, the other groups move aside and a faded placeholder shows where it will land. Clear search before reordering.",
+          "Select + beside My Bots to create a bot and choose its engine, model and reasoning effort. After creation, the engine stays fixed; its model and effort remain editable.",
+          "Group order and collapse state are saved in this desktop profile. Bot departments and manual order are saved in the workspace. Clear search and expand headings to find missing items.",
+          "Expand a bot in Advanced mode to see Private conversations and Group conversations (read only). Private conversations remain editable. A group entry opens that bot’s participation in the selected group conversation in the main chat area, without a composer. Back to private chat restores the original private conversation; Open group opens the matching group conversation to reply. Multiple unused empty private chats share one visible entry without deleting history; conversations with activity, queued work or a folder are kept."
+        ],
+        "caption": "Real isolated desktop demo: single-row pins, original list entries, wide chat bubbles and timestamps below messages. All content is synthetic demo data, not user work."
+      },
+      "image": "desktop-demo.png"
+    },
+    {
+      "id": "room-members",
+      "zh": {
+        "title": "群内员工与对话",
+        "steps": [
+          "群名右侧是紧凑员工条，按 Bot 保存的执行器排列。点击执行器标签平滑收起和展开；收起后保留的卡片继续平铺可用宽度，不显示横向滚动条。状态来自实际运行，不代表任务已经验收。",
+          "等待 AI 首次回复的提示按员工的具体执行分别判断；旧提示缺少执行身份时保留文字，但不会显示可能针对错误执行的操作。",
+          "点击加号选择已有 Bot，或从侧边栏把 Bot 拖到群内的员工条，可将它加入该群；拖到侧边栏的群聊行上不会加入。点击成员卡打开管理面板，可为该群单独选择成员的模型和思考程度；执行器保持不变。尚未单独设置时使用 Bot 的默认配置，设置后不影响私聊或其他群。",
+          "把员工卡片拖回侧边栏，可移出当前群；也可点员工卡片进入管理面板后移除。主管和最后一名成员不能移除。群内有运行或待处理任务时先完成或停止任务。",
+          "移出群不会删除 Bot、聊天记录或其他群里的成员关系。保存失败时会显示错误，请处理后重试。",
+          "每个群有且只有一个专属主管，创建群时自动配置。主管不是员工 Bot，只在所属群里出现；不能移出、置顶、放入分组或复用到其他群。普通群消息默认交给主管，也可用 @ 指定员工。员工工作时可向空闲主管跟进；主管忙时消息会排队。指定其他成员的插话留给正确的人；主管引用该条消息回复后，可确认送达。插话目标显示员工与任务，同名任务用短标识区分。前面还有消息时，本条会继续排队；重复操作会核对原回执。输入框上方只保留真正等待发送的消息，可编辑或取消。已确认收到的消息不再额外提示；暂时确认不了的，在对应消息下显示“还没确认 Bot 是否收到”，点开可查看说明。它可能已经发出，请先核对 Bot 的回复，系统不会自动再发一次，也不把它算成等待发送的消息。群头不显示电话、负责人选择和“全部对话”下拉。",
+          "私聊顶部保留搜索和更多菜单；群聊可点击搜索在当前对话里查找。用户头像使用个人资料，未设置时显示姓名缩写。",
+          "普通员工 Bot 可以加入多个群，分组只整理员工。Botdom 不提供全局“参谋长”的创建引导、身份标记或设置入口。删除群时会一并移除该群的专属主管，普通员工保留。",
+          "群聊右上角“更多”保留成员管理、工作文件夹、用量和导出；不再提供无进展时限选择，后台使用原有默认处理。回复引用可跳回原消息，定位反馈只落在消息气泡上。",
+          "群设置的“工作文件夹”可以随时更换：点“更换文件夹…”选择新位置，或“恢复默认”。更换后群里每个对话下一轮都会在新文件夹里重新开始（不续接旧会话），聊天记录保留；旧文件夹里已登记的文件仍保留记录，但“文件”页只列出当前文件夹的文件。群里有任务在运行或排队时不能更换，会提示等任务结束或停止后再改。",
+          "群聊顶部的群名和成员卡片使用实色背景，渐变从卡片下方开始；执行器名称、数量和折叠箭头保持单行。折叠后仍保留成员展开动画。",
+          "右侧群面板有任务、文件、文档、设置四个页签，共用同一宽度。“文件”页签先列出对你有用的文件：你上传的、Bot 在回复里附上的，以及已知 Bot 产出的文档、表格、演示、PDF、Markdown 和图片；日志、测试输出、JSON 等数据文件和来源不明的临时文件收进底部“过程文件”（即使 Bot 在回复里附上也一样），需要时点开。拖动左边缘连续调宽，宽度会保存在当前客户端，切页和重新打开时保留。聚焦分隔条后按左右键调整、Shift 微调、Home 或双击恢复默认，End 调到当前允许的最宽；也可点击顶部恢复按钮。聚焦页签后可用左右键或 Home、End 切换。窗口缩小时面板自动收窄，窄窗使用全宽面板，可用右上角关闭或 Esc 返回聊天。",
+          "员工条、多人进度和侧栏优先显示实际运行队列；明确的空队列会清掉旧忙碌状态，只有缺少队列信息的旧记录才回退旧状态。待执行分别说明“该员工已有运行回合”“等待当前群回合”或“等待调度”；不会根据队列顺序推断同事互等。旧记录缺少等待原因时只显示排队。",
+          "员工之间的单向通知由收件员工自己的执行处理；收件员工空闲时可与发送者同时工作，同一员工仍逐条执行。暂停的员工保留尚未开始的通知，恢复后继续；这些排队通知可跨服务重启保留。相同回合重复发送同一通知会复用已有条目，失败会在群内显示提示。",
+          "较晚返回的旧状态不会覆盖已经显示的更新队列、暂停状态或群内对话列表。服务重启后，重新连接会以该服务保存的任务板和当前队列为准。切换期间，原对话的更新不会取消你刚选中的对话，新对话已经收到的消息会保留。切换对话时如消息过多，客户端会补取最新一页，较早消息仍可向上翻阅。群内出现同步失败提示时，当前记录可能不完整；点击提示中的“重试”或重新打开该对话。自动补取只尝试一次，失败提示会保留，直到重试成功。",
+          "Bot 下的群内记录只读，不会把群上下文合并到私聊，也不会切换群内正在使用的对话。记录包括该 Bot 的发言、@ 它的消息，以及明确发给它的任务和回复。可刷新或加载更早的记录；读取失败会显示重试，切换后迟到的结果不会覆盖当前内容。"
+        ],
+        "caption": "隔离 Electron 桌面演示：群成员卡片和任务概览使用演示资料。成员状态圆点不代表任务完成或验收。"
+      },
+      "en": {
+        "title": "Room members and conversations",
+        "steps": [
+          "The compact strip beside the group name groups bots by saved engine. Select an engine label to fold or expand; the remaining cards keep filling the available width without a horizontal scrollbar. Status reflects execution, not accepted completion.",
+          "A notice while waiting for the AI's first reply is tied to the employee's specific execution. Older notices without that identity retain their text but do not offer actions that might target another run.",
+          "Select + to choose an existing bot, or drag a sidebar bot onto the group's member strip to add it; dropping it on a group in the sidebar does not add it. Open a member card to set that member’s model and thinking level for this group; its harness stays fixed. Until set separately, the bot default is used. A group setting does not change private chats or other groups.",
+          "Drag a member card back to the sidebar to remove it from this group, or remove it in the member management panel. The lead and last member cannot be removed. Finish or stop active or pending work first.",
+          "Removing a member keeps the bot, chat history and membership in other groups. A failed save shows an error; resolve it and retry.",
+          "Each group has one dedicated supervisor, created with the group. It is not an employee bot and appears only in that group; it cannot be removed, pinned, filed in a department or reused. Plain messages go to it; @mentions can address employees. While employees work, an available supervisor can answer follow-ups; a busy supervisor's message stays queued. A steered message naming another member stays with its intended recipient; a supervisor reply citing that message confirms delivery. Interjection targets show the employee and task, with short identifiers to distinguish matching names. When another message is ahead, this one remains queued; a repeated action checks its original receipt. Only messages actually waiting to send stay above the composer, with edit and cancel controls. Confirmed delivery needs no extra label. An uncertain message shows Not yet confirmed as received beneath that message; expand it for an explanation. It may already have been sent, so check the bot’s replies first. It is never sent again automatically or counted as waiting to send. The header has no call, responder or All threads dropdown.",
+          "Direct chats retain Search and More in the header; group Search finds text in the current conversation. Your messages use your profile picture, with initials as the fallback.",
+          "Employee bots may join several groups; departments organize employees only. Botdom has no global Chief creation flow, badge or setting. Deleting a group removes its dedicated supervisor and keeps employees.",
+          "More in the group header contains member management, working folder, usage and export. There is no no-progress timeout selector; background handling keeps its existing defaults. A reply quote jumps to its source with feedback on the message bubble only.",
+          "A room's working folder can be changed at any time from its settings: Change folder… picks a new place, Use default resets it. After a change, every conversation in the room starts fresh in the new folder at its next turn (old sessions are not resumed) and the chat history stays; files already indexed keep their record, but the Files tab lists only the current folder. While work is running or queued the change is refused, and you are asked to wait until it finishes or is stopped.",
+          "The group title and member cards have a solid header background. Fading starts below the cards. Engine name, count and disclosure arrow stay on one line; disclosure motion remains available.",
+          "The right group panel has Tasks, Files, Documents and Settings tabs sharing one width. Files lists what matters to you first: your uploads, files a bot attached to a reply, and documents, sheets, slides, PDFs, Markdown and images from a known bot; logs, test output, JSON and other data files, and scratch files of unknown origin fold into Working files at the bottom, even when a bot attached them to a reply. Drag its left edge to resize continuously; this client remembers the width across tabs and reopening. Focus the separator and use Left/Right, Shift for fine steps, Home or double-click to reset, and End for the available maximum; the header also has a reset button. Focus a tab and use Left/Right or Home/End to switch tabs. The panel narrows with the window. In narrow windows it fills the view; close at the top right or press Esc to return to chat.",
+          "Member cards, parallel progress and the sidebar use the actual running queue first. An explicit empty queue clears old busy indicators; records without queue information fall back to legacy status. Pending work distinguishes an employee with an active turn, the current room turn and awaiting dispatch. Queue order never implies employees are waiting on each other. Legacy records without a waiting reason show only Queued.",
+          "One-way notices between employees run in the recipient’s own execution. An available recipient can work alongside the sender; each employee still handles one turn at a time. Paused employees retain notices that have not started, including across a service restart, and continue after resuming. Repeating the same notice within one turn reuses its existing entry. A failed notice appears in the group.",
+          "An older response arriving late cannot replace a newer queue, hold status or conversation list. After the service restarts, reconnecting uses its saved task board and current queue. Updates to the previous conversation do not cancel your pending selection, and messages received for the selected conversation are retained. When many messages arrive during a switch, the client fetches the latest page; earlier messages remain available by scrolling up. A sync-failure notice means the current transcript may be incomplete. Select Retry in that notice or reopen the conversation. Automatic recovery attempts one read, and the failure notice stays until a retry succeeds.",
+          "A bot’s group log is read only. It does not merge group context into private chat or change the group’s active conversation while you browse. It includes the bot’s messages, @mentions, and assignments or replies explicitly addressed to it. Refresh or load earlier messages as needed. Failed reads offer Retry; late results from a previous selection cannot replace the current log."
+        ],
+        "caption": "Isolated Electron desktop demo: member cards and the task overview use demo data. Status dots do not mean a task is complete or accepted."
+      },
+      "image": "room-member-controls-demo.png"
+    },
+    {
+      "id": "personal-avatars",
+      "zh": {
+        "title": "更换自己的头像",
+        "steps": [
+          "打开设置 → 通用，在“你的头像”中选择颜色和形状，或点“选择照片”上传图片。用户和 Bot 使用同一套头像；这里仅修改你自己的头像。",
+          "提供与 Bot 相同的 7 种颜色、10 种形状，默认使用蓝色 Botdom 头像。点击颜色或形状即保存，无需上传照片。侧栏、个人资料和自己消息旁的头像同步更新，刷新或重开后保留。动态头像会眨眼、跟随鼠标并在点击时反馈；系统或应用开启减少动态效果时遵循该设置。上传的照片保持静态。",
+          "上传支持 PNG、JPEG、GIF、WebP，最大 10 MB，尺寸至少 64 × 64、最大 8192 × 8192。先预览居中裁切，可调整缩放，再点“保存照片”；取消不会替换现有头像。保存时转换成 512 × 512 WebP，原图片的相机或位置等元数据不保留。",
+          "已有自选头像时，可点“恢复默认头像”回到初始头像。保存失败会显示错误并保留原头像，恢复连接后重试。",
+          "头像只保存到当前工作区的个人资料；团队工作区仅修改当前登录者自己的资料，不改变其他成员。选择或上传头像不会调用模型，也不更改 Bot 的模型、权限或任务。"
+        ],
+        "caption": "隔离 Electron 桌面演示：用户和 Bot 共用颜色、形状与动态头像，图中均为演示资料。"
+      },
+      "en": {
+        "title": "Change your own avatar",
+        "steps": [
+          "Open Settings → General and find Your avatar. Choose colors and shapes or use Choose photo. People and Bots use the same avatar family; these controls only change your own avatar.",
+          "Choose from the same seven colors and 10 shapes as Bots. The default is a blue Botdom avatar. Select a color or shape to save it directly. The sidebar, profile and your message avatars update together, including after reload or reopening. Mascots blink, follow the pointer and react to presses. System and app reduced-motion settings are respected. Uploaded photos stay still.",
+          "Uploads accept PNG, JPEG, GIF or WebP up to 10 MB, from 64 × 64 to 8192 × 8192 pixels. Preview the centered crop, adjust zoom, then select Save photo. Cancel keeps the current avatar. Saving produces a 512 × 512 WebP without the original camera or location metadata.",
+          "Select Reset avatar to return to the original default. A failed save shows an error and keeps the previous avatar; retry after the connection recovers.",
+          "The avatar belongs to your profile in the current workspace. On a team workspace, only the signed-in person’s own profile changes. Choosing or uploading an avatar makes no model call and does not change bot models, permissions or tasks."
+        ],
+        "caption": "Isolated Electron desktop demo: people and Bots share colors, shapes and animated avatars. All profile information is demo data."
+      },
+      "image": "profile-avatar-demo.png"
+    },
+    {
+      "id": "bot-avatar-shapes",
+      "zh": {
+        "title": "选择 Bot 头像和形状",
+        "steps": [
+          "新建机器人时，在顶部头像区分别选择颜色和形状；已有 Bot 可打开该 Bot 的设置，在基本资料中修改。",
+          "Bot 的资料面板只保留常用项：基本（颜色、形状、名称、头衔）、工作说明（长期指示）和记忆开关。模型在聊天顶部切换；回复风格、思考投入、备用模型和提示缓存不在这里显示；分组和加入哪些群在侧栏与群成员里管理；记忆容量、整理和修改记录收在“更多记忆设置”里。",
+          "形状提供默认、团子、圆形、方糖、胶囊、水滴、盾形、六边形、菱形、星星。选项显示实际形状预览；选中后大头像立即变化。默认保留 Botdom 立体外观，其余按名称展示对应轮廓。",
+          "新建 Bot 的头像和形状在点击“创建机器人”后保存，取消不会创建 Bot；已有 Bot 的更改按原设置方式保存，重开后保留。形状改变不影响名字、模型、成员关系、权限或已有工作。",
+          "也可上传自己的图片；选择颜色或形状会切回机器人头像，并保留未修改的颜色或形状。群主管仍保留身份标记，主管不是普通员工。",
+          "聊天消息旁的机器人头像可随鼠标轻微转动眼睛，点击会有轻微回弹；静态展示不会关闭这些直接交互。减少动态效果时停用这些反馈，自定义上传图片保持静态。点击头像反馈不会向机器人发送消息或启动任务。"
+        ],
+        "caption": "隔离 Electron 桌面演示裁图：新建 Bot 选择黄色星星形状，颜色与形状可分别修改。"
+      },
+      "en": {
+        "title": "Choose a bot avatar and shape",
+        "steps": [
+          "During bot creation, choose the colour and shape separately in the avatar area. For an existing bot, open its settings and edit the basic profile.",
+          "A bot's panel keeps only everyday settings: Basics (colour, shape, name, title), standing instructions and the memory switch. Change the model from the top of the chat; reply style, effort, backup models and prompt-cache warming are not shown here; groups and room membership are managed from the sidebar and each room's members; memory capacity, upkeep and history sit under More memory settings.",
+          "Shapes include Default, Blob, Circle, Squircle, Capsule, Drop, Shield, Hexagon, Diamond and Star, with real shape previews. A selection immediately changes the large preview. Default retains the Botdom 3D face; the other choices display their named silhouettes.",
+          "For a new bot, the choice is saved when you select Create bot; Cancel creates nothing. Existing bot settings save through their usual path and survive reopening. Shape changes leave the name, model, membership, permissions and existing work unchanged.",
+          "You can upload an image instead. Choosing a colour or shape switches back to a robot avatar while preserving the other setting. A group supervisor retains its identity mark and is not an employee bot.",
+          "Robot avatars beside chat messages can gently look toward the pointer and respond to a click. Static display does not disable these direct interactions. Reduced motion disables this feedback; uploaded images remain still. Avatar feedback sends no message and starts no task."
+        ],
+        "caption": "Cropped isolated Electron desktop demo: a new bot with the yellow Star selected; colour and shape are independent."
+      },
+      "image": "bot-shapes-demo.png"
+    },
+    {
+      "id": "model-and-reasoning",
+      "image": "effort-options-demo.png",
+      "zh": {
+        "title": "选择模型与思考程度",
+        "steps": [
+          "创建 Bot 时选择 Harness。创建后，Bot 设置和对话的模型菜单固定使用已选 Harness 及账号，只能调整该 Harness 提供的模型与思考程度。若要换 Harness，请新建 Bot。",
+          "打开模型菜单，在“思考程度”下直接选择当前引擎支持的档位。选项会根据可用宽度自动排列，也可以使用方向键切换。",
+          "选择“默认”时不指定强度，由引擎决定；它与部分引擎提供的“无”档位不同。列表只显示引擎提供的档位；不支持强度设置时不显示。具名模型变体仍按引擎原有选项选择。",
+          "修改后重新打开菜单可查看保存结果。工作中的 Bot 不接受思考程度变更；保存失败显示错误，原设置保持不变。调整这些选项不会发送消息或启动任务。",
+          "完整模型菜单仍区分“仅此对话”和“对话 + 机器人默认”。旧会话若已保存其他 Harness，不自动迁移，也不能用它覆盖当前 Bot 的默认 Harness；批量跟随默认模型只处理相同 Harness 的会话。"
+        ],
+        "caption": "隔离 Electron 桌面演示：在模型菜单中直接选择思考程度。"
+      },
+      "en": {
+        "title": "Choose a model and reasoning effort",
+        "steps": [
+          "Choose a Harness when creating a bot. After creation, bot settings and conversation model menus keep that Harness and account fixed. You can change its model and reasoning effort. Create another bot to use another Harness.",
+          "Open the model menu and choose a supported level directly under Thinking level. Options adapt to the available width; use the arrow keys to change the selection.",
+          "Default sends no explicit effort value and lets the engine decide. This differs from an explicit None level offered by some engines. Only engine-provided levels appear; engines without effort support have no effort selector. Named model variants keep their engine-provided option controls.",
+          "Reopen the menu to inspect the saved setting. Working bots cannot change effort. A failed save shows an error and retains the saved selection. Changing these options does not send a message or start work.",
+          "The full model menu retains Only this thread and Thread + bot default scopes. Legacy conversations on another Harness are not migrated automatically and cannot overwrite the bot’s default Harness. Bulk following of the default model only updates conversations on the same Harness."
+        ],
+        "caption": "Isolated Electron desktop demo: choose reasoning effort directly in the model menu."
+      }
+    },
+    {
+      "id": "chat-scroll",
+      "image": "jump-to-latest-demo.png",
+      "zh": {
+        "title": "连续滚动到聊天底部",
+        "steps": [
+          "向上翻阅私聊或群聊时，输入框上方会出现向下箭头。点击后，聊天会连续平滑滚到最后一条消息，停稳后箭头消失，并恢复跟随新消息。",
+          "滚动途中向上滑动、拖动滚动条或触摸滑动，可停止自动回底，继续阅读当前位置。切换对话会停止原对话的滚动。",
+          "系统或应用开启“减少动态效果”时，点击箭头会直接定位到底部。"
+        ],
+        "caption": "隔离 Electron 桌面演示裁图：向上阅读长聊天时显示回到底部箭头。文字均为演示数据；静态截图用于说明入口，不能表现动画时序。"
+      },
+      "en": {
+        "title": "Scroll smoothly to the latest message",
+        "steps": [
+          "When reading earlier messages in a direct or group chat, a down arrow appears above the composer. Select it to scroll smoothly to the final message. The arrow disappears on arrival and the chat resumes following new messages.",
+          "Scroll upward, grab the scrollbar or use a touch gesture to interrupt the return and keep reading. Switching conversations cancels the old conversation’s scroll.",
+          "When system or app reduced motion is enabled, the arrow jumps directly to the bottom."
+        ],
+        "caption": "Cropped isolated Electron desktop demo: the down arrow appears while reading earlier content in a long chat. All text is demo data; this static image identifies the control rather than showing animation timing."
+      }
+    },
+    {
+      "id": "message-delivery",
+      "image": "message-delivery-demo.png",
+      "zh": {
+        "title": "看懂消息下方的提示",
+        "steps": [
+          "正常交给 Bot 的消息只显示原来的时间，不再占用输入框上方。是否完成工作，请看 Bot 的回复或任务板。",
+          "“正在交给 Bot…”表示还在发送；“等待发送给 Bot”表示这句话还在等待。真正待发送的消息仍放在输入框上方，可编辑或取消；有正在工作的 Bot 时，可用“现在发给”选择目标。已经开始发送或还没确认结果的消息不能再次发送、编辑或取消。",
+          "“还没确认 Bot 是否收到”不等于失败。这句话可能已经发出；点开提示查看说明，先核对 Bot 有没有回复。系统不会自动再发一次，避免重复执行。",
+          "提示只按原消息的发送记录对应显示，不靠文字相似来猜测；旧记录如果找不到对应消息，不会随意挂到另一条消息下。"
+        ],
+        "caption": "隔离 Electron 桌面演示裁图：已确认收到的消息保持安静，待确认提示跟随第二条消息，点击可阅读说明。消息与状态均为演示数据，不是用户真实投递记录。"
+      },
+      "en": {
+        "title": "Understand the hint beneath a message",
+        "steps": [
+          "A message confirmed as received keeps its usual timestamp without adding a panel above the composer. Read the bot’s reply or task board to check whether work is complete.",
+          "Sending to the bot means a send is in progress; Waiting to send to the bot means it has not been sent yet. Actual queued messages remain above the composer with edit and cancel controls. Send now to selects an available running bot. Sends that have started or are unconfirmed cannot be sent again, edited or cancelled.",
+          "Not yet confirmed as received does not mean failure. The message may already have been sent. Expand the hint and check whether the bot has replied. It will not be sent again automatically, to avoid repeating work.",
+          "Hints follow the original send identity rather than matching text. An old record without a corresponding message is not attached to an unrelated message."
+        ],
+        "caption": "Cropped isolated Electron desktop demo: confirmed delivery stays quiet, and an expandable hint follows the second message. Messages and delivery states are demo data, not the user’s actual delivery records."
+      }
+    },
+    {
+      "id": "desktop-start",
+      "zh": {
+        "title": "打开新版桌面客户端",
+        "steps": [
+          "打开 ~/Applications/Botdom Next.app。启动时，皇冠和四位队员会聚拢，工作区准备好后即可进入聊天。系统开启“减少动态效果”时会显示静态队标。",
+          "桌面界面、API 和聊天更新共用本机 8820 端口。若窗口无法加载，在 botdom-next 目录运行 npm run botdom:start，等服务启动后重新打开客户端。",
+          "后续产品界面验收只在桌面客户端中进行，使用隔离演示数据；命令行单元测试和静态检查照常进行。",
+          "点侧栏上方的房屋图标打开主页，点主页里的“使用指南”可直接阅读对应章节。个人菜单的“关于”提供版本号、双语使用指南和可离线阅读的开源许可。",
+          "主页右上角的 GitHub 链接可以打开 Botdom 的项目仓库。",
+          "当前安装包尚未配置自动更新渠道，后续版本需要手动安装。",
+          "在本机桌面手动新建 Bot 时，Bot 和首个私聊默认使用“完全访问”。如果你给新建 Bot 保存过其他默认权限，沿用你的选择。快速建群的新主管和新员工也默认完全访问。用已有 Bot 建群时，仅新主管采用这个默认值，已有员工按自己保存的权限工作。",
+          "新建 Bot、删除 Bot、调整分组、改权限这类改动只接受来自这个桌面窗口的操作。本机其他程序（包括 Bot 自己运行的命令）直接调用 Botdom 的接口会被拒绝，并提示“必须来自桌面应用或已配对设备”。如果窗口里的操作突然都提示被拒绝，退出并重新打开桌面客户端即可。",
+          "每个 Bot 都自带“Botdom 团队管理”技能，可以在对话里替你新建 Bot、把 Bot 拉进群、新建群。例如直接说“帮我建一个叫 DeepSeek 的通用 Bot”。在“完全访问”的对话里新 Bot 立刻建好并可撤销；其他情况会出现一张卡片，等你点同意后才生效，Bot 回复“等待确认”不代表已经建好。Bot 新建的 Bot 默认先询问再执行，需要时由你调高。",
+          "拦截规则：Bot 改动或删除另一个 Bot 时，无论权限模式如何都只会发来卡片，由你确认；群主管不能被 Bot 修改或删除，也不会被拉进别的群。普通成员在群里只能拉人进群，改群名、改公告、移除成员、开新对话由该群主管或你来做。一个 Bot 一轮最多新建 4 个 Bot，所有 Bot 合计每小时最多 8 个，工作区上限 100 个；到达上限时 Bot 会停下并告诉你。调整分组、修改权限模式始终只能由你操作。"
+        ],
+        "caption": "隔离桌面演示中的 Botdom 启动窗口。"
+      },
+      "en": {
+        "title": "Open the new desktop client",
+        "steps": [
+          "Open ~/Applications/Botdom Next.app. The crowned supervisor and four teammates settle into place while the workspace opens. Reduce motion shows a still team emblem.",
+          "The desktop interface, API and chat updates share local port 8820. If the window fails to load, run npm run botdom:start from the botdom-next checkout and reopen the app once the service is ready.",
+          "Product UI acceptance uses the desktop application with isolated demo data. Command-line unit tests and static checks still run normally.",
+          "Select the house at the top of the sidebar to open Home. Its guide links open the relevant chapter. About in the profile menu shows the version, bilingual user guide and offline open-source licenses.",
+          "Use the GitHub link at the top of the home page to open the Botdom repository.",
+          "Automatic updates are not configured in this installer. Install later versions manually.",
+          "Bots you create in the local desktop start with Full access for the Bot and its first conversation. A saved New bot approval preference takes precedence. Quick group creation gives the new supervisor and new employees Full access. When you choose existing employees, the new supervisor gets Full access and those employees keep their saved permissions.",
+          "Creating or deleting a Bot, changing groups and changing permissions are accepted only from this desktop window. Any other program on this computer, including commands a Bot runs itself, is refused when it calls Botdom directly, with a notice that the change must come from the desktop app or a paired device. If every action in the window is suddenly refused, quit and reopen the desktop client.",
+          "Every Bot carries the “Botdom team” skill and can add a Bot, bring Bots into a group, or open a group for you from a conversation. For example, say “create a general Bot named DeepSeek”. In a Full access conversation the new Bot is added at once and can be undone; anywhere else a card appears and nothing happens until you approve it, so “waiting for confirmation” does not mean it exists yet. A Bot added by a Bot asks before it acts until you raise its access.",
+          "Guard rails: when a Bot changes or deletes another Bot you always get a card to confirm, at every access level; a group's supervisor cannot be changed or deleted by a Bot and is never added to another group. An ordinary member can only add Bots to its group; renaming, the bulletin, removing members and opening a new conversation belong to that group's supervisor or to you. One Bot adds at most 4 Bots per turn, all Bots together at most 8 per hour, and the workspace holds 100; at a limit the Bot stops and tells you. Changing groups (分组) and access levels is always yours alone."
+        ],
+        "caption": "The Botdom startup window in an isolated desktop demo."
+      },
+      "image": "botdom-startup-demo.png"
+    },
+    {
+      "id": "goal-and-citations",
+      "zh": {
+        "title": "目标与回复来源",
+        "steps": [
+          "在有专属主管的群里，普通消息默认交给主管：主管判断是闲聊还是任务，闲聊直接回答，任务则拆分并安排员工。用 @ 点名员工时，消息直接交给被点名的员工，不经过主管。私聊仍可用“目标”按钮、加号菜单或 /goal 切换 Goal 模式。",
+          "群内任务由本群主管协调。主管先明确接口、文件归属、关键正确性条件和故障范围；按独立产物与依赖分工，不为用满员工而强拆任务。代码交付需有独立检查和当前合并产物的验证证据；主管审核设计、覆盖缺口和集成结果。尚未验证的要求必须说明，测试通过数或主管复核都不是质量保证，也不代表你已验收。私聊 Goal 由当前 Bot 自己持续工作。主管直接回答的闲聊不会显示进度卡。",
+          "本机普通主管群的代码目标，或已分派员工的代码任务，可在主管声明当前批次足以覆盖目标后立即进入独立验证，无须先反复主管复核；未声明的任务仍在提出完成或开发轮数用尽时检查。同一主管模型开启独立上下文，按原需求和产物编写检查，每项保存在独立文件。系统运行合并测试和独立检查，保存日志、退出结果及源文件指纹。仅识别含 package.json、pyproject.toml、Cargo.toml、go.mod 等项目标记的固定本机目录；需要主管已有完全访问权限且未收窄本机工具，云端、远程执行器和非代码任务不冒充已验证。 本地 Node 持久化任务还需声明故障恢复验证是否适用；适用时，由系统实际注入写入生效前后及后续恢复写失败，比较操作返回结果、当前业务状态和重开后的状态。只模拟“失败但没有写入”的钩子不能代替这项证据；不适用或未支持的存储方式必须说明。 对本机 Node HTTP 服务，还需声明请求头拒绝检查是否适用；系统先确认完整合法请求成功，再对必须的请求头分别删除或设为非法，确认完整请求会被拒绝，然后只发送一字节正文，检查是否及时返回相同错误以及服务能否继续响应。适用条件、覆盖路由和必须的请求头仍需独立审核。",
+          "验证结果区分产品失败、检查无效和环境阻塞。故障检查必须确认注入真正发生；无效检查只允许独立验证方修改对应检查文件一次，保留旧版本，不允许改产品、清单或其他检查。能够归责到当前目标原负责人及明确文件范围的产品失败，由系统直接返给该员工；同一检查修复后仍失败、归属不明或越界改动时交主管审设计。修复后沿用冻结检查，最终仍需合并检查及主管审核。默认 13 轮开发之外仅追加一次有限质量额度，两位员工时总上限 22 轮；无效检查的修正也消耗额度。缺失或无效证据、超时、检查被改弱、文件在验证中改变或权限收紧都不能完成。需求变化、验证中断或重启后检查来源不明时，核对保存证据并重新发起目标；自动验证返工不会在重启后盲目重放。检查不能保证没有漏项，人工验收仍由你决定。",
+          "独立任务可同批交给最多四名不同员工并行执行；有依赖的任务需等前置结果，同一个忙碌 Bot 的后续工作会排队。员工工作时，可以 @ 空闲主管提问；主管自己忙时，问题会排队。",
+          "目标分工使用任务范围内的 checkpoint：主管首次规划可以读取近期群聊；员工只接收当前目标、自己的派工、该任务上一份已核对来源的交付、任务要求及明确分配的补充消息。其他员工的聊天过程和旧汇报不会自动重放。主管后续接收看板与当前批次汇报，负责合并和验证；共享 CONTEXT.md 是索引，具体接口、文档和证据按任务需要读取。原始记录仍保留可查，checkpoint 不是测试通过或用户验收证明。",
+          "主管会尽量省略例行派工的重复进度发言，遇到需要你决定的事情、重要阻碍或完成时仍应说明。员工回报仍保留在聊天和任务板中；若主管的当前上下文已包含经过核对的完整回报，内部交接会引用它，避免重复发送全文。",
+          "进度卡显示执行轮数和运行、受阻、需要输入、停止等状态。达到轮数上限会结束自动续接；需要你补充时先回答问题。",
+          "目标进行时向主管补充要求，内容会关联原目标。已派工只表示员工已开始执行；如果关联任务失败，要求会重新等待主管处理，任务板显示实际结果。主管仍需检查回报，达到轮数限制或停止后不会自动继续。",
+          "目标执行中如果引擎报错、超时或没有可信回报，系统不会盲目重跑整轮派工。已完成的员工回报保留，失败任务显示受阻；继续之前请核对工作目录、聊天和可能发生的外部操作，再明确告诉 Bot 如何继续。",
+          "原目标卡会列出补充要求：等待主管协调、已回复但等待安排、已派工、已答复或已中断。主管回复不等于已经派工，派工也不等于工作完成。",
+          "“已交付 · 待验收”表示 Bot 报告目标完成，不代表人工验收或第三方验证。请检查产物和证据。可用输入框的停止按钮结束当前执行。",
+          "普通群回合、分派续接和 Goal 新产生的文本回复保存引用关联：员工引用分派消息，主管续接和 Goal 回复引用发起任务。历史消息不补写引用；工具日志不作为普通文本回复。",
+          "员工回报显示居中的“谁回复了谁”条目，展开框与条目共用中线，正文左对齐；实际接收人可能是主管或其他员工。历史加入/移出群聊显示为轻量系统提示，历史回报不等于当前任务状态。",
+          "普通 Bot 发言显示左侧头像和聊天气泡，保留发言者名称。消息时间显示在气泡下方，包含今天/昨天或星期月日，以及时、分、秒；跨年记录带年份。",
+          "普通文本回答按执行器实际发送的流式片段，逐段追加到同一个气泡；历史消息直接显示完整内容，不播放模拟打字。推理片段不会作为回答显示；完成后的正文接替临时气泡。Goal 主管含内部调度协议的回合仍需过滤后展示，不能直接公开原始片段。",
+          "输入框和普通消息默认使用更宽的聊天区域；长消息可占据大部分可用宽度，短消息仍按内容收缩。无论回复包含标题、代码或列表，都保持聊天气泡。",
+          "本机普通主管群重启时，仅恢复 30 分钟内已保存且整批尚未开始的派工决定；成员、权限、任务板、当前聊天分支及新消息必须仍一致。恢复沿用原目标，不重发用户消息或重跑已完成的主管决定。已经进入派工或准备、状态无法确认、已停止、条件改变或旧记录缺少检查点时，保持明确中断，不自动重做；可展开“查看已保存的派工”，核对聊天和任务板后再让主管继续。此恢复不适用于云端、团队环境、私人 Bot 或定时任务；定时任务仍以调度器保存的终态为准。含凭据的决定不会保存为检查点或派给员工，请改用凭据卡并移除指令中的秘密。此恢复亦不代表任务完成或用户验收。"
+        ]
+      },
+      "en": {
+        "title": "Goals and reply sources",
+        "steps": [
+          "In a group with a dedicated supervisor, plain messages go to the supervisor by default. It answers conversation directly and turns work into assigned tasks. @mention an employee to talk to that employee directly instead. In direct chat, use Goal beside the composer, the + menu or /goal.",
+          "The group supervisor defines interfaces, file ownership, critical correctness rules and a bounded failure model before assigning independent deliverables. Work is split by dependencies, not to occupy every member. Code delivery requires independent checks and evidence for the current combined result; the supervisor reviews design, coverage gaps and integration. Unverified requirements must be disclosed. Test counts and supervisor review are not a quality guarantee or human acceptance. A private-chat Goal continues with that bot. Direct conversational answers do not show a progress card.",
+          "For a local supervisor group with a code goal or delegated code work, independent verification can begin as soon as the supervisor marks a batch sufficient to cover the goal. Otherwise it remains a gate at proposed completion or development-limit exhaustion. The same supervisor model uses independent context to write a separate module for each check from the original requirements and deliverables. The host executes combined and independent checks and saves logs, exit results and source hashes. This covers pinned local folders with markers such as package.json, pyproject.toml, Cargo.toml or go.mod and requires existing Full access with unrestricted local tools. Cloud, remote engines and non-code tasks do not claim this verification. Local Node persistence tasks must also declare recovery-probe applicability. When applicable, a host probe injects failures before and after actual mutations, blocks later mutations until the operation settles, and compares acknowledged state with live and reopened state. A zero-write failure hook does not substitute for this evidence. Non-applicable or unsupported storage must be explained. Local Node HTTP services also declare header-rejection applicability. The host first proves a complete valid request succeeds, then confirms missing/invalid required headers reject a complete body and the same incomplete request body after only one byte. It checks prompt rejection and continued service health. Applicability, route coverage and the required-header set still need independent review.",
+          "Results distinguish product failures, invalid checks and environment blockers. Fault checks must confirm the intended injection occurred. The independent verifier may correct invalid check modules once, preserving old versions; product files, the manifest and other checks stay frozen. For a proven product failure bound to the current goal, original owner and explicit files, the host directly returns the repair to that employee. A repeated failed check, ambiguous ownership or edits outside the declared files require supervisor design review. Frozen checks run again after repair; final combined checks and supervisor review remain required. The default 13 development turns receive one bounded quality reserve, for 22 total turns with two employees; correcting invalid checks consumes this allowance too. Missing or invalid evidence, timeouts, weakened checks, concurrent file changes or tighter permissions prevent completion. Changed requirements, interrupted verification or uncertain provenance after restart require inspecting evidence and starting a fresh goal. Automatic verification repairs are not blindly replayed after restart. Checks cannot guarantee complete coverage; acceptance remains yours.",
+          "Independent tasks can be dispatched in one batch to up to four different employees. Dependent work waits for its prerequisites, and more work for the same busy bot queues. You can @mention an available supervisor while employees work; a question queues while the supervisor is busy.",
+          "Goal assignments use task-scoped checkpoints. The supervisor may read recent room context for initial planning. Employees receive the current goal, their assignment, the same task’s last delivery with verified provenance, task requirements and explicitly assigned follow-ups. Other employees’ histories and old reports are not replayed automatically. Later supervisor turns receive the board and current batch reports for integration and verification. Shared CONTEXT.md is an index; interface documents and evidence are retrieved as needed. Original records remain available. A checkpoint does not prove correctness or human acceptance.",
+          "The supervisor is instructed to skip repetitive routine dispatch updates while answering questions and reporting completion, significant blockers or decisions you need to make. Employee reports remain in the chat and task board; when a verified full report is already in the supervisor's current context, its internal handoff refers to it instead of sending the full text twice.",
+          "The progress card shows rounds and working, blocked, needs-input or stopped states. Automatic continuation ends at the round limit; answer requests for input before continuing.",
+          "Follow-up requests to the supervisor stay attached to the original goal. Dispatched means an employee has started, not that the work succeeded. If the associated task fails, the request returns to waiting for the supervisor and the task board shows the actual outcome. The supervisor still reviews reports; a stopped or turn-limited run does not continue automatically.",
+          "If an engine fails, times out or returns no verified report during a goal, the system does not blindly replay the whole assignment. Completed employee reports remain available and the failed task is blocked. Check the working folder, chat and any external effects before explicitly telling the bot how to continue.",
+          "The original goal card lists each follow-up as awaiting coordination, replied but awaiting assignment, assigned, answered, or interrupted. A reply is not an assignment, and an assignment does not mean the work is complete.",
+          "Completion is the bot’s report, not human acceptance or independent verification. Inspect deliverables and evidence. Use Stop in the composer to end execution.",
+          "New text replies from ordinary room turns, coordinated handoffs and goals retain citations: employees quote their assignment; supervisor continuations and goal replies quote the initiating request. Historical messages are not backfilled; tool logs are not ordinary text replies.",
+          "Employee reports use a centered “who replied to whom” disclosure. Its details share the same center line, with left-aligned prose. The actual recipient may be the supervisor or another employee. Historical membership changes are quiet system notices; a historical report is not current execution state.",
+          "Ordinary bot messages show an avatar beside the bubble and retain the speaker name. Time appears below the bubble with today/yesterday or weekday and date, plus hours, minutes and seconds. Older years include the year.",
+          "Ordinary replies append actual engine streaming deltas to one bubble. Saved history appears immediately, without simulated typing. Reasoning is excluded and the saved reply replaces its temporary bubble. Goal supervisor turns containing private coordination envelopes remain filtered before display.",
+          "The composer and ordinary messages use a wider default chat area. Long messages can use most of the available width; short messages fit their text. Headings, code and lists retain their chat bubble.",
+          "After a local supervisor group restarts, only a saved decision less than 30 minutes old whose whole batch has not entered dispatch can resume. Membership, permissions, the task board, active conversation branch and incoming messages must still match. Recovery keeps the original goal without reposting user input or rerunning its completed coordination decision. Dispatch or preparation already begun, uncertain state, Stop, changed conditions and legacy records without a checkpoint remain explicitly interrupted and are not redone automatically. Expand View saved assignments, check chat and the board, then ask the supervisor to continue. This does not apply to cloud/team environments, private bots or scheduled routines; the scheduler’s saved terminal outcome remains authoritative. A decision containing a credential is neither checkpointed nor dispatched; use a credential card and remove secrets from the instruction. Recovery does not mean completion or your acceptance."
+        ]
+      }
+    },
+    {
+      "id": "workspace-work-board",
+      "image": "work-board-requirements-demo.png",
+      "zh": {
+        "title": "跨群工作看板",
+        "steps": [
+          "点击左侧“工作看板”，集中查看当前工作区各群未归档对话里的任务；私聊、已取消任务和已归档对话不列入。群内“任务概览”与独立看板使用同一份任务记录。",
+          "状态分为待安排、进行中、受阻、复核与验收、已验收。Bot 回报和主管认可都还在复核与验收列；只有你点击“验收此任务”才进入已验收。排队任务不会冒充正在运行，受阻也不等于一定需要你补充信息。",
+          "五列始终保持一行，不横向滚动。空列自动折叠；窗口变窄时，放不下的列收成显示名称和数量的窄栏。点击窄栏优先展开该列，其他列按空间折叠；至少保留一列展开。手动折叠偏好保存在当前客户端，窗口变宽会恢复因空间不足自动收起的列。卡片填满展开列，不额外居中限宽，只在各自列内上下滚动。收起与展开平滑过渡，减少动态效果开启时立即切换。",
+          "筛选后优先展开有匹配任务的列；手动折叠偏好仍保留。可按群、负责人、优先级筛选，搜索标题、要求、验收标准、群、对话与 Bot。菜单支持方向键、Enter 确认、Esc 关闭；选项较多时可搜索。“全部 / 待我验收 / 主管复核 / 受阻”可快速切换：待我验收仅显示主管已认可且没有活动派工的任务；主管复核显示 Bot 已回报、尚未主管认可的任务。窗口窄时快捷视图收进下拉菜单，不换行也不横向滚动。计数随其他筛选条件变化；“清除筛选”恢复全部。每列先显示 30 项，底部“显示更多”继续加载。",
+          "点卡片查看任务要求、验收标准、最新进展、关联回报和文件；最近记录默认收起，最多保留 20 条。“打开原群聊”进入卡片所属的原对话。同名任务不会串群。回报按原对话和消息 ID 精确读取，并核对员工与已提供的派工标记；没有关联、读取失败或归属无法确认会明确提示，不拿其他聊天代替。文件使用原消息的访问限制；文件存在不代表验收通过。",
+          "“新建任务”只需选择群与对话、填写标题。保存后进入待安排、保持未分配，不会立即启动 Bot；到所属群聊请主管安排执行。负责人由该群主管分配，任务详情和新建任务都不能直接修改负责人；卡片保留负责人显示，顶部负责人筛选只影响查看范围。需要调整分工时，请在原群聊向主管说明。",
+          "详情里的验收、反馈返工、优先级和顺序操作沿用群内任务板规则。反馈返工会把你的修改意见发给该群主管安排；不能把卡片随意拖到已验收。保存失败会提示错误，任务不会伪装成已保存。",
+          "新建后可在详情点击“编辑要求”，补充任务要求与验收标准，每项最多 1,000 字。仅待安排或返工中、且没有活动派工的任务可改；执行开始后锁定。保存不改负责人、状态或排序，不启动 Bot；主管下次运行时可从任务板读取。其他客户端已改过要求时会拒绝覆盖，请取消后重新编辑核对最新内容；保存失败会保留当前草稿。要求修改记入历史，不冒充执行进展。"
+        ],
+        "caption": "真实 Electron 桌面的隔离演示：可补充任务要求和验收标准，负责人保持只读。全部为合成演示资料。"
+      },
+      "en": {
+        "title": "Work board across groups",
+        "steps": [
+          "Choose Work board in the sidebar to see tasks from every unarchived group conversation in this workspace. Direct chats, cancelled tasks and archived conversations are excluded. The group overview and this board share the same task records.",
+          "The five columns are To do, In progress, Blocked, Review & accept and Accepted. Bot reports and supervisor approval remain under Review & accept; only your Accept this task action moves a task to Accepted. Queued work is not presented as running, and blocked work does not necessarily require your input.",
+          "Columns always stay on one row without horizontal scrolling. Empty columns fold automatically; narrower windows fold columns into rails showing their name and count. Select a rail to prioritize opening it while other columns fit the available space. At least one column stays open. Manual folds are saved in this desktop profile; widening restores columns folded only for lack of space. Cards fill the open column without a centered width cap and scroll vertically within it. Folding and opening animate smoothly; reduced motion switches immediately.",
+          "Filtering prioritizes columns with matching tasks while retaining manual fold preferences. Filter by group, owner or priority; search titles, requirements, acceptance criteria, groups, conversations and bots. Menus support arrow keys, Enter and Escape, with search for longer lists. All / Ready for acceptance / Supervisor review / Blocked are quick views: Ready for acceptance includes supervisor-approved tasks with no active assignment; Supervisor review includes reported tasks not yet approved by the supervisor. In narrow windows the views collapse into a dropdown without wrapping or horizontal scrolling. Counts follow the other filters. Clear filters restores all tasks. Each column initially shows 30 cards; Show more reveals the next batch.",
+          "Open a card for requirements, acceptance criteria, latest progress and linked reports or files. Recent activity is collapsed by default, with up to 20 retained entries. Open original chat returns to that exact conversation. Reports load by conversation and message ID, checking the employee and any supplied assignment identity. Missing links, loading failures and unverified reports are stated explicitly without substituting another chat. Files retain the original message access checks; their presence is not acceptance.",
+          "New task asks only for a group, conversation and title. Saving leaves it unassigned in To do without starting a bot; ask the supervisor to arrange execution in the original group chat. The group supervisor manages assignment. Neither task details nor creation allows direct assignee changes. Cards still show the owner; the assignee filter only changes which tasks you see. Discuss changes to responsibilities with the supervisor in the original chat.",
+          "Acceptance, rework feedback, priority and ordering follow the group task board rules. Rework feedback sends your requested changes to that group’s supervisor. Dragging a card cannot mark it accepted. Failed saves display an error without pretending the task was saved.",
+          "After creating a task, choose Edit requirements in its details to add requirements and acceptance criteria, up to 1,000 characters each. Only To do or Returned tasks with no active assignment can be edited. Saving preserves owner, status and order and does not start a bot; the supervisor can read the brief from the board on its next turn. Conflicting edits from another client are refused: cancel and reopen the editor to check the latest version. Failed saves retain the current draft. Brief edits appear in history, not as execution progress."
+        ],
+        "caption": "Real isolated Electron desktop demo: requirements and acceptance criteria can be added while assignment stays read-only. All content is synthetic demo data."
+      }
+    },
+    {
+      "id": "group-task-board",
+      "zh": {
+        "title": "群任务板",
+        "steps": [
+          "群聊天顶部的“任务概览”显示当前对话的任务进度与状态；概览始终保持单行；进度条先随可用宽度收缩，窄窗口下切换为状态图标与数量，悬停可查看完整说明，不会出现横向滚动；点击可打开或收起右侧任务板，查看目标和任务卡。概览按下时保持平稳，不会整体缩放；面板开合时与聊天区域平滑过渡，开启减少动态效果时直接切换。也可点击群名打开右侧面板并选择“任务”；按 Esc 可关闭面板并返回入口。面板开关状态保存在当前桌面客户端。",
+          "主管收到任务后会把它拆成几条待办，写明负责人，再将互不依赖的工作同时派给多名员工。每次派工在聊天里显示为居中的“主管 安排给 员工 · 任务名”条目，展开可看完整指令；员工运行且可确定当前任务时，卡片显示“正在：任务名”。",
+          "状态含义：待安排＝尚未开始执行（已派出的任务排队时也在此状态）；进行中＝员工已开始执行；已回报·主管检查中＝员工回合结束并交回结果；主管认可·等你验收＝主管检查后认为合格；返工中＝你已反馈修改意见，等待返工；受阻＝员工不可用、失败或需要你补充；你已验收＝只有你点击“验收通过”才会出现；已取消。",
+          "“进行中”“已回报”由系统根据实际执行自动标记，主管不能自称完成；主管认可也不等于验收。如果派工条目无法写入聊天，聊天不会留下这批条目，未开始执行的任务显示受阻。请点“查看回报”跳到员工的回报消息，核对产物后再验收；回报较早时会先载入更早的聊天记录再定位；距离较近时平滑滚动；较远时聊天区淡出后在该条处淡入，并以柔和光晕提示位置，不做长距离滚动。任务卡只预览回报的前三行（短回报完整显示），完整内容请查看回报。",
+          "点开一条任务可看负责人和更新记录，并按当前状态验收或反馈返工。反馈返工可在多行输入框写下要改的地方，⌘/Ctrl+Enter 发送；会作为你的消息发给主管安排返工。负责人只读，由该群主管分配；需要调整分工时，在原群聊向主管说明。",
+          "继续旧任务时，请告诉主管要继续的任务全名；也可以打开原任务并点“反馈返工”。确认到原任务后，派工会保留它的标题与历史，展开派工条目可看这次的具体步骤。新目标里碰巧相同的短编号不会改写旧任务。主管给不同员工安排同名的新工作时，会分别创建独立条目；你创建的同名任务和历史上手动指定负责人的任务、未分配或存在歧义的旧任务，仍须明确选择后继续。旧引用无法确认时，核对任务板后重试。调整执行安排前请等待原执行结束或先停止它；已验收或取消的任务须由你重新打开。",
+          "底部输入框可手动添加任务；有待安排的任务且群内空闲时，可点“让主管安排”。主管每批最多可派 4 名不同员工，依赖任务仍按顺序推进；每个目标最多 13 轮，用完会停下并提示你，再发消息即可继续。",
+          "同一批工作若再次收到完全相同的回报，目标会停下并请你提供新信息。员工回报中提及其他成员不会自动触发新回合；必要时由主管重新安排。",
+          "任务板按群内每个对话分别保存在工作区的 groups.json 中。排序保存后会立即显示已保存的结果；如果连接中断，重新连接后会恢复最新任务板。已有 60 条任务时，主管不会为了新增任务而删掉历史记录；可以继续明确的旧任务，或开启新的群内对话。群目录中的 TASKS.md 只作为可选的补充笔记。",
+          "同一员工正在运行时，另一份待执行任务仍单独列出，不因员工或派工编号相同而隐藏不同执行。员工卡片、总目标与任务板仅通过当前对话中已确认的任务编号和负责人匹配任务；未提供、冲突或已改派时只显示工作状态，不猜任务名。已映射任务卡会明确显示运行或待执行，后续任务不会冒充当前运行；实际阻塞执行或其他对话由后台确认后才显示。暂停后仍在清理的运行回合显示“正在停止”，清理后再显示暂停；停止中的员工不能作为插话目标，其他员工可继续执行。",
+          "多人同时提出审批或问题时，请分别查看对应员工的卡片再回复。若提示答复未能送达，检查卡片是否仍在等待，然后重新打开该对话确认；不要把错误提示当成审批已经生效。收件箱副本缺少原卡片信息时，请打开原对话处理；如果没有访问权限，请联系对应群主管。群聊中的永久授权暂不可记住，可选择仅允许一次。",
+          "待安排的任务可用拖动把手或键盘上下键、上移/下移按钮排序；优先级为紧急、高、普通、低，旧任务默认为普通。优先级优先，同级按手动次序；跨级拖动会提示先修改优先级。按住任务左侧的拖动把手移动即可拿起任务：任务浮起跟随指针，同级任务实时让位，松手后落入空位；按 Escape 取消并归位。上移/下移和 Alt+上/下同样滑到新位置，保存失败会退回原位。拖动只在同一优先级内调换。顺序和优先级保存于当前群对话，刷新或重开仍保留，状态更新和主管计划不会覆盖。总目标卡和主管按同一顺序读取，已选独立派工批次也按此排序。只调整优先级或顺序不会固定负责人；历史上手动指定的负责人记录仍会保留，即使更新日志已滚动裁剪。任务板不提供直接改派；旧任务分配来源不明时仍保留当前负责人，不擅自换人。如需调整，在群聊向主管说明；依赖、可用员工与人工明确指定的任务仍受尊重，不抢占执行，也不把回报或主管通过当作用户验收。",
+          "任务状态有固定的流转规则：员工执行中的任务，主管只能标“受阻”或“取消”，不能改回待办或直接审核通过；“审核通过”必须在员工回报之后。你只能对已回报或主管审核通过的任务点“验收”，对已回报、审核通过或受阻的任务点“退回”；“重新打开”只用于已验收、已取消、受阻或已退回的任务。执行中的任务不能退回或重新打开，需要先停止，等它结束后再操作；“取消”随时可用。进度条分两层：实色是你已验收的，浅色是做完了正在等审核或等你验收的，旁边会写出待验收的数量。",
+          "Goal 卡片和任务板会将确认来自系统的停止、中断提示显示为简明状态；点“查看原始详情”可核对完整原始原因。这里只整理显示，不修改任务状态、执行记录或日志；主管内容、用户备注与员工回报保留原文和换行，不按系统提示裁切或翻译。"
+        ],
+        "caption": "隔离桌面演示：窄窗口中，任务概览以图标与数量保持单行。"
+      },
+      "en": {
+        "title": "Group task board",
+        "steps": [
+          "Task overview at the top of the group chat shows this conversation’s progress and status. The overview stays on one line. The progress bar shrinks first; narrow windows use status icons and counts with full labels on hover, without horizontal scrolling. Select it to open or close the right task board and see the goal and task cards. The overview stays steady when pressed; the panel and chat area transition smoothly, or switch immediately with reduced motion. Alternatively, select the group name and choose Tasks. Press Esc to close the panel and return to its entry. Its open state is saved in this desktop profile.",
+          "The supervisor breaks a request into items, names an owner for each and assigns independent work to several employees at once. Each assignment appears in the chat as a centered “Supervisor assigned Employee · task” line you can expand for the full instruction; when the employee is running and its current item is clear, its card shows “On: task”.",
+          "Statuses: Not assigned = not yet started, including an assignment waiting in the queue; In progress = the employee has started; Reported · supervisor checking = the employee's turn finished with a result; Supervisor approved · awaiting you; Rework = you sent change requests and it awaits rework; Blocked = the employee was unavailable, failed or needs your input; Accepted by you = only appears after you select Accept; Cancelled.",
+          "In progress and Reported are set by the app from actual execution, never by the supervisor's own claim, and supervisor approval is not acceptance. If the assignment entries cannot be written to chat, that batch leaves no entries in the conversation and the items that did not start show as blocked. Use View report to jump to the employee's reply and check the deliverable before accepting; an older report loads earlier history first, a nearby message scrolls smoothly, and a distant one fades out and back in at the message with a soft glow instead of a long scroll. Task cards preview the first three lines of a long report (short ones show in full); open the report for everything.",
+          "Open an item to see its owner and history, and accept or request rework when its status allows. Write changes in the multi-line rework box and press ⌘/Ctrl+Enter to send them to the supervisor as your message. The owner is read-only and managed by the group supervisor; discuss changes to responsibilities in the original chat.",
+          "To continue an existing task, give the supervisor its full title or open the original item and select Request rework. When the item is confirmed, its title and history carry forward. Expand the assignment in chat to read the specific step. A short number reused by a new goal cannot overwrite the old task. A supervisor can give different employees new work with the same name, creating separate items. Same-name tasks you created and historical tasks with a manually selected owner, unassigned items and ambiguous older items still require an explicit selection to continue. If the old item cannot be confirmed, check the board and retry. Wait for the current execution to finish or stop it before changing execution arrangements. Only you can reopen an accepted or cancelled item.",
+          "Add items manually at the bottom. When items are unassigned and the group is idle, select Ask supervisor to assign. The supervisor can assign up to four different employees per batch; dependent tasks still run in sequence. Each goal is limited to 13 turns; when it stops, send another message to continue.",
+          "If the same assignments return identical reports again, the goal pauses for new information. Mentions in employee reports do not automatically start another room turn; the supervisor can arrange further work when needed.",
+          "Each group conversation's board is saved in the workspace groups.json. A saved order appears immediately; if the connection drops, the latest board is restored after reconnecting. At 60 items, the supervisor keeps the existing history and refuses to add more items. Continue a specific existing item or start a new conversation in the group. Use TASKS.md in the group folder for optional notes.",
+          "An employee’s current execution and pending follow-up stay separate, even when their employee or assignment IDs match. Member cards, goal progress and the task board match tasks only through a confirmed task ID and owner in the current conversation. Missing, conflicting or reassigned mappings show execution status without guessing the current task title. Mapped task cards distinguish running from queued work; a follow-up never appears as the current execution. Blocking tasks or other conversations appear only when confirmed by the scheduler. A held turn still being cleaned up shows Stopping, then Paused after cleanup; it cannot receive an interjection while stopping, and other employees can continue working.",
+          "When several employees ask for approval or input, review each employee's card separately before answering. If delivery fails, check whether the card is still waiting and reopen the conversation to confirm; an error does not mean approval took effect. If an inbox copy lacks its original card information, respond in the original conversation, or contact the group supervisor if you cannot access it. Remembering permanent group approval is temporarily unavailable; you can allow the request once.",
+          "Reorder pending work with the drag handle, Up/Down arrow keys, or move buttons. Priority is Urgent, High, Normal or Low; older items default to Normal. Priority comes first, then your manual order within that level. Cross-priority drops ask you to change priority first. Press the drag handle and move to lift a task: it floats with the pointer while same-priority tasks slide aside, then settles into the open slot when you release; Escape puts it back. Move buttons and arrow keys slide it too, and a failed save slides it back. Dragging only reorders within one priority. Both settings belong to this group conversation and survive refresh or reopening, status updates and supervisor plans. The overview and supervisor read the same order, and selected independent dispatch batches follow it. Changing priority or order does not fix the assignee. Historical manually selected owners remain protected after old updates roll out of the log. The board does not allow direct reassignment. Older records with an uncertain assignment source retain their current owner; discuss any changes with the supervisor in the group chat. Dependencies, available employees and explicit task requests still apply; running work is not preempted and reports or supervisor approval do not mean your acceptance.",
+          "Task states follow fixed rules: while an employee is running an item, the supervisor can only mark it blocked or cancelled, not move it back to to-do or approve it; approval comes only after the employee reports. You can accept only reported or supervisor-approved work, and return reported, approved or blocked work; reopen is for accepted, cancelled, blocked or returned items. A running item cannot be returned or reopened: stop it and wait for it to finish first. Cancel is always available. The progress bar has two layers: solid for what you accepted, pale for finished work still awaiting review or your acceptance, with the count of items awaiting acceptance beside it.",
+          "Goal cards and the task board show concise summaries for confirmed system stop and interruption notices. Select View original details to check the complete original reason. This changes presentation only, preserving task state, execution records and logs. Supervisor text, personal notes and employee reports retain their wording and line breaks without being clipped or translated as system notices."
+        ],
+        "caption": "Isolated desktop demo: the task overview stays on one line with icons and counts in a narrow window."
+      },
+      "image": "task-overview-single-line-demo.png"
+    },
+    {
+      "id": "context-documents",
+      "zh": {
+        "title": "上下文索引与维护",
+        "steps": [
+          "员工 Bot 的索引位于 ~/.botdom-next/workspaces/<botId>/CONTEXT.md；群聊索引位于 ~/.botdom-next/group-contexts/<groupId>/CONTEXT.md。群资料属于该群，不与员工私人笔记合并。 群回合默认不装载 Bot 的私人索引、长期记忆正文和专题目录；按明确授权再读取相关私人资料。",
+          "索引只列文件用途、读取条件、当前工作摘要及来源消息；自动提供的索引最多 60 行 / 6 KB。长材料放入专题文档，根据当前任务读取相关片段，不遍历所有文件或历史。",
+          "员工 MEMORY.md 是独立的长期记忆摘要，已有 200 行 / 24 KB 的装载上限；memory/<topic>.md 和按日日志按需检索。身份 SOUL.md 镜像由 Bot 设置维护，不在工作目录冒充修改。",
+          "群目录中的 TASKS.md 只是可选的补充笔记；任务状态以群任务板为准，由应用根据主管的安排和实际执行记录，不依赖模型手动维护此文件。",
+          "仅写入明确共享或核实的事实，区分 Bot 自述和用户验收。文件新增、迁移或信息过期时更新索引；已有文档不会在启动时被模板覆盖。",
+          "只有具备文件工具和相应权限的执行器可直接维护文档；缺少工具时应明确报告需要更新的内容。不能声称已保存，不能把索引当作新增权限。"
+        ]
+      },
+      "en": {
+        "title": "Context indexes and upkeep",
+        "steps": [
+          "Employee indexes live at ~/.botdom-next/workspaces/<botId>/CONTEXT.md; group indexes at ~/.botdom-next/group-contexts/<groupId>/CONTEXT.md. Shared room notes stay separate from private employee notes. Room turns do not automatically load private bot indexes, memory summaries or topic directories; retrieve private material only when authorized for this room.",
+          "The index lists file purpose, retrieval conditions, a brief work summary and source messages. At most 60 lines / 6 KB are supplied automatically. Keep longer material in topic documents and retrieve relevant excerpts instead of all files or history.",
+          "MEMORY.md remains a separate long-term summary capped at 200 lines / 24 KB. Topic notes and daily logs are retrieved on demand. The SOUL.md persona mirror is maintained through Bot settings, not by impersonating it in the working folder.",
+          "TASKS.md in a group folder is optional notes only. Task status lives on the group task board, recorded by the app from the supervisor's plan and actual execution rather than by models editing this file.",
+          "Save verified or explicitly shared facts; distinguish bot reports from human acceptance. Update the index when files move or facts expire. Startup never replaces existing documents with templates.",
+          "Only engines with file tools and permission can edit these documents directly. Otherwise report the needed update without claiming it was saved. An index grants no additional access."
+        ]
+      }
+    },
+    {
+      "id": "interaction-and-imports",
+      "zh": {
+        "title": "交互与精简入口",
+        "steps": [
+          "侧栏搜索使用放大镜按钮，点击打开居中的搜索弹窗，可搜索 Bot、群聊和消息；Escape 关闭弹窗。收起侧栏时搜索也使用同一个弹窗，不强制展开侧栏。侧栏不再显示 This computer 位置选择。",
+          "空白私聊页显示 Bot 和开场提示。点击提示仅填入草稿，保留已有输入；你确认发送后才调用 Bot。",
+          "按钮悬停、按下、成员卡和折叠使用轻量过渡。系统或应用开启减少动态效果时，这些位移和入场动画会关闭。",
+          "Botdom 不提供从 Grok Bot 迁移的启动弹窗、设置入口或目录探测。通用备份恢复与 AI 工具导入是不同流程。",
+          "新工作区创建普通 Bot，不自动生成全局参谋长。旧记录的全局角色在工作区升级时撤销；Bot、历史、身份说明和模型保留。旧助手的固定欢迎卡改用中性介绍。",
+          "Learn / 教技能入口和技能编写开关已移除，旧配置也不会重新开启。已安装技能仍可供正常任务使用。输入框不再显示对话运行位置选择，新对话默认自动选择；这不会新增电脑、云端或文件权限。",
+          "侧栏 Bot 名称与群名使用 13px 常规字重，分组标题和置顶名称使用 12px，列表行距保持紧凑。",
+          "加号菜单使用独立浮层，避免被侧栏的滚动渐变遮住。按下方向键可进入菜单，Escape 关闭并返回加号；点击外部关闭。关于、设置、用量、更新、自动化和快捷键页面使用紧凑字体；中文快捷键说明可直接搜索。用量页顶部以所选时段的总花费为主数字（无费用时显示 token 数），下方的红色标签显示错误数及工具／回合分布，右侧一行列出时间、token、AI 步骤和工具调用；“花在哪里”每行一条名称与数字，下方是该 Bot 颜色的进度条，没有费用时不显示短横，已删除的 Bot 标为“已删除”，只差大小写的同一模型合并为一行。聊天跳到较早消息后，可点向下箭头连续平滑滚动到底部，滚动中向上滑动可中断，开启减少动态效果时直接定位；“显示更新的消息”的条数只计可见消息，不含隐藏的工具调用。设置 › 通用 › 界面字体可换整个应用的文字：默认是系统字体苹方，也可选终端风格（Source Code Pro，中文用苹方）、圆体、手札体、翩翩体、娃娃体、楷体等，点卡片即时生效；选“自定义”可填这台电脑上已安装的任意字体名。字体只保存在这台电脑。在侧栏展开某个 Bot：上面是它的私聊，可以直接对话；下面的“群聊（只读）”列出它所在的群，点开只看它在该群的发言和 @ 它的消息，不能在这里回复，需要时点“打开群聊”。点左下角头像打开菜单：顶部显示你的名字，第一组是“主页”和“用量”，第二组是设置、键盘快捷键、关于和检查更新。回复里的普通链接使用主题强调色，悬停时出现下划线；指向本机文件的链接显示为带文件图标的小标签，点击即可另存一份。@ 提及显示为圆角高亮。新建群聊时默认是“快速组队”：选主管用哪个执行器，再用 − / + 选每种执行器各几个员工（最多 20 位），点“一键建群”即建好群、专属主管和这些员工；也可切到“选已有 Bot”逐个勾选。点群顶部成员卡打开“员工管理”：每位成员一行，可为当前群选择模型与思考程度（执行器不变）、暂停或移出；“添加员工”展开后可加入其他 Bot，保存后生效。用量里的执行过程把“最慢／最贵”标签放在名称后，本群主管显示为“主管”。群顶部成员卡显示 Bot 的身份头像；部分卡片按身份色淡染底色，紫色身份的卡片使用中性底色。状态文字前显示小圆点：空闲时静止，工作或思考时只让圆点缓慢明暗变化，头像不再带外圈或浮动。悬停或按下成员卡时会轻轻回弹，开启减少动态效果时保持静止。窄栏仅显示头像时，圆点保留在卡片右下角；完整状态可悬停或聚焦成员按钮查看。圆点不代表完成或验收；任务状态按颜色区分（进行中、已回报、待验收、受阻、已验收），验收时会出现一个对勾动画；新消息轻轻浮入。系统或应用开启“减少动态效果”时，状态圆点保持静止。Bot 记下团队记忆时，对话里会出现一行“记入分组记忆 · 决定/人物/存放位置/术语：内容”，可撤销或查看详情；“工作过程 · 用时”标签展开后是这一轮的工具步骤。",
+          "可点击控件按用途提供动效：按钮轻抬并在按下时回弹，列表选项轻移并过渡底色，图标做细微响应，链接保留文字式反馈，不使用统一的悬停外框。打开或切换私聊、群聊时，聊天正文淡入并轻轻上移；等待对话记录加载完成后再播放，不会随每次流式文字更新重复。聊天窗口弹出和关闭、Bot 列表展开与收起、下拉菜单开合均保留动效。系统或应用开启“减少动态效果”时停用位移和缩放，保留静态状态与键盘焦点。"
+        ]
+      },
+      "en": {
+        "title": "Interaction and simplified entry points",
+        "steps": [
+          "The sidebar magnifier opens a centered search palette for bots, group chats and messages. Escape closes it. The collapsed rail opens the same palette without expanding the sidebar. The sidebar workspace selector is hidden.",
+          "Empty direct chats show the bot and suggested opening prompts. A suggestion only appends to the draft; sending is your decision.",
+          "Buttons, member cards and disclosures use restrained hover, press and transition feedback. System or application reduced-motion settings disable movement and entry animations.",
+          "Botdom has no Grok Bot migration popup, settings entry or local directory probe. Generic backup restoration and AI tool import are separate workflows.",
+          "New workspaces start with an ordinary bot, without a global Chief. Workspace upgrades revoke legacy global roles while retaining bots, history, persona and model. Legacy fixed helper intros use neutral text.",
+          "Learn / Teach and the skill-authoring toggle are removed, including when an old configuration enabled them. Installed skills remain available for ordinary work. The composer has no conversation location picker; new conversations use automatic selection without granting computer, cloud or file access.",
+          "Sidebar bot and group names use regular-weight 13px text; section headings and pinned names use 12px with compact row spacing.",
+          "The + menu is a separate overlay, outside the sidebar scroll fade. Arrow Down enters its items; Escape closes it and returns focus to +. Clicking outside dismisses it. About, Settings, Usage, Updates, Automations and shortcuts use compact typography; Chinese shortcut descriptions are searchable. The Usage page leads with total spend for the chosen period (tokens when there is no cost), with errors as a red tag beneath it and time, tokens, AI steps and tool calls in one row beside it; Where it went shows each name and number on one line above a bar in that bot's colour, leaves the cost blank when there is none, marks deleted bots, and aligns tokens and cost by bot and model, merging model names that differ only in case. After jumping to an earlier message, Jump to latest smoothly scrolls to the bottom; scrolling upward interrupts it, and reduced motion uses an immediate jump; the Show later count includes only visible messages, not hidden tool calls. Settings › General › App font changes the text across the app: the default is the system font (PingFang), and Terminal (Source Code Pro with PingFang for Chinese), Rounded, Handwritten, Pen, Cute, Kai and more apply as soon as you pick a tile; Custom takes the name of any font installed on this computer. The choice is kept on this computer only. Expanding a bot in the sidebar shows its private chats, which you can continue, and Groups (read only): each opens a log of what it said in that group and what @ it, with Open group to reply there. Your avatar at the bottom left opens a menu with your name on top, then Home and Usage, then Settings, keyboard shortcuts, About and updates. Links in replies use the theme accent color and underline on hover; links to files on this computer show as small chips with a file icon, and clicking one saves a copy. @mentions show as rounded highlights. New group opens on Quick team: pick the supervisor's engine, use − / + to choose how many employees of each engine (up to 20), and Create team makes the group, its supervisor and those employees at once; Pick bots keeps the one-by-one choice. Clicking a member card opens member management: one row per member to switch its model (the engine stays), pause or remove it; Add employees lists other bots, and changes apply when you save. In a run's detail, Slowest and Most expensive tags sit after the name, and the group's supervisor shows as “Supervisor”. Group member cards show each bot's avatar. Some card backgrounds use a light identity tint; purple bots use a neutral background. A small dot precedes the status text. Idle dots stay still; only the dot gently pulses during work or thought, with no avatar ring or floating motion. Member cards respond gently to hover and press, and stay still with reduced motion. In narrow avatar-only cards, the dot stays in the bottom-right corner; hover or focus the member button for the full status. A dot does not mean completion or acceptance; task statuses have their own colours (in progress, reported, awaiting acceptance, blocked, accepted), accepting shows a quick tick, and new messages ease in. All of this stops when reduced motion is on. When a bot saves something to team memory, a line reads “saved to department memory · Decision/Person/Where it lives/Term: …” with Undo and Details; the “Work log · time” chip expands to that turn's tool steps.",
+          "Controls use motion appropriate to their purpose: buttons lift and press softly, list options shift with a background transition, icons respond subtly, and links keep text-based feedback. There is no universal hover frame. Opening or switching private and group chats fades and lifts the transcript after the selected history is ready, without replaying on every streaming text update. Chat windows animate in and out; bot disclosures and dropdown menus retain their opening and closing motion. System or app Reduced motion stops movement and scaling while keeping static states and keyboard focus."
+        ]
+      }
+    },
+    {
+      "id": "file-display-limits",
+      "zh": {
+        "title": "文件显示范围",
+        "steps": [
+          "图片可使用聊天中的图片查看器；音频和视频使用对应播放器，具体编码还取决于桌面运行环境。",
+          "Markdown 文件显示正文摘要卡，点击“阅读”打开完整内容；支持标题、列表、代码和表格。预览上限 2 MB，摘要最多展示前 12,000 个字符；原文件可保存。文档中的脚本不执行，嵌入图片省略，链接只显示文字。",
+          "Bot 回复里出现本机网页服务地址（localhost、127.0.0.1 或 0.0.0.0，Botdom 自身端口除外）时，下方显示网页预览卡：缩略画面可直接看，点击“预览”放大并可操作，也可重新加载或在浏览器打开；每条回复最多两张。交付的 .html 文件同样显示网页卡，在隔离沙盒中运行，无法读取 Botdom 数据。",
+          "多张图片按九宫格排列：2 张和 4 张两列，3 张及 5 至 9 张三列，均裁成方图；超过 9 张时最后一格显示“+N”，点任一张进入大图浏览并可左右切换。单张图片保持原比例。",
+          "PDF 显示首页预览和阅读入口；阅读器提供页码、上一页/下一页、适应宽度与缩放。预览上限 25 MB；加密、损坏或无法读取的文件显示错误，可保存后使用外部软件查看。",
+          "阅读器在窗口中央打开，可拖动左边缘调整宽度。点击阅读器外侧空白区域、关闭按钮或按 Escape 均可关闭，焦点返回原文档卡。内部正文与翻页区域的点击不会关闭阅读器。",
+          "HTML 文件有受隔离的预览；CSV / TSV 有表格预览。聊天中的 DOCX、XLSX、PPTX 文档卡提供文字预览及阅读器：DOCX 支持标题、段落、列表、表格和粗斜体；XLSX 可切换工作表，每表最多预览 500 行、50 列，超出会提示；PPTX 按顺序展示每页标题和文字。Office 原文件上限 25 MB，并限制解压体积和条目数；损坏、不支持或超限会显示错误。文字预览不还原完整排版、图片、图表、合并单元格、公式计算或备注；可保存原文件到 Office 软件查看。群文件侧栏暂不提供 Office 内容预览。",
+          "群工作区自动发现 deliverables/ 中的可读文档和图片；日志、JSON、脚本及隐藏目录不会自动登记。Bot 在回复中明确附上的文件和用户上传仍可登记。测试与中间产物应放在 .work/，不要作为成果附上。已有登记不会自动删除。",
+          "历史文件仅绑定可验证的原始快照；不能找到或无法校验的旧文件会标为不可用，不用当前同名文件替换历史版本。源码、假引擎测试和演示文件不代表所有真实格式均已完成桌面验收。",
+          "多名员工同时工作时，回复中明确链接的文件关联对应员工；无法确认来源的共享产物会登记，但不猜测作者或任务。旧文件被未知来源改写、或旧记录缺少可对比的指纹时，当前文件不沿用旧作者。单个文件超过 50 MiB、单次校验预算用完或暂不可读时显示“内容未校验”，不猜作者或任务；观察记录不是已确认的新版本。打开后发现内容已改变时先刷新列表，再重新打开。并行期间变更的群笔记不会按完成顺序猜测作者。",
+          "内部凭据目录 .openmausbot-secrets 中的文件不能登记或通过群文件入口读取，包括旧登记记录和符号链接指向的文件。需要共享结果时，请让员工提供不含凭据的独立产物。"
+        ],
+        "caption": "真实 Electron 桌面中的隔离演示：Markdown 文档卡、PDF 首页与居中展开回报。文件和人物均为演示资料，不是用户工作记录。"
+      },
+      "en": {
+        "title": "File display limits",
+        "steps": [
+          "Images use the chat image viewer; audio and video use their own players. Actual codec support depends on the desktop runtime.",
+          "Markdown files have a content-preview card. Read opens the complete document, including headings, lists, code and tables. Text previews are limited to 2 MB; card excerpts show at most 12,000 characters. Save retains the original file. Scripts are not executed, embedded images are omitted, and links display as text.",
+          "When a bot reply mentions a web service on this machine (localhost, 127.0.0.1 or 0.0.0.0, except Botdom's own ports), a web preview card appears below it: the thumbnail shows the live page, Preview enlarges it for interaction, and you can reload or open it in your browser. Each reply shows at most two. A delivered .html file gets the same card and runs in an isolated sandbox with no access to Botdom data.",
+          "Several pictures sit in a square grid: two or four in two columns; three, or five to nine, in three columns. Past nine, the last tile shows +N. Click any picture to browse them full size. A single picture keeps its own shape.",
+          "PDF cards preview the first page and open a reader with page selection, previous/next, fit-width and zoom. The limit is 25 MB. Encrypted, damaged or unavailable files show an error and can be saved for an external viewer.",
+          "The reader opens in the center; drag its left edge to resize it. Click outside the reader, use Close, or press Escape to dismiss it and return focus to the original card. Clicking document content or paging controls keeps the reader open.",
+          "HTML has a sandboxed preview; CSV/TSV have table previews. Chat document cards and the reader provide text previews for DOCX, XLSX and PPTX. DOCX shows headings, paragraphs, lists, tables, bold and italic; XLSX has worksheet tabs and a truncation notice beyond 500 rows or 50 columns per sheet; PPTX shows titles and text slide by slide. Office files are limited to 25 MB, with bounded decompression and archive entries; damaged, unsupported or oversized files show an error. Text previews do not reproduce full layout, images, charts, merged cells, formula calculation or notes. Save the original for an Office application. The group files sidebar does not yet preview Office contents.",
+          "Historical files are bound only to verifiable original snapshots. Missing or invalid old files are marked unavailable; a current file with the same name never substitutes for a historical version. Source checks, fake engines and demo files do not qualify all real-world formats.",
+          "The group workspace automatically discovers readable documents and images in deliverables/, but not logs, JSON, scripts or hidden directories. Explicit bot attachments and user uploads can still be registered. Tests and intermediate files belong in .work/, not in user-facing attachments. Existing registrations are not automatically removed.",
+          "During overlapping employee turns, files explicitly linked in a reply are attributed to that employee. Other shared deliverables are registered without guessing an author or task; an unattributed revision or a legacy record without a comparable fingerprint does not retain its previous author. Files over 50 MiB, files beyond a scan’s verification budget, or temporarily unreadable files show Content unverified without a guessed author or task; an observation is not a confirmed revision. If a file changed before opening, refresh the list and reopen it. The app also avoids guessing who changed shared notes during overlapping work.",
+          "Files under the internal .openmausbot-secrets credential directory cannot be registered or read through group files, including old registry entries and symlink targets. Ask the employee for a separate deliverable without credentials when a result needs to be shared."
+        ],
+        "caption": "Isolated Electron desktop demo: Markdown card, first PDF page and centered report disclosure. All files and people are synthetic demo data, not user work."
+      },
+      "image": "documents-demo.png"
+    },
+    {
+      "id": "legacy-chat-history",
+      "zh": {
+        "title": "查看旧版聊天记录",
+        "steps": [
+          "已迁入旧 Botdom 当前可见会话的历史记录及可验证附件。已有新版对话保持独立；在群或 Bot 的会话列表选择“旧版聊天记录”阅读。归档或删除的旧群不会因此恢复。",
+          "历史迁入不会发送消息、执行旧任务、导入旧权限或恢复全局参谋长；来源与回复接收人仅用于展示。原始历史正文保持不变，旧版文件链接通过单独的映射绑定已校验快照。",
+          "找不到旧文件时先检查该消息的不可用提示；不要用最新同名文件代替旧版本。恢复操作前先停止新版后端，并从 ~/.botdom-next/backups/ 中选对应备份；保留现有工作区，避免覆盖迁入后的新聊天。"
+        ]
+      },
+      "en": {
+        "title": "Read legacy chat history",
+        "steps": [
+          "Visible legacy Botdom conversations and verifiable attachments have been copied. Existing new conversations remain separate; select Legacy chat history in a group or bot conversation list. Archived or deleted legacy groups are not restored.",
+          "Importing history sends no messages, executes no old tasks, grants no old permissions and restores no global Chief role. Provenance and reply recipients are display metadata. Original transcript text is preserved; a separate mapping binds old file links to verified snapshots.",
+          "For a missing file, check the message’s unavailable notice rather than replacing it with the latest same-named file. Stop the new backend before recovery and choose the corresponding backup under ~/.botdom-next/backups/. Preserve the current workspace to protect chats created after import."
+        ]
+      }
+    },
+    {
+      "id": "usage-execution-status",
+      "zh": {
+        "title": "阅读用量与执行状态",
+        "steps": [
+          "用量列表与详情分别显示工具错误和回合失败。回合正常结束仍会保留历史工具错误；这不表示任务已通过用户验收。",
+          "点击一条记录，再展开错误详情可查看已记录的原因；诊断中的链接不显示账号凭据和查询参数。真正回合失败、运行中、取消和未知状态分别显示；旧记录没有分类信息时标为未分类错误，不猜测成功或失败。",
+          "历史明细缺失时仍保留汇总中的工具错误与回合失败数，并注明缺少明细和原因；可见的部分原因仍可展开。子回合失败也计入整体结果。",
+          "工具错误可能来自命令、路径或开发中测试失败；同一回合可能随后恢复。回合失败表示执行中断，额度不足、网络或引擎原因以实际记录为准。",
+          "“花在哪里”中名称与 token、费用在同一行，条形放在下一行。长机器人、模型和提供方名称会换行；分栏随面板可用宽度调整。错误总数下方完整显示工具错误与失败回合的拆分，界面调整不改变统计口径或真实记录。"
+        ],
+        "caption": "隔离 Electron 桌面演示裁图：长 Bot 名称与模型名可换行，错误分类完整显示。费用和用量均为固定演示数据，不代表真实账单。"
+      },
+      "en": {
+        "title": "Read usage and execution status",
+        "steps": [
+          "The usage list and details show tool errors separately from failed turns. A normally ended turn keeps historical tool errors visible; it does not indicate your acceptance.",
+          "Open a run and expand its error details for recorded reasons; links in diagnostics omit account credentials and query parameters. Failed, running, cancelled and unknown outcomes have separate labels. Older records without classification show unclassified errors rather than a guessed outcome.",
+          "When historical details are missing, summary counts of tool errors and failed turns remain visible with a missing-details notice. Available reasons can still be expanded. Failed child turns also count toward the overall outcome.",
+          "Tool errors can come from commands, paths or development test failures; the same turn may recover afterward. A failed turn indicates an execution failure; quota, network and engine reasons follow the recorded evidence.",
+          "Where it went puts the name, tokens and cost above a separate bar. Long bot, model and provider names wrap, and columns follow the panel’s available width. Tool-error and failed-turn counts remain fully readable below the error total. These layout changes do not change aggregation or source records."
+        ],
+        "caption": "Cropped isolated Electron desktop demo: long bot and model names wrap and the error split stays visible. Costs and usage are fixed demo data, not a real bill."
+      },
+      "image": "usage-layout-demo.png"
+    }
+  ]
+}

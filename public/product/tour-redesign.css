@@ -1,0 +1,242 @@
+/* Product tour polish layer (2026-11-04). Loaded after botdom-map.css; restyles only, never moves the road or changes content.
+   Goals: a first screen with a clear focal point, stops that differ in rhythm and colour, a court session on a lit stage,
+   and one consistent type scale. Reduced motion is honoured: nothing here animates except hover lifts. */
+:root{--bd-radius-xl:36px;--bd-gold-grad:linear-gradient(90deg,var(--gold),#F4CF6B 55%,var(--royal-2))}
+
+/* ---------- Type scale ---------- */
+.bd-stop h2,.bd-court-head h2{font-weight:900;letter-spacing:-.045em;line-height:1.04;text-wrap:balance}
+.bd-intro,.bd-court-head p:not(.bd-place){font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--ink-2)}
+.bd-btn{font-size:16px;font-weight:800;letter-spacing:-.01em}
+
+/* ---------- Hero ---------- */
+.bd-cartouche-pre{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 12px;border-radius:999px;background:var(--gold-soft);
+  box-shadow:0 0 0 1.5px rgba(230,174,46,.55);color:var(--gold-ink);font-size:14px;font-weight:800;letter-spacing:.02em}
+.bd-cartouche-pre::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(230,174,46,.28)}
+.bd-wordmark{position:relative;width:max-content;max-width:100%;margin-bottom:10px}
+.bd-wordmark::after{content:"";position:absolute;left:.04em;right:.04em;bottom:-.07em;height:.06em;border-radius:999px;background:var(--bd-gold-grad);opacity:.9}
+#hero-title{font-size:clamp(32px,3.6vw,54px);line-height:1.06;letter-spacing:-.045em;font-weight:900;margin-top:26px;text-wrap:balance}
+.bd-hero .bd-lede{font-size:clamp(18px,1.6vw,22px);max-width:40ch;margin-top:18px}
+.bd-hero .bd-btn{min-height:54px;padding-inline:26px}
+.bd-landmark--castle{position:relative;isolation:isolate}
+.bd-landmark--castle::before{content:"";position:absolute;z-index:-1;left:50%;top:44%;width:128%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(253,240,201,.95) 0 24%,rgba(253,240,201,.55) 42%,rgba(253,240,201,0) 68%);pointer-events:none}
+.bd-landmark--castle .bd-lm{filter:drop-shadow(0 26px 30px rgba(91,67,181,.28))}
+/* Centred, mirror-symmetric hero: one axis from kicker to castle to road */
+.bd-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"cart" "h1" "lede" "acts" "legend" "art";justify-items:center;text-align:center;column-gap:0}
+.bd-cartouche{display:flex;flex-direction:column;align-items:center}
+.bd-wordmark{margin-inline:auto}
+#hero-title{max-width:24ch;margin-inline:auto}
+.bd-hero .bd-lede{margin-inline:auto;max-width:46ch}
+.bd-actions{justify-content:center}
+.bd-landmark--castle{grid-area:art;justify-self:center;margin-top:clamp(56px,6vw,88px)}
+.bd-compass{display:none}
+/* Residents stand in a mirror-symmetric formation: lead centred above, reviewer at the door, two flanking */
+.bd-res--research{left:27%;top:66%}
+.bd-res--writer{left:73%;top:66%}
+.bd-res--lead{left:50%;top:50%}
+.bd-res--review{left:50%;top:97%}
+/* Tool line-up: quiet chips instead of a dashed box */
+.bd-guilds-legend{padding:0;border:0;background:none;width:min(660px,100%);margin-top:36px}
+.bd-guilds-title{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);text-align:center;margin:0 0 12px}
+.bd-guilds-legend ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.bd-guilds-legend li{display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 14px 7px 12px;border-radius:999px;background:#fff;box-shadow:0 0 0 1.5px var(--line),0 6px 12px -8px rgba(42,35,80,.35);
+  font-size:14px;font-weight:700;color:var(--ink);white-space:nowrap}
+.bd-guilds-legend li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lead)}
+.bd-guilds-legend li:nth-child(2)::before{background:var(--research)}
+.bd-guilds-legend li:nth-child(3)::before{background:var(--writer)}
+.bd-guilds-legend li:nth-child(4)::before{background:var(--review)}
+.bd-guilds-legend li:nth-child(5)::before{background:var(--gold)}
+.bd-guilds-legend li:nth-child(6)::before{background:var(--royal-2)}
+
+/* ---------- Stops: a gold-topped sheet, role-coloured records ---------- */
+.bd-content{border-radius:var(--bd-radius-xl);padding:clamp(28px,3.4vw,48px);
+  background:var(--bd-gold-grad) top/100% 7px no-repeat,#FFFEFC}
+.bd-record{--rc:var(--lead);border-radius:24px;border-top:7px solid var(--rc);padding-top:18px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.bd-record:nth-child(2){--rc:var(--research)}
+.bd-record:nth-child(3){--rc:var(--writer)}
+.bd-record:nth-child(4){--rc:var(--review)}
+.bd-record:nth-child(5){--rc:var(--gold-soft)}
+.bd-record:hover{transform:translateY(-3px)}
+.bd-record h3{font-weight:850;letter-spacing:-.02em}
+.bd-place{font-weight:850}
+
+/* ---------- Throne Room: the court at dusk ---------- */
+.bd-throne{background:linear-gradient(180deg,#2F2766,#221B4A);box-shadow:0 0 0 2px var(--gold),0 6px 0 var(--gold-deep),0 60px 90px -50px rgba(34,27,74,.85)}
+.bd-hall{background:
+  radial-gradient(ellipse at 50% 42%,rgba(244,207,107,.28),rgba(244,207,107,0) 55%),
+  radial-gradient(circle at 18% 22%,rgba(255,255,255,.55) 0 1.5px,transparent 2px),
+  radial-gradient(circle at 82% 16%,rgba(255,255,255,.5) 0 1.5px,transparent 2px),
+  radial-gradient(circle at 70% 84%,rgba(255,255,255,.4) 0 1.5px,transparent 2px),
+  radial-gradient(circle at 30% 78%,rgba(255,255,255,.4) 0 1.5px,transparent 2px),
+  linear-gradient(180deg,#3A3080,#2A2360)}
+.bd-hall .bd-arc{stroke:var(--gold)}
+.bd-hall .bd-spark{fill:#FFE9A0;filter:drop-shadow(0 0 8px rgba(255,214,102,.95))}
+.bd-sample{background:var(--gold-soft);color:var(--gold-ink)}
+.bd-caption,.bd-counter{color:#D8CEF6}
+.bd-ctl{font-weight:800}
+.bd-steps button{border-radius:14px}
+
+
+/* ---------- One centred column: no left/right zigzag ---------- */
+.bd-stop:not(.bd-stop--hero){display:flex;flex-direction:column;align-items:center;row-gap:clamp(20px,2.2vw,28px);width:min(1240px,100% - 64px);margin-inline:auto;padding-block:clamp(44px,5vw,76px)}
+.bd-stop:not(.bd-stop--hero) .bd-landmark{flex-direction:column;align-items:center;justify-content:center;gap:12px;grid-column:auto;grid-row:auto}
+.bd-stop:not(.bd-stop--hero) .bd-content{width:100%;grid-column:auto;grid-row:auto}
+
+.bd-stop:not(.bd-stop--hero) .bd-content>h2{text-align:center;margin-inline:auto;max-width:18ch}
+.bd-stop:not(.bd-stop--hero) .bd-content>.bd-intro{text-align:center;margin-inline:auto;max-width:56ch}
+
+/* Grand scale: full-width sheets, big landmarks, display-size headings */
+.bd-stop:not(.bd-stop--hero) .bd-lm{width:min(100%,380px);height:auto;aspect-ratio:240/192}
+.bd-stop:not(.bd-stop--hero) .bd-content{padding:clamp(32px,4.6vw,72px) clamp(24px,5vw,80px)}
+.bd-stop:not(.bd-stop--hero) .bd-content>h2{font-size:clamp(40px,5.6vw,84px);max-width:20ch;margin-bottom:.25em}
+.bd-stop:not(.bd-stop--hero) .bd-content>.bd-intro{font-size:clamp(18px,1.7vw,24px);max-width:60ch}
+.bd-stop:not(.bd-stop--hero) .bd-place{font-size:18px;padding:8px 22px 8px 8px}
+.bd-court{width:min(1240px,100% - 64px)}
+.bd-landmark--castle .bd-lm{width:min(100%,600px)}
+.bd-landmark--castle .bd-residents{width:min(100%,600px)}
+
+.bd-stop:not(.bd-stop--hero) .bd-record{padding:clamp(20px,2vw,30px)}
+.bd-stop:not(.bd-stop--hero) .bd-record h3{font-size:clamp(19px,1.6vw,24px)}
+.bd-stop:not(.bd-stop--hero) .bd-record>p,.bd-stop:not(.bd-stop--hero) .bd-record li{font-size:clamp(15px,1.15vw,17px);line-height:1.55}
+
+/* Tool banners: any count stays centred (3 + 2 reads as a symmetric pyramid, not a ragged grid) */
+.bd-banners{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,2vw,28px)}
+.bd-banners>*{flex:0 0 calc((100% - 2*clamp(16px,2vw,28px))/3);min-width:0}
+@media (max-width:900px){.bd-banners>*{flex-basis:calc((100% - clamp(16px,2vw,28px))/2)}}
+@media (max-width:600px){.bd-banners>*{flex-basis:100%}}
+
+/* Chinese keeps normal tracking so characters never crowd */
+:root:lang(zh) :is(.bd-stop h2,.bd-court-head h2,#hero-title){letter-spacing:-.01em;line-height:1.15}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width:900px){
+  .bd-landmark--castle::before{width:110%}
+  .bd-guilds-legend ul{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bd-guilds-legend li{padding:6px 11px 6px 10px;font-size:13px}
+  .bd-content{border-radius:28px}
+}
+@media (prefers-reduced-motion:reduce){.bd-record{transition:none}.bd-record:hover{transform:none}}
+
+/* ---------- Stop rail: text-free button row at the foot of every card (tour-rail.js) ---------- */
+.bd-rail{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,20px);margin-top:clamp(28px,3.4vw,52px);padding-top:clamp(20px,2.4vw,32px);border-top:2px dashed var(--line)}
+.bd-rail-dots{display:flex;align-items:center;justify-content:center;gap:clamp(4px,.7vw,10px);flex-wrap:wrap}
+.bd-rail-btn{display:inline-grid;place-items:center;border-radius:999px;background:#fff;color:var(--ink);font-weight:800;text-decoration:none;
+  box-shadow:0 0 0 1.5px var(--line),0 3px 0 var(--line);transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease)}
+.bd-rail-step{width:48px;height:48px;font-size:28px;line-height:1;padding-bottom:3px}
+.bd-rail-dot{min-width:38px;height:38px;padding:0 6px;font-size:12px;letter-spacing:.02em}
+a.bd-rail-btn:hover{transform:translateY(-2px);background:var(--gold-soft);box-shadow:0 0 0 1.5px var(--gold),0 5px 0 var(--gold)}
+a.bd-rail-btn:active{transform:translateY(1px)}
+.bd-rail-dot.is-here{background:var(--royal);color:#fff;box-shadow:0 0 0 1.5px var(--royal),0 3px 0 var(--gold)}
+.bd-rail-btn.is-off{opacity:.35;box-shadow:0 0 0 1.5px var(--line)}
+.bd-rail-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media (max-width:760px){.bd-rail{flex-wrap:wrap}.bd-rail-dots{order:3;flex-basis:100%}.bd-rail-step{width:44px;height:44px}.bd-rail-dot{min-width:34px;height:34px}}
+@media (prefers-reduced-motion:reduce){.bd-rail-btn{transition:none}a.bd-rail-btn:hover{transform:none}}
+
+/* Limits chips: six items sit as an even 3 + 3 grid instead of a ragged 5 + 1 */
+.bd-content .bd-fog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,18px);justify-items:stretch;width:100%}
+.bd-content .bd-fog>li{justify-content:center;text-align:center;margin:0}
+@media (max-width:600px){.bd-content .bd-fog{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Emblem bands (tour-ornaments.js): text-free, mirror-symmetric badge rows ---------- */
+.bd-orn{display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.4vw,20px);width:100%;margin:clamp(8px,1.4vw,20px) 0 clamp(20px,2.4vw,36px);
+  padding:clamp(18px,2.2vw,30px) clamp(12px,2vw,32px);border-radius:28px;background:linear-gradient(180deg,#F7F3FD,#EFE9FA);box-shadow:inset 0 0 0 1.5px var(--line)}
+.orn-tile{--c:var(--lead);--s:clamp(54px,6.4vw,92px);display:grid;place-items:center;flex:none;width:var(--s);height:var(--s);border-radius:28%;background:var(--c);
+  box-shadow:0 0 0 2px #fff,0 5px 0 rgba(42,35,80,.16),0 14px 22px -12px rgba(42,35,80,.5)}
+.orn-tile.is-big{--s:clamp(70px,8.6vw,124px);box-shadow:0 0 0 3px var(--gold),0 6px 0 var(--gold-deep),0 18px 26px -12px rgba(42,35,80,.55)}
+.orn-bot .bd-bot{--s:calc(var(--tile,92px)*.92)}
+.orn-tile{--tile:var(--s)}
+.orn-bot .bd-bot{width:100%;height:100%;--s:clamp(52px,6vw,86px)}
+.orn-bot.is-big .bd-bot{--s:clamp(66px,8vw,116px)}
+.orn-bot{background:radial-gradient(circle at 50% 38%,#fff,var(--c) 92%)}
+.orn-glyph{font-size:calc(var(--s)*.5);font-weight:900;color:#fff;line-height:1}
+.orn-link{flex:1 1 0;min-width:10px;max-width:56px;text-align:center;color:var(--gold-deep);font-size:clamp(20px,2.4vw,30px);font-weight:900;line-height:1;border-bottom:3px dotted rgba(230,174,46,.7);height:.7em}
+.orn-link:empty{height:0;border-bottom:3px dotted rgba(230,174,46,.7);align-self:center;max-width:36px}
+
+/* Garland: pennants hanging from a sagging cord */
+.orn-garland{align-items:flex-start;gap:clamp(6px,1.2vw,16px);padding-top:clamp(26px,3vw,40px);background:
+  radial-gradient(120% 100% at 50% 0,transparent 0 62%,transparent 62%),linear-gradient(180deg,#F7F3FD,#EFE9FA);position:relative}
+.orn-garland::before{content:"";position:absolute;left:4%;right:4%;top:14px;height:3px;border-radius:3px;background:var(--gold)}
+.orn-flag{flex:1 1 0;max-width:84px;aspect-ratio:1/1.15;background:var(--c);clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);filter:drop-shadow(0 6px 4px rgba(42,35,80,.2))}
+.orn-flag:nth-child(5){max-width:104px;margin-top:6px}
+
+/* Sheets with a wax seal */
+.orn-sheet{--c:#fff;position:relative;border-radius:10px;align-content:center;gap:7px;padding:0 clamp(10px,1.5vw,20px);box-sizing:border-box;box-shadow:0 0 0 2px var(--line),0 5px 0 rgba(42,35,80,.12),0 14px 22px -12px rgba(42,35,80,.45)}
+.orn-sheet b{display:block;width:100%;height:5px;border-radius:3px;background:var(--line)}
+.orn-sheet b:first-child{width:60%;background:var(--research)}
+.orn-sheet.is-big{box-shadow:0 0 0 3px var(--gold),0 6px 0 var(--gold-deep),0 18px 26px -12px rgba(42,35,80,.55)}
+.orn-wax{position:absolute;right:-12%;bottom:-12%;width:42%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a8c,var(--writer-ink,#C0452F) 80%);box-shadow:0 3px 6px rgba(42,35,80,.35)}
+.orn-sheets .orn-link{max-width:24px}
+
+/* Round control keys */
+.orn-keys{gap:clamp(12px,2.2vw,34px)}
+.orn-icon{background:#fff}
+.orn-icon>span{transform:scale(calc(var(--s)/44px/1.35))}
+.orn-icon.is-big>span{transform:scale(calc(var(--s)/44px/1.2))}
+.orn-keys .orn-icon{border-radius:50%}
+.orn-badges .orn-icon{border-radius:30%}
+.orn-badges{gap:clamp(10px,2vw,30px)}
+.orn-badges .orn-icon>span:is(:nth-child(n)){--c:var(--lead)}
+.orn-badges .orn-icon:is(:nth-child(2),:nth-child(5))>span{--c:var(--research)}
+.orn-badges .orn-icon:is(:nth-child(3),:nth-child(4))>span{--c:var(--writer)}
+
+/* Battlement */
+.orn-wall{gap:0;padding:0;background:none;box-shadow:none;align-items:flex-end;overflow:hidden;border-radius:6px 6px 0 0}
+.orn-wall i{flex:1 1 0;height:clamp(26px,3vw,40px);background:linear-gradient(180deg,#E8E0F6,#DDD2F2)}
+.orn-wall i:nth-child(even){background:none;height:0}
+.orn-wall i:nth-child(odd){box-shadow:inset 0 3px 0 #fff;border-radius:4px 4px 0 0}
+.orn-wall{border-bottom:clamp(14px,1.6vw,22px) solid #DDD2F2}
+.orn-wall i:nth-child(6){background:linear-gradient(180deg,#F4CF6B,var(--gold))}
+
+/* Fog clouds */
+.orn-fog{gap:clamp(6px,1.2vw,16px)}
+.orn-fog>span{opacity:var(--o);flex:1 1 0;max-width:110px;aspect-ratio:2/1;position:relative}
+.orn-fog>span::before,.orn-fog>span i{content:"";position:absolute;background:#fff;border-radius:999px;box-shadow:0 0 0 1.5px var(--line)}
+.orn-fog>span::before{left:0;right:0;bottom:0;height:52%}
+.orn-fog>span i{left:22%;bottom:22%;width:34%;aspect-ratio:1}
+
+/* Message steps */
+.orn-steps{gap:clamp(6px,1.2vw,14px)}
+.orn-dot{flex:none;display:grid;place-items:center;width:clamp(30px,3.6vw,46px);aspect-ratio:1;border-radius:50%;background:#fff;color:var(--royal);font-weight:900;font-size:clamp(13px,1.4vw,18px);box-shadow:0 0 0 2px var(--line),0 3px 0 var(--line)}
+.orn-steps .orn-link{height:0;max-width:44px;align-self:center}
+.orn-play{flex:none;display:grid;place-items:center;width:clamp(56px,6.4vw,84px);aspect-ratio:1;border-radius:50%;background:var(--royal);box-shadow:0 0 0 3px var(--gold),0 6px 0 var(--gold-deep)}
+.orn-play i{width:0;height:0;margin-left:8%;border-style:solid;border-width:.7em 0 .7em 1.1em;border-color:transparent transparent transparent #fff;font-size:clamp(14px,1.8vw,24px)}
+
+/* Pinned notes */
+.orn-notes{gap:clamp(8px,1.6vw,22px)}
+.orn-note{position:relative;flex:1 1 0;max-width:120px;aspect-ratio:1;display:grid;place-items:center;border-radius:6px 6px 14px 6px;background:var(--c);box-shadow:0 8px 14px -8px rgba(42,35,80,.5),inset 0 -6px 0 rgba(42,35,80,.08)}
+.orn-note b{font-size:clamp(26px,3.4vw,48px);font-weight:900;color:#fff;line-height:1}
+.orn-note i{position:absolute;top:-7px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--gold) 70%);box-shadow:0 2px 3px rgba(42,35,80,.4)}
+
+@media (max-width:600px){
+  .orn-relay .orn-link,.orn-sheets .orn-link{display:none}
+  .orn-relay,.orn-sheets{gap:6px}
+  .orn-steps .orn-link{display:none}
+  .orn-badges{flex-wrap:wrap}
+  .orn-flag{max-width:34px}
+}
+
+/* Fog band reads as dusk sky so the white clouds stand out; demo row centred on the page axis */
+.orn-fog{background:linear-gradient(180deg,#E3DAF5,#D3C8EE)}
+.bd-demo-row{justify-content:center;gap:clamp(20px,3vw,48px);flex-wrap:wrap}
+.orn-wax{right:auto;left:50%;bottom:-14%;transform:translateX(-50%)}
+
+/* Phones: smaller tiles so every band fits its card; the relay drops the two outer "you" markers to stay symmetric */
+@media (max-width:600px){
+  .bd-orn{padding:16px 10px;gap:6px}
+  .orn-tile{--s:44px;flex:0 1 auto;min-width:0}
+  .orn-tile.is-big{--s:60px}
+  .orn-bot .bd-bot{--s:40px}
+  .orn-bot.is-big .bd-bot{--s:54px}
+  .orn-relay>.orn-glyph{display:none}
+  .orn-keys{gap:8px}
+  .orn-dot{width:28px;font-size:12px}
+  .orn-play{width:50px}
+  .orn-steps{gap:5px}
+  .orn-note{border-radius:5px 5px 10px 5px}
+}
+
+/* Hero tool chips: any count stays centred (3 + 2 or 2 + 2 + 1 as a symmetric pyramid) */
+.bd-guilds-legend ul{display:flex;flex-wrap:wrap;justify-content:center}
+.bd-guilds-legend li{flex:0 0 calc((100% - 20px)/3)}
+@media (max-width:900px){.bd-guilds-legend li{flex-basis:calc((100% - 6px)/2)}}

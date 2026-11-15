@@ -1,0 +1,153 @@
+import { useState } from "react";
+import { BotdomGuide } from "./BotdomGuide";
+import type { ReactNode } from "react";
+import type { AppSettingsSection } from "@/state/store";
+import { t } from "@/lib/i18n";
+import { appVersion } from "@/lib/app-links";
+import type { LocaleKey } from "@/locales";
+import { productName } from "../lib/brand";
+import { OpenAtLoginRow } from "./OpenAtLoginRow";
+import { EnginesSettings } from "./EnginesSettings";
+import { LocalComputerSection } from "./LocalComputerSection";
+import { BuiltInBrowserRow, ServerSitesRow } from "./BrowserSettingsRows";
+import { LoginsSettings } from "./LoginsSettings";
+import { CloudPlanRow, CloudPlanFootnote, useCloudPlan } from "./ProIntroduction";
+import { CloudUsageDetails, CloudUsageSummaryView, useCloudUsageSettings } from "./CloudUsageMeter";
+import { SettingRow, SettingsDisclosureRow, SettingsGroup, SettingsRows } from "./SettingsPrimitives";
+import { UsageSection } from "./UsageSection";
+import { PlanUsageSummary } from "./PlanUsage";
+import { SkinPicker } from "./SkinPicker";
+import { ProfileFields } from "./ProfileSettings";
+import { NotificationSoundsRow } from "./NotificationSettingsRows";
+import { useServerUpdateItem } from "./SidebarProfileMenu";
+import { BrowserProfilesRow, LanguageRow, SendKeyRow, UpdatesRow } from "./AppSettingsRows";
+import { ThemeRow } from "./ThemeRow";
+import { FontRow } from "./AppearanceSelectRows";
+import { AdminOnly } from "./AdminOnly";
+
+export type SimpleDisclosureId = "ai-more" | "ai-keys" | "computer-elsewhere" | "billing-limits";
+
+export type Disclose = (id: SimpleDisclosureId) => { id: SimpleDisclosureId; open: boolean; onToggle: () => void };
+
+export const SIMPLE_ADVANCED_ONLY: readonly LocaleKey[] = [
+  "settings.newBotEffort.title", "newBot.defaults", "settings.roomTurns.title", "settings.mcpCalls.title", "settings.threads.title",
+  "settings.recovery.title", "settings.threadCleanup.title", "settings.chatWidth.title",
+  "settings.pinnedCircles.title", "settings.universalPins.title", "settings.toolCalls.title", "settings.runCard.title", "settings.keepWarm.title",
+];
+
+type Has = (id: AppSettingsSection) => boolean;
+
+export function SimpleGeneralPage(_props: { has: Has; peopleOpen: boolean; onLooks: () => void }) {
+  return <SettingsGroup block="general"><SettingsRows>
+    <ProfileFields nameOnly />
+    <LanguageRow simple />
+    <ThemeRow simple />
+    <FontRow />
+    <SendKeyRow simple />
+    <NotificationSoundsRow simple />
+    <OpenAtLoginRow simple />
+  </SettingsRows></SettingsGroup>;
+}
+
+export function SimpleLooksPage({ onBack }: { onBack: () => void }) {
+  return (
+    <>
+      <div><button type="button" className="ui-button" onClick={onBack}>{t("settings.simple.looks.back")}</button></div>
+      <div data-settings-block="looks"><SkinPicker /></div>
+    </>
+  );
+}
+
+export function SimpleAiPage({ has, disclose, connections }: { has: Has; disclose: Disclose; connections: ReactNode }) {
+  return (
+    <>
+      {has("engines") && <div data-settings-block="engines" className="flex scroll-mt-4 flex-col gap-7"><AdminOnly><EnginesSettings simple more={disclose("ai-more")} /></AdminOnly></div>}
+      {has("connections") && (
+        <AdminOnly>
+          <SettingsDisclosureRow title={t("settings.section.connections")} block="connections" {...disclose("ai-keys")}>
+            {connections}
+          </SettingsDisclosureRow>
+        </AdminOnly>
+      )}
+    </>
+  );
+}
+
+export type RemoteAccessCards = Record<"client" | "domain" | "pairing" | "companion", ReactNode>;
+
+export function SimpleComputerPage({ has, remoteAccess, servers, disclose }: { has: Has; remoteAccess: RemoteAccessCards; servers: ReactNode; disclose: Disclose }) {
+  return (
+    <>
+      {has("computer") && <SettingsGroup label={t("settings.simple.computer.bots")} block="computer"><AdminOnly><LocalComputerSection /></AdminOnly></SettingsGroup>}
+      {has("companion") && (
+        <SettingsGroup label={t("settings.simple.computer.devices")} block="companion">
+          {remoteAccess.pairing}
+          {remoteAccess.companion}
+        </SettingsGroup>
+      )}
+      {has("computer") && (
+        <SettingsGroup label={t("settings.experimental.browser")} block="browser">
+          <SettingsRows><BuiltInBrowserRow /><ServerSitesRow /></SettingsRows>
+          <BrowserProfilesRow />
+        </SettingsGroup>
+      )}
+      {has("logins") && <div data-settings-block="logins" className="scroll-mt-4"><LoginsSettings /></div>}
+      {(has("companion") || has("desktopWorkspaces")) && (
+        <SettingsDisclosureRow title={t("settings.simple.computer.elsewhere")} block="elsewhere" {...disclose("computer-elsewhere")}>
+          {has("companion") && <div data-settings-block="remote" className="flex scroll-mt-4 flex-col gap-4 empty:hidden">{remoteAccess.client}{remoteAccess.domain}</div>}
+          {has("desktopWorkspaces") && <div data-settings-block="desktopWorkspaces" className="flex scroll-mt-4 flex-col gap-4">{servers}</div>}
+        </SettingsDisclosureRow>
+      )}
+    </>
+  );
+}
+
+export function SimpleBillingPage({ has, disclose, cloudAccount }: { has: Has; disclose: Disclose; cloudAccount: ReactNode }) {
+  const { usage, upgrade, dialog } = useCloudUsageSettings();
+  const plan = useCloudPlan();
+  const signedOut = plan?.view.kind === "signed-out" || plan?.view.kind === "removed";
+  return (
+    <>
+      <div data-settings-block="usage" className="scroll-mt-4">
+        {usage ? <CloudUsageSummaryView usage={usage} upgrade={upgrade}>{dialog}</CloudUsageSummaryView> : <AdminOnly note="settings.adminOnly.usage"><PlanUsageSummary /></AdminOnly>}
+      </div>
+      {(usage || has("usage")) && (
+        <SettingsDisclosureRow title={t("settings.simple.billing.limits")} {...disclose("billing-limits")}>
+          {usage && <CloudUsageDetails usage={usage} upgrade={upgrade} />}
+          {has("usage") && <AdminOnly note="settings.adminOnly.usage"><UsageSection /></AdminOnly>}
+        </SettingsDisclosureRow>
+      )}
+      {has("cloudAccount") && (
+        <SettingsGroup label={t("settings.simple.billing.plan")} block="cloudAccount" footnote={<CloudPlanFootnote />}>
+          <SettingsRows><CloudPlanRow place="plan" usage={usage} upgrade={upgrade} /></SettingsRows>
+          {signedOut ? null : <div className="flex flex-col gap-4">{cloudAccount}</div>}
+        </SettingsGroup>
+      )}
+    </>
+  );
+}
+
+const versionTitle = () => `${productName()} ${appVersion()}`;
+
+function ServerUpdatesRow() {
+  const entry = useServerUpdateItem(true);
+  if (!entry) return null;
+  const status = entry.phase === "idle" ? undefined : [entry.label, entry.item.subtitle].filter(Boolean).join(" ");
+  const action = entry.phase === "available" ? t("settings.simple.updates.seeRelease")
+    : entry.phase === "reload" ? t("settings.simple.updates.reload")
+      : entry.phase === "checking" ? t("common.checking") : t("settings.updates.check");
+  return (
+    <SettingRow title={versionTitle()} subtitle={status}>
+      <button type="button" className="ui-button" disabled={entry.item.disabled} onClick={entry.item.onSelect}>{action}</button>
+    </SettingRow>
+  );
+}
+
+export function SimpleUpdatesPage(_props: { remoteActive: boolean }) {
+  const [guide, setGuide] = useState(false);
+  return <SettingsGroup block="updates"><SettingsRows>
+    <SettingRow title={versionTitle()}>{null}</SettingRow>
+    {window.ogb?.updater ? <UpdatesRow /> : <ServerUpdatesRow />}
+    <SettingRow title={t("guide.title")}><button type="button" className="ui-button" onClick={() => setGuide(!guide)} aria-expanded={guide}>{t("guide.title")}</button></SettingRow>
+  </SettingsRows>{guide && <div className="mt-4"><BotdomGuide /></div>}</SettingsGroup>;
+}
