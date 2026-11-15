@@ -1,4 +1,6 @@
 window.MusterProductZh= {
+  "Your AI bot kingdom": "你的 AI Bot 王国",
+  "One goal. Your AI team works together.": "一个目标，AI 团队一起开工。",
   "Botdom brings supported AI tools into one group chat. You talk to the lead; the lead assigns, members hand off, and you check the results.": "Botdom 将支持的 AI 工具放在同一个群聊中。你与主管沟通，主管分工，成员交接，你来检查成果。",
   "Codex, OpenCode, DeepSeek Harness and Claude Code. Install and configure each tool yourself; availability and features vary.": "支持 Codex、OpenCode、DeepSeek Harness 和 Claude Code。请自行安装并配置；可用性和功能因工具而异。",
   "Pi Agent and WorkBuddy connections": "Pi Agent 和 WorkBuddy 接入",
