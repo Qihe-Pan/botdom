@@ -2,6 +2,8 @@
 
 Botdom 是一个本地优先的 AI Bot 团队工作空间。你可以与 Bot 私聊，也可以在群聊里由主管组织多个 Bot 协作，并在任务看板中查看进度。
 
+Botdom 基于 [OpenMausBot](https://github.com/milind-soni/OpenMausBot) 开发，遵循 Apache 2.0 开源协议。
+
 ## 项目结构
 
 - `src/`、`public/`：桌面界面、主页和使用指南
